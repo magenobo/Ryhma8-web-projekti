@@ -1,0 +1,40 @@
+body {
+    background-color: #f8f7f6;
+}
+
+h1 {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 4%;
+    width: 80vw;
+    margin: 30px auto;
+    border: 2px solid black;
+    border-radius: 2px;
+  
+}
+
+.koko_profiili {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profiilit {
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+    border-radius: 150px 150px 0px 0px;
+}
+
+.profiili_nimi {
+    background-color: #856955;
+    text-align: center;
+}
+
+.profiili_tekeminen {
+    background-color: #a17d60;
+    text-align: center;
+}
+
+

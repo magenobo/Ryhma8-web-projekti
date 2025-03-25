@@ -1,3 +1,26 @@
-#tumma-taustavari {
-    color:#e0e0e0;
+
+
+body{
+    background-color: #f8f7f6;
+}
+
+#etusivu{
+padding: 3%;
+}
+
+#etusivukuva{
+height: auto;
+width: 100%;
+padding: 2%;
+}
+
+#etusivu h1{
+text-align: center;
+word-spacing: 10px;
+}
+
+#etusivu p {
+    text-align: justify;
+    
+
 }
