@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f7f6;
+    background-color: #fff0d5;
 }
 
 h1 {
@@ -13,9 +13,25 @@ h1 {
   
 }
 
+.infoa {
+    align-items: center;
+    text-align: center;
+    background-color: #e0e0e0;
+   
+
+    padding: 1%;
+    width: 70vw;
+    margin: 30px auto;
+   
+    border-radius: 2px;
+  
+   
+}
 .koko_profiili {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+    margin: 2%;
 }
 
 .profiilit {
@@ -25,15 +41,29 @@ h1 {
 img{
     max-width: 100%;
     border-radius: 150px 150px 0px 0px;
+   
 }
 
 .profiili_nimi {
     background-color: #856955;
-    text-align: center;
+    text-align: center;    
+    font-size: larger;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    color: white;
 }
 
 .profiili_tekeminen {
     background-color: #a17d60;
+    text-align: center;
+    font-size: small;
+    height: 20vh;
+    color: white;
+  
+    
+
+}
+.profiilit_oma {
     text-align: center;
 }
 
