@@ -27,22 +27,13 @@ word-spacing: 10px;
 
 }
 
-.row {
+footer {
     position: fixed;
-    bottom: 0%;
-    left: 0%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.column {
-    flex: 1 1 30%;
-    background-color: #e0e0e0;
-    text-align: center;
-    padding-top: 1em;
-
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100vw;
+    padding-top: 5em;
 }
 
 
