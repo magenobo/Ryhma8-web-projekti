@@ -1,9 +1,28 @@
 body{
-    background-color: #f8f7f6;
+    background-color: #e8e5dd;
+    
+
 }
 
+#esittely{
+    display: none; /*PIILOSSA*/
+}
+#kysymyslaatikko{
+    background-color: #bda492;
+    padding: 20px;
+    border-radius: 10px; 
+   
+}
+
+#kielivisa{
+background-color: #e0e0e0;
+border: 1px solid #000;
+margin-bottom: 10%;
+
+}
 #kielivisa h1 {
 text-align: center;
+
 }
 
 #kielivisa p{
@@ -12,7 +31,83 @@ text-align: center;
 
 #visa{
     background-color: #c6bbb2;
+    border-radius: 10px; 
+    
 }
+
+#visa-container{
+    padding: 20px; 
+}
+
+#kysymys{
+    padding: 20px 0;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 10px; 
+    text-align: center;
+
+}
+
+#quiz h2{
+    font-size: 18px;
+    font-weight: 600;
+ 
+}
+
+#vastausnapit{
+    max-width: 50%;  
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+
+
+
+   
+
+}
+#btn{
+    background: #fff;
+    color: black;
+    font-weight: 500;
+    width: 100%;
+    border: 1px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    border: 3px solid #000;
+    
+
+ 
+   
+}  
+
+#btn:hover{
+    background-color:#8d7d6f ;
+    color: #fff;
+}
+
+#next-btn{
+    background-color: #bda492;
+    font-weight: 500;
+    width: 120px;
+    border: 0;
+    padding: 5px;
+    border-radius: 4px; 
+    cursor: pointer;
+    align-self: flex-start;
+    align-items: end;
+    float: right;
+    display: none; /*PIILOSSA*/
+    
+ 
+        
+}
+
+
 
 footer {
     bottom: 0;
