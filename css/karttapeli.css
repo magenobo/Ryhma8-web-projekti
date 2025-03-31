@@ -89,3 +89,19 @@ h1 {
 .tumma-taustavari {
     background-color: #e0e0e0;
 }
+
+/*hyvin pienet näytöt ovat normaalia koodia/
+/*isommat puhelimet sekä tabletit 641-994*/
+@media screen and (min-width: 641px) {
+
+}
+
+/*isot näytöt, kannettavat tietokoneet 995-13199*/
+@media screen and (min-width: 995px) {
+
+}
+
+/*tosi isot näytöt 1199->*/
+@media screen and (min-width: 1200px) {
+
+}
