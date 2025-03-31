@@ -54,7 +54,7 @@ text-align: center;
 }
 
 
-#btn, .btntwo{
+.btn, .btntwo{
     background: #fff;
     color: black;
     font-weight: 500;
@@ -69,11 +69,14 @@ text-align: center;
  
 }  
 
-#btn:hover, .btntwo:hover{
+.btn:hover:not([disabled]), .btntwo:hover:not([disabled]){
     background-color:#8d7d6f ;
     color: #fff;
 }
 
+.btn:disabled, .btntwo:disabled{ /*hover ei enää näy kun on valittu vastaus.*/
+    cursor: no-drop;
+}
 #next-btn{
     background-color: #bda492;
     font-weight: 500;
@@ -88,6 +91,15 @@ text-align: center;
     display: none; /*PIILOSSA*/
     
      
+}
+
+.correct{
+    background-color: rgb(8, 194, 8) ;
+   
+}
+
+.incorrect{
+    background-color: #f24c41;
 }
 
 

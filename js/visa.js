@@ -97,26 +97,61 @@ function showQuestion(){
         button.dataset.correct = answer.correct;
     }
     button.addEventListener("click", selectAnswer);
+    
   });
-
 }
 
 
 function resetState(){
-    nextButton.setHTMLUnsafe.display = "none";
+    nextButton.style.display = "none";
     while(vastausnapit.firstChild){
         vastausnapit.removeChild(vastausnapit.firstChild);
     }
 }
 
-function selectAnswer(e){
+function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
     const selectBtn = e.target;
     const isCorrect = selectBtn.dataset.correct === "true";
     if(isCorrect){
-        selectBtn.classList.add("correct");
+        selectBtn.classList.add("correct"); //oikein
+        score++; //Oikeasta vastauksesta piste
     }else{
-        selectBtn.classList.add("incorrect");
+        selectBtn.classList.add("incorrect"); //väärin
+        
+    }
+     Array.from(vastausnapit.children).forEach(button => {
+        if(button.dataset.correct === "true"){
+            button.classList.add("correct");
         }
-    } //vastausvaihtoehdot tulee näkyviin
+        button.disabled = true;
+        });
+        nextButton.style.display = "block";  
+    } 
 
-startQuiz();
+    function showScore(){
+        resetState();
+        questionElement.textContent = 'Pisteet ${score}/3}!'; //Pisteet 
+        nextButton.textContent = "Yritä uudelleen";
+        nextButton.style.display = "block";
+    }
+
+    function handleNextButton(){
+        currentQuestionIndex++;
+        if(currentQuestionIndex < questions.length){
+            showQuestion();
+        }else{
+            showScore();
+        }
+        }
+    
+
+    nextButton.addEventListener("click", ()=>{ //seuraava-napin toiminta
+        if(currentQuestionIndex < questions.length){
+           handleNextButton();
+        }else{
+            startQuiz();
+        }
+        
+    });
+
+    startQuiz();
