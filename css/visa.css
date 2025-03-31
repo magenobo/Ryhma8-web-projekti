@@ -54,7 +54,7 @@ text-align: center;
 }
 
 
-#btn{
+#btn, .btntwo{
     background: #fff;
     color: black;
     font-weight: 500;
@@ -69,7 +69,7 @@ text-align: center;
  
 }  
 
-#btn:hover{
+#btn:hover, .btntwo:hover{
     background-color:#8d7d6f ;
     color: #fff;
 }
