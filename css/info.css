@@ -48,7 +48,7 @@ img{
 .profiili_nimi {
     background-color: #856955;
     text-align: center;    
-    font-size: larger;
+    font-size: large;
     margin-top: 2%;
     margin-bottom: 3%;
     color: white;
@@ -58,14 +58,16 @@ img{
     background-color: #a17d60;
     text-align: center;
     font-size: small;
-    padding: 5vh;
+    padding: 25px;
     color: white;
+    max-height: 120px;
+    
   
     
 
 }
 .profiilit_oma {
-    max-width: 50%;
+    max-width: 100%;
     padding-left: 25%;
     padding-right: 25%;
     padding-top: 3%;
