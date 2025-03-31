@@ -65,7 +65,6 @@ const questions = [
     }
 ];
 
-
 const questionElement = document.getElementById("kysymys");
 const vastausnapit = document.getElementById("vastausnapit");
 const nextButton = document.getElementById("next-btn");
@@ -87,6 +86,7 @@ function showQuestion(){
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
 
   currentQuestion.answers.forEach(answer => {
     const button = document.createElement("button");
@@ -117,4 +117,6 @@ function selectAnswer(e){
     }else{
         selectBtn.classList.add("incorrect");
         }
-    }
+    } //vastausvaihtoehdot tulee näkyviin
+
+startQuiz();
