@@ -18,8 +18,9 @@ h1 {
     text-align: center;
     background-color: #e0e0e0;
     border: 2px solid rgb(231, 150, 107);
-    width: 70vh;
     margin: 30px auto;
+    max-width: fit-content;
+
 }
 
 .koko_profiili { /*kaikki profiilit*/
@@ -56,12 +57,18 @@ img{ /*valokuvat ihmisistä*/
     height: 60px;
 }
 
-.profiilit_oma {
+.special_two {
+    
     max-width: 100%;
     padding-left: 25%;
     padding-right: 25%;
     padding-top: 3%;
 
+
+}
+
+.special_one {
+    display: none;
 }
 
 
@@ -84,66 +91,39 @@ div.container {
 /*hyvin pienet näytöt ovat normaalia koodia*/
 /*isommat puhelimet sekä tabletit 641-994*/
 @media screen and (min-width: 641px) {
-    
-    .koko_profiili {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 3%;
-        margin: 5%;
-    }
-
-    
-    .profiili_nimi {
-        background-color: #856955;
-        text-align: center;    
-        font-size: large;
-        margin-top: 2%;
-        margin-bottom: 3%;
-        color: white;
-    }
-    
-    .profiili_tekeminen {
-        background-color: #a17d60;
-        text-align: center;
-        font-size: small;
-        padding: 25px;
-        color: white;
-        max-height: 120px;
-        
-      
-        
-    
-    }
-    .profiilit_oma {
-        max-width: 100%;
-
-        padding-top: 3%;
-    
-    }
-    
-    
-    footer {
-        bottom: 0;
-        right: 0;
-        left: 0;
-        max-width: 100vw;
-        padding-top: 5em;
-        margin-top: 5em;
-    }
-    
-    div.container {
-        max-width: 100%;
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
-
 }
+
 /*isot näytöt, kannettavat tietokoneet 995-1199*/
 @media screen and (min-width: 995px) {
+
 
 }
 
 /*tosi isot näytöt 1199->*/
 @media screen and (min-width: 1200px) {
+    .koko_profiili { /*kaikki profiilit*/
+        display: flex;
+        margin: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+
     
+    .special_two {
+        display: none;
+    }
+    
+    .special_one {
+        display: inline;
+    }
+   
+    .infoa {
+        max-width: fit-content;
+
+    }
+    
+    h1 {
+        max-width: 900px;
+    }
 }
