@@ -63,12 +63,12 @@ h1 {
     text-align: center;
     margin-top: 3%;
     padding: 2%;
-    width: 24vw;
+    width: 25vw;
     border-radius: 20px;
 
 }
 
-.kysymys {
+#answer {
     background-color: rgb(200, 200, 200);
     padding: 2%;
     margin-top: 2%;
@@ -77,12 +77,14 @@ h1 {
     text-align: center;
 }
 
-.laheta_btn {
-    background-color: #eccdff;
+
+
+#next_btn, #send_btn {
+  background-color: #a8c9a5;
     text-align: center;
+    margin-top: 3%;
     padding: 2%;
-    margin-top: 2%;
-    width: 20vw;
+    width: 24vw;
     border-radius: 20px;
 }
 
