@@ -13,39 +13,33 @@ h1 {
   
 }
 
-.infoa {
+.infoa { /*infoteksti sivusta*/
     align-items: center;
     text-align: center;
     background-color: #e0e0e0;
-   
-    border: 2px solid rgb(255, 148, 148);
-
-    padding: 1%;
-    width: 70vw;
+    border: 2px solid rgb(231, 150, 107);
+    width: 70vh;
     margin: 30px auto;
-   
-    border-radius: 2px;
-  
-   
 }
-.koko_profiili {
+
+.koko_profiili { /*kaikki profiilit*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 3%;
     margin: 5%;
 }
 
-.profiilit {
+.profiilit { /*profiilikokonaisuus, jossa kuva, nimi ja tekeminen*/
     align-items: center;
 }
 
-img{
+img{ /*valokuvat ihmisistä*/
     max-width: 100%;
     border-radius: 150px 150px 0px 0px;
    
 }
 
-.profiili_nimi {
+.profiili_nimi { /*Tila, jossa lukee käyttäjän nimi*/
     background-color: #856955;
     text-align: center;    
     font-size: large;
@@ -54,18 +48,14 @@ img{
     color: white;
 }
 
-.profiili_tekeminen {
+.profiili_tekeminen { /*Tila, jossa lukee mitä käyttäjä on tehnyt*/
     background-color: #a17d60;
     text-align: center;
     font-size: small;
-    padding: 25px;
     color: white;
-    max-height: 120px;
-    
-  
-    
-
+    height: 60px;
 }
+
 .profiilit_oma {
     max-width: 100%;
     padding-left: 25%;
@@ -88,4 +78,72 @@ div.container {
     max-width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+
+/*hyvin pienet näytöt ovat normaalia koodia*/
+/*isommat puhelimet sekä tabletit 641-994*/
+@media screen and (min-width: 641px) {
+    
+    .koko_profiili {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3%;
+        margin: 5%;
+    }
+
+    
+    .profiili_nimi {
+        background-color: #856955;
+        text-align: center;    
+        font-size: large;
+        margin-top: 2%;
+        margin-bottom: 3%;
+        color: white;
+    }
+    
+    .profiili_tekeminen {
+        background-color: #a17d60;
+        text-align: center;
+        font-size: small;
+        padding: 25px;
+        color: white;
+        max-height: 120px;
+        
+      
+        
+    
+    }
+    .profiilit_oma {
+        max-width: 100%;
+
+        padding-top: 3%;
+    
+    }
+    
+    
+    footer {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        max-width: 100vw;
+        padding-top: 5em;
+        margin-top: 5em;
+    }
+    
+    div.container {
+        max-width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+}
+/*isot näytöt, kannettavat tietokoneet 995-1199*/
+@media screen and (min-width: 995px) {
+
+}
+
+/*tosi isot näytöt 1199->*/
+@media screen and (min-width: 1200px) {
+    
 }
