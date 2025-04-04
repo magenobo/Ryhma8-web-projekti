@@ -64,7 +64,7 @@ h1 { /* otsikko "tarinapeli" */
 
 #word-box { /* sisällä on otsikko ja sanat, joista valita */
     width: 100%;
-    height: 250px;
+    height: 100%;
     border: 2px solid black;
     border-bottom: none;
 }
@@ -76,9 +76,11 @@ h1 { /* otsikko "tarinapeli" */
 #ask-word { /* div jossa alemmat kolme */
     border: 2px solid black;
     padding: 25px;
+    display: block;
 }
 
 #word-label { /* label "anna sana" */
+    display: block;
     padding-bottom: 10px;
     display: block;
     font-size: 1.3em;
@@ -140,7 +142,12 @@ h1 { /* otsikko "tarinapeli" */
     text-align: center;
 }
 
-
+.answer {
+    color: black;
+    background-color: #f5f5f5;
+    font-size: 1.2em;
+    text-align: center;
+}
 
 .correct {
     color: green;
@@ -156,3 +163,17 @@ h1 { /* otsikko "tarinapeli" */
     text-align: center;
 }
 
+.ready {
+    color: black;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#final-story {
+    padding: 20px;
+    background-color: #f5f5f5;
+    font-size: 1.3em;
+    line-height: 2em;
+}

@@ -1,7 +1,12 @@
-// luodaan kuuntelija buttoniin, josta peli alkaa ja tulee näkyviin
+// luodaan kuuntelijat nappeihin, joista aloitetaan peli ja tarkastetaan sana
 const startButton = document.querySelector("#start-game")
 startButton.addEventListener("click", startGame)
 
+const checkButton = document.querySelector("#word-check")
+checkButton.addEventListener("click", checkWord)
+
+
+// taulukko, joka sisältää sanat, joiden joukosta käyttäjä valitsee haluamansa
 const possibleWords = [
     ["suomalainen", "japanilainen", "brasilialainen", "kanadalainen", 
     "egyptiläinen", "australialainen", "meksikolainen", "intialainen", "indonesialainen"],
@@ -30,76 +35,134 @@ const possibleWords = [
     ["ahmia", "syödä", "tökkiä", "heitellä", "sekoittaa", "koskea", "haistella", "potkia", "paiskoa"]
 ]
 
-const checkButton = document.querySelector("#word-check")
-checkButton.addEventListener("click", checkWord)
+let storyWords = []
 
+// 
 let words = document.querySelector("#words")
 let points = document.querySelector("#points")
+let response = document.querySelector("#answer")
 
-// lasketaan pyydettyjen sanojen määrää ja pisteitä
-wordCount = 1
-pointCount = 0
-tries = 0
+let showWords = document.querySelector("#possible-words")
 
-index = 0
+// koodissa lasketaan pyydettyjen sanojen määrää, pisteitä, yrityksiä ja kohtaa, jossa ollaan menossa taulussa (indeksi)
+let wordCount = 1
+let pointCount = 0
+let tries = 0
+let index = 0
 
-
-/**
- * @param {Event} event
- */
-
-
-// nappia painamalla nappi katoaa ja pelialusta tulee näkyviin
+// "aloita peli" -nappia painamalla nappi katoaa ja pelialusta tulee näkyviin
 function startGame() {
 
-    const gameBoard = document.querySelector("#game-board").style.display = "block"
+    document.querySelector("#game-board").style.display = "block"
     startButton.style.display = "none"
 
     changeWords()
 }
 
+// funktio tuo taulukosta oikeat sanat käyttäjän näkyville
 function changeWords() {
     
-    let showWords = document.querySelector("#possible-words")
-    let words = possibleWords[index].toString().replace(/,/g, " ").split(" ")
-    showWords.textContent = words.join(" ")
-    
-    words.textContent = "Sana" + wordCount + "/10"
+    let wordsArray = possibleWords[index]
+    showWords.textContent = wordsArray.join(" ")
+    words.textContent = "Sana " + wordCount + "/10"
 }
+
 
 // 
 function checkWord() {
-    
+
+    if (checkButton.textContent === "Jatka eteenpäin") {
+        nextWords()
+        return
+    }
+
     let givenWord = document.querySelector("#word-input").value
-    let answer = document.querySelector("#answer")
 
     if (possibleWords[index].includes(givenWord)) {
-        console.log("täällä");
         
-        wordCount++
         pointCount++
         index++
-        answer.textContent = "Sana kelpaa! Ansaitsit 1 pisteen. Jatka eteenpäin."
-        answer.classList.add("correct")
-        checkButton.textContent = "Jatka eteenpäin"
-        points.textContent = "Pisteet " + pointCount + "/10"
+        tries++
 
-        changeWords()
+        if (tries == 2) {
+
+            response.textContent = "Sana kelpaa! Ansaitsit 0.5 pistettä. Jatka eteenpäin."
+            response.classList.remove("answer", "correct", "incorrect")
+            response.classList.add("correct")
+            checkButton.textContent = "Jatka eteenpäin"
+            points.textContent = "Pisteet " + pointCount + "/10"
+            storyWords.push(givenWord)
+        } else {
+            
+            response.textContent = "Sana kelpaa! Ansaitsit 1 pisteen. Jatka eteenpäin."
+            response.classList.remove("answer", "correct", "incorrect")
+            response.classList.add("correct")
+            checkButton.textContent = "Jatka eteenpäin"
+            points.textContent = "Pisteet " + pointCount + "/10"
+            storyWords.push(givenWord)
+            console.log(storyWords);
+        }
+
+
     } else {
         pointCount-= 0.5
         tries++
-        
+
         if (tries == 2) {
-            answer.textContent = "Sana ei kelpaa! Käytit viimeisen yrityksen etkä ansainnut pisteitä. Jatka eteenpäin."
-            answer.classList.add("incorrect")
+
+            response.textContent = "Sana ei kelpaa! Käytit viimeisen yrityksen etkä ansainnut pisteitä. Jatka eteenpäin."
+            response.classList.remove("answer", "correct", "incorrect")
+            response.classList.add("incorrect")
             checkButton.textContent = "Jatka eteenpäin"
 
-            changeWords()
+            if (index < 9) {
+                storyWords.push(possibleWords[index][index])
+            } else {
+                storyWords.push(possibleWords[index][index-1])
+            }
+
+            console.log(storyWords);
             
         } else {
+            
             document.querySelector("#word-input").value = ""
-            answer.textContent = "Sana ei kelpaa! Yksi yritys jäljellä. Oikealla sanalla voit ansaita 0.5 pistettä."
-            answer.classList.add("incorrect")
+            response.textContent = "Sana ei kelpaa! Yksi yritys jäljellä. Oikealla sanalla voit ansaita 0.5 pistettä."
+            response.classList.remove("answer", "correct", "incorrect")
+            response.classList.add("incorrect")
+
         }
+    }
+}
+
+function nextWords() {
+    tries = 0
+    wordCount++
+
+    if (wordCount <= possibleWords.length) {
+        document.querySelector("#word-input").value = ""
+        checkButton.textContent = "Tarkista sana"
+        response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
+        response.classList.remove("answer", "correct", "incorrect")
+        response.classList.add("answer")
+        changeWords()
+    } else {
+
+        console.log(storyWords);
+        
+
+        document.querySelector("#ask-word").style.display = "none"
+        document.querySelector("#choose-word").textContent = "Onnea läpäisit pelin! "
+        showWords.textContent = ""
+
+        let finalStory = document.querySelector("#final-story")
+        
+        finalStory.textContent = "Olipa kerran " + storyWords[0] + ", joka halusi " + storyWords[1] + " ulkomaille "
+        + storyWords[2] + " kanssa. Hän ei kuitenkaan osannut " + storyWords[3] + " paikallista kieltä ja joutui sen vuoksi "
+        + storyWords[4] + ". Siellä " + storyWords[0] + " tapasi kokin, joka väitti osaavansa tehdä " + storyWords[5] + ". Päästäkseen maistamaan kokin tekeleitä "
+        + storyWords[0] + " seurasi tätä keittiöön, jonka katosta roikkui " + storyWords[6] + " lippu. 'Miksi sinulla on tuo lippu tuossa?' kysyi " + storyWords[0]
+        + ". 'Ystäväni vieraili " + storyWords[7] + " ja toi sen minulle', kokki vastasi tuodessaan valmista ruokaa pöytään. " 
+        + storyWords[0] + " tuijotti tortilloja ihmeissään, koska ne näyttivät " + storyWords[8] + ". Hän alkoi kuitenkin " 
+        + storyWords[9] + " ruokaa lopulta suurella ruokahalulla, kunnes pystyi vatsa pullottaen lysähtämään takaisin tuoliin."
+
     }
 }
