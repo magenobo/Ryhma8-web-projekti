@@ -58,9 +58,9 @@ const questions = [
     {
         question: "Aloha!", 
         answers: [
-            { text: "Uusi-Seelanti", correct: true},
+            { text: "Kreikka", correct: false},
             { text: "Portugali", correct: false},
-            { text: "Havaijii", correct: false},
+            { text: "Havaijii", correct: true},
         ]  
     }
 ];
@@ -68,19 +68,41 @@ const questions = [
 const questionElement = document.getElementById("kysymys");
 const vastausnapit = document.getElementById("vastausnapit");
 const nextButton = document.getElementById("next-btn");
+const laatikko = document.getElementById("kysymyslaatikko");
+const scoreElement = document.getElementById("score");
+const restartButton = document.getElementById("restart-btn");
+
+//aloitusnäkymä
+const startScreen = document.getElementById("startscreen")
+const startButton = document.getElementById("start-btn")
+const quizContainer = document.getElementById("visa") 
+
+//virheilmoitukset
+const errorMessage = document.getElementById("vaara-vastaus");
+const correctAnswerSpan = document.getElementById("oikea-vastaus");
 
 let currentQuestionIndex = 0;
 let score = 0;
 
 
+ //päivittää pisteet
+ function updateScore(){
+ scoreElement.textContent = `Pisteet: ${score}`;
+ }
+
 
 function startQuiz(){
+    startScreen.style.display = "none"; //piilottaa aloitusnäytön
+    quizContainer.style.display = "block"; // näyttää pelin sisällön
+    laatikko.style.display = "block"; //näyttää kysymyslaatikon
+    restartButton.style.display = "none"; //piilottaa restart-napin
     currentQuestionIndex = 0; //resettaa kysymyksen
     score = 0; // nollaa scoren
-    nextButton.textContent = "Seuraava"; //??//
+    nextButton.textContent = "Seuraava";
+    updateScore(); //Päivittää pisteet alussa
     showQuestion();
 }
-
+//näyttää ensimmäisen kysymyksen
 function showQuestion(){
     resetState();
   let currentQuestion = questions[currentQuestionIndex];
@@ -107,40 +129,67 @@ function resetState(){
     while(vastausnapit.firstChild){
         vastausnapit.removeChild(vastausnapit.firstChild);
     }
+    errorMessage.style.display = "none"; //piiloittaa virheilmoituksen uuden kysymyksen tullessa
 }
 
 function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
     const selectBtn = e.target;
     const isCorrect = selectBtn.dataset.correct === "true";
+
     if(isCorrect){
         selectBtn.classList.add("correct"); //oikein
         score++; //Oikeasta vastauksesta piste
     }else{
         selectBtn.classList.add("incorrect"); //väärin
+
         
     }
+
+    updateScore();
+
+
+
      Array.from(vastausnapit.children).forEach(button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
         }
-        button.disabled = true;
+        button.disabled = true; //estää muiden nappien painamisen
         });
         nextButton.style.display = "block";  
     } 
 
+
+    //näyttää loppupisteet
     function showScore(){
         resetState();
-        questionElement.textContent = 'Pisteet ${score}/3}!'; //Pisteet 
+        questionElement.textContent = `Pisteet ${score}/${questions.length}`; //Pisteet 
         nextButton.textContent = "Yritä uudelleen";
-        nextButton.style.display = "block";
+        nextButton.style.display = "block"; 
+        restartButton.style.display= "block"; //näytetään "palaa alkuun" nappi
     }
+
+    restartButton.addEventListener("click", () => {
+       startScreen.style.display = "block"; // näyttää aloitusnäytön
+       quizContainer.style.display = "none";  // Piilottaa pelin
+       laatikko.style.display = "none";       // Piilottaa kysymyslaatikon
+       restartButton.style.display = "none";  // Piilottaa Palaa alkuun -napin
+       score = 0;                             // Nollaa pisteet
+       currentQuestionIndex = 0;              // Resetoi kysymys
+       nextButton.style.display = "none";
+    
+    });
+
+
+//käynnistä peli vasta, kun käyttäjä painaa "aloita"
+startButton.addEventListener("click", startQuiz);
+
 
     function handleNextButton(){
         currentQuestionIndex++;
         if(currentQuestionIndex < questions.length){
-            showQuestion();
+            showQuestion(); //jos on toinen kysymys, näyttää sen
         }else{
-            showScore();
+            showScore(); //jos ei ole kysymyksiä, näyttää scoren, kun painaa seuraava
         }
         }
     
@@ -154,4 +203,5 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
         
     });
 
-    startQuiz();
+
+

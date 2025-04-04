@@ -13,6 +13,7 @@ body{
 background-color: #e0e0e0;
 border: 1px solid #000;
 margin-bottom: 10%;
+padding: 2rem; /*tsekkkkaa*/
 
 }
 #kielivisa h1 {
@@ -20,37 +21,94 @@ text-align: center;
 
 }
 
-#kielivisa p{
-    text-align: center;
-    display: none; /*piilossa*/
+#esittely{
+font-size: 1.2rem;
+text-align: center;
+width: 100%;
+margin: 0 auto 2rem auto;
+line-height: 1.5;
+background-color: #faf8f5;
+padding: 20px; 
+border:solid #000 2px;
+
+
+
+    
 }
+
+#startscreen {
+    background-color: #d6c6bb;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+
+  
+
+}
+
+#start-btn{
+    border-radius: 20px;
+    border: solid #000 2px;
+    margin-top: 60px;
+    width: 110px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+   
+
+}
+
+#start-btn:hover{
+
+  background-color:#8d7d6f ;
+    color: #fff;
+}
+
 
 
 #kysymyslaatikko{
     background-color: #bda492;
-    padding: 20px;
+    padding:20px;
     border-radius: 10px; 
+    display: none;
+    
+    
 }
 
 #visa{
     background-color: #c6bbb2;
     border-radius: 10px; 
     width: 100%;
+    display: none;
+   
+    
 }
 
 #visa-container{
     padding: 20px ; 
     font-size: 18px;
     font-weight: 600;
+    justify-content: flex-end;
+ 
+    
+    
 }
 
  #kysymys{
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: #fff;
     border: 3px solid #000;
     border-radius: 10px; 
     text-align: center;
+ 
+    
 
+}
+
+#vastausnapit{
+    padding: 40px;
 }
 
 
@@ -59,7 +117,7 @@ text-align: center;
     color: black;
     font-weight: 500;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     margin: 10px 0;
     border-radius: 10px;
     cursor: pointer;
@@ -82,16 +140,24 @@ text-align: center;
     font-weight: 500;
     width: 120px;
     border: 0;
-    padding: 5px;
     border-radius: 4px; 
     cursor: pointer;
-    align-self: flex-start;
-    align-items: end;
-    float: right;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
     display: none; /*PIILOSSA*/
+    cursor: pointer;
+    transition: 0.3s;
+    float: right;
+}
+
+#next-btn:hover{
+  background-color:#8d7d6f ;
+    color: #fff;
+}
     
      
-}
+
 
 .correct{
     background-color: rgb(8, 194, 8) ;
@@ -102,6 +168,12 @@ text-align: center;
     background-color: #f24c41;
 }
 
+#vaara-vastaus{
+    display: none;
+    font-size: 1.2rem;
+    padding-bottom: 60px;
+    text-align: center;
+}
 
 
 footer {

@@ -53,10 +53,15 @@
           </nav>
         
     </header>
-<div id="kielivisa"><h1>KIELIVISA</h1>
-    <P id="esittely">PELISSÄ ESIIN TULEE TERVEHDYKSIÄ ERI KIELILLÄ, JA 
-        TEHTÄVÄNÄ ON TIETÄÄ TERVEHDYSTÄ VASTAAVA KIELI KOLMESTA VASTAUSVAIHTOEHDOSTA.</P>
+<div id="kielivisa">
+    <h1>KIELIVISA</h1>
 </div>
+
+   <div id="startscreen">
+    <p id="esittely">PELISSÄ ESIIN TULEE TERVEHDYKSIÄ ERI KIELILLÄ, JA 
+        TEHTÄVÄNÄSI ON TIETÄÄ TERVEHDYSTÄ VASTAAVA KIELI KOLMESTA VAIHTOEHDOSTA.</p>
+        <button id="start-btn">Aloita peli</button>
+    </div>
 
 <div id="kysymyslaatikko"><!--KOKO LAATIKKO-->
     <div id="visa">
@@ -67,15 +72,18 @@
                     <button class="btn">vastaus 2</button>
                     <button class="btn">vastaus 3</button>
                 </div>
-            <button id="next-btn">Seuraava</button>
+            <div id="vaara-vastaus">Väärin! Oikea vastaus: <span id="oikea-vastaus"></span>
+            </div>
+           <div><button id="next-btn">Seuraava</button></div>
+           <div id="score">Pisteet: 0</div>
+           <div><button id="restart-btn">menepois</button></div>
+           
+           
         </div>
     </div>
 </div>
 
-<div id="pelinloppu">
-    <h2>peli loppui</h2>
-    <p id="pisteet">Oikeat vastaukset: 0/8</p>
-</div>
+
 <footer>
     <div class="container text-center tumma-taustavari">
         <div class="row tumma-taustavari">
