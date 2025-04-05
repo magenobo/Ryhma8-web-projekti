@@ -84,14 +84,6 @@ h1 {
     margin-bottom: 5%;
 }
 
-.parrot-img { /* kaikki papukaijakuvat */
-    width: 20vw;
-    height: 20vw;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid black;
-}
-
 #upper-row {
     margin: 0 10%;
     display: grid;
