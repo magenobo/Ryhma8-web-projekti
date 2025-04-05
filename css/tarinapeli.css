@@ -30,7 +30,6 @@ h1 { /* otsikko "tarinapeli" */
     background-color: #856955;
     color: #ffffff;
     font-size: 1.2em;
-    align-content: center;
 }
 
 #story-img-div, .button {
@@ -67,6 +66,7 @@ h1 { /* otsikko "tarinapeli" */
     height: 100%;
     border: 2px solid black;
     border-bottom: none;
+    margin-bottom: -2px;
 }
 
 #word-box, #choose-word {
@@ -77,6 +77,7 @@ h1 { /* otsikko "tarinapeli" */
     border: 2px solid black;
     padding: 25px;
     display: block;
+    margin-top: 0;
 }
 
 #word-label { /* label "anna sana" */
@@ -171,9 +172,32 @@ h1 { /* otsikko "tarinapeli" */
     text-align: center;
 }
 
-#final-story {
-    padding: 20px;
+#result-board {
+    display: none;
     background-color: #f5f5f5;
-    font-size: 1.3em;
-    line-height: 2em;
+    margin: 20px 60px 60px 60px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#final-story, #final-text {
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+
+#final-points, #start-again {
+    width: 35vh;
+    height: 6vh;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: #856955;
+    color: #ffffff;
+    font-size: 1.2em;
+    align-content: center;
+    margin: auto;
+    border: 1px solid black;
+}
+
+#start-again {
+    margin: 15px;
 }

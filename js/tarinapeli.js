@@ -5,6 +5,9 @@ startButton.addEventListener("click", startGame)
 const checkButton = document.querySelector("#word-check")
 checkButton.addEventListener("click", checkWord)
 
+const againButton = document.querySelector("#start-again")
+againButton.addEventListener("click", gameAgain)
+
 
 // taulukko, joka sisältää sanat, joiden joukosta käyttäjä valitsee haluamansa
 const possibleWords = [
@@ -19,7 +22,7 @@ const possibleWords = [
     ["supista", "puhua", "kuiskata", "huutaa", "mutista", "kiljua", "jaaritella", "pölöttää", "selittää"],
 
     ["vankilaan", "juustokellariin", "kauppaan", "teatteriin", "museoon",
-    "kirjastoon", "puistoon", "kotelliin", "sairaalaan"],
+    "kirjastoon", "puistoon", "hotelliin", "sairaalaan"],
 
     ["tortilloja", "papuja", "sushia", "sämpylöitä", "piiraita", "hampurilaisia",
     "pannukakkuja", "nuudeleita", "jauhelihapihvejä"],
@@ -41,6 +44,8 @@ let storyWords = []
 let words = document.querySelector("#words")
 let points = document.querySelector("#points")
 let response = document.querySelector("#answer")
+
+let givenWord = document.querySelector("#word-input")
 
 let showWords = document.querySelector("#possible-words")
 
@@ -71,44 +76,54 @@ function changeWords() {
 // 
 function checkWord() {
 
-    if (checkButton.textContent === "Jatka eteenpäin") {
+    if (checkButton.textContent == "Jatka eteenpäin") {
         nextWords()
         return
     }
 
-    let givenWord = document.querySelector("#word-input").value
+    if (givenWord.value == "") {
+        response.textContent = "Vastauslaatikko ei voi olla tyhjä!"
+        response.classList.add("incorrect")
+        return
+    }
 
-    if (possibleWords[index].includes(givenWord)) {
+    if (possibleWords[index].includes(givenWord.value)) {
         
         pointCount++
-        index++
         tries++
 
         if (tries == 2) {
+
+            givenWord.disabled = true
 
             response.textContent = "Sana kelpaa! Ansaitsit 0.5 pistettä. Jatka eteenpäin."
             response.classList.remove("answer", "correct", "incorrect")
             response.classList.add("correct")
             checkButton.textContent = "Jatka eteenpäin"
             points.textContent = "Pisteet " + pointCount + "/10"
-            storyWords.push(givenWord)
+            storyWords.push(givenWord.value)
         } else {
             
+            givenWord.disabled = true
+
             response.textContent = "Sana kelpaa! Ansaitsit 1 pisteen. Jatka eteenpäin."
             response.classList.remove("answer", "correct", "incorrect")
             response.classList.add("correct")
             checkButton.textContent = "Jatka eteenpäin"
             points.textContent = "Pisteet " + pointCount + "/10"
-            storyWords.push(givenWord)
-            console.log(storyWords);
+            storyWords.push(givenWord.value)
         }
 
 
     } else {
-        pointCount-= 0.5
+        if (pointCount >= 0.5) {
+            pointCount-= 0.5
+        }
         tries++
 
         if (tries == 2) {
+
+            givenWord.disabled = true
 
             response.textContent = "Sana ei kelpaa! Käytit viimeisen yrityksen etkä ansainnut pisteitä. Jatka eteenpäin."
             response.classList.remove("answer", "correct", "incorrect")
@@ -120,8 +135,6 @@ function checkWord() {
             } else {
                 storyWords.push(possibleWords[index][index-1])
             }
-
-            console.log(storyWords);
             
         } else {
             
@@ -137,8 +150,12 @@ function checkWord() {
 function nextWords() {
     tries = 0
     wordCount++
+    index++
 
     if (wordCount <= possibleWords.length) {
+
+        givenWord.disabled = false
+
         document.querySelector("#word-input").value = ""
         checkButton.textContent = "Tarkista sana"
         response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
@@ -147,12 +164,10 @@ function nextWords() {
         changeWords()
     } else {
 
-        console.log(storyWords);
-        
+        document.querySelector("#game-board").style.display = "none"
+        document.querySelector("#result-board").style.display = "block"
 
-        document.querySelector("#ask-word").style.display = "none"
-        document.querySelector("#choose-word").textContent = "Onnea läpäisit pelin! "
-        showWords.textContent = ""
+        document.querySelector("#final-points").textContent = "Yhteispisteet " + pointCount + " / 10"
 
         let finalStory = document.querySelector("#final-story")
         
@@ -165,4 +180,21 @@ function nextWords() {
         + storyWords[9] + " ruokaa lopulta suurella ruokahalulla, kunnes pystyi vatsa pullottaen lysähtämään takaisin tuoliin."
 
     }
+}
+
+function gameAgain() {
+    tries = 0
+    wordCount = 1
+    pointCount = 0
+    index = 0
+
+    response.classList.remove("answer", "correct", "incorrect")
+    response.classList.add("answer")
+    response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
+
+    checkButton.textContent = "Tarkista sana"
+    words.textContent = "Sana " + wordCount + "/10"
+
+    document.querySelector("#game-board").style.display = "block"
+    document.querySelector("#result-board").style.display = "none"
 }

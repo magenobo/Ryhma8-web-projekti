@@ -55,8 +55,8 @@
 
     <h1>Tarinapeli</h1>
     <p id="info-text">Tässä pelissä sinua pyydetään valitsemaan valmiiksi annettujen sanojen joukosta kymmenen yksittäistä sanaa,
-        joista muodostuu lopulta lyhyt tarina. Jos sana ei löydy laatikosta tai se on väärin kirjoitettu, vähennetään 0.5 pistettä.
-        Pisteet eivät kuitenkaan voi mennä miinuksen puolelle. Jokaista sanaa kohden on kaksi yritystä.
+        jotka lisätään lyhyeen tarinaan. Jos sana ei löydy laatikosta tai se on väärin kirjoitettu, vähennetään 0.5 pistettä eli ole siis
+        tarkka kirjoitusasun kanssa. Pisteet eivät kuitenkaan voi mennä miinuksen puolelle. Jokaista sanaa kohden on kaksi yritystä.
     </p>
 
     <div id="start-button" class="button">
@@ -67,8 +67,7 @@
 
     <div id="game-board">
         <div id="word-box">
-            <p class="game-board" id="choose-word" >Valitse sana tästä laatikosta:</p>
-            <p id="final-story"></p>
+            <h5 class="game-board" id="choose-word" >Valitse sana tästä laatikosta:</h5>
             <p id="possible-words"></p>
         </div>
         <div id="ask-word">
@@ -81,6 +80,13 @@
             <p id="words" >Sana 1/10</p>
             <p id="points" >Pisteet 0/10</p>
         </div>
+    </div>
+
+    <div id="result-board">
+        <h5 id="final-text" >Onnea läpäisit pelin! Tässä tarinasi:</h5>
+        <p id="final-story"></p>
+        <p id="final-points"></p>
+        <button id="start-again">Aloita alusta</button>
     </div>
 
     <footer>
