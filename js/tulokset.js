@@ -29,6 +29,7 @@ function showRecords() {
     for (let i = 1; i <= bagdecount; i++) {
         let parrotImg = document.querySelector(`#parrot-img-${i}`)
         parrotImg.src = `./img/papukaija${i}.jpg`
+        parrotImg.alt = `${i}. ansaittu papukaijakuva`
         parrotImg.classList.add("parrot-img")
     }
 
