@@ -65,19 +65,21 @@ const questions = [
     }
 ];
 
+//pelin kokonaisuus
 const questionElement = document.getElementById("kysymys");
 const vastausnapit = document.getElementById("vastausnapit");
 const nextButton = document.getElementById("next-btn");
 const laatikko = document.getElementById("kysymyslaatikko");
 const scoreElement = document.getElementById("score");
 const restartButton = document.getElementById("restart-btn");
+const EndScreen = document.getElementById("endscreen");
 
 //aloitusnäkymä
 const startScreen = document.getElementById("startscreen")
 const startButton = document.getElementById("start-btn")
 const quizContainer = document.getElementById("visa") 
 
-//virheilmoitukset
+//virheilmoitukset väärästä vastauksesta
 const errorMessage = document.getElementById("vaara-vastaus");
 const correctAnswerSpan = document.getElementById("oikea-vastaus");
 
@@ -90,27 +92,30 @@ let score = 0;
  scoreElement.textContent = `Pisteet: ${score}`;
  }
 
-
+    //pelin alku
 function startQuiz(){
     startScreen.style.display = "none"; //piilottaa aloitusnäytön
     quizContainer.style.display = "block"; // näyttää pelin sisällön
     laatikko.style.display = "block"; //näyttää kysymyslaatikon
     restartButton.style.display = "none"; //piilottaa restart-napin
+    scoreElement.style.display = "block"; //näyttää pisteet 
     currentQuestionIndex = 0; //resettaa kysymyksen
-    score = 0; // nollaa scoren
-    nextButton.textContent = "Seuraava";
-    updateScore(); //Päivittää pisteet alussa
-    showQuestion();
+    score = 0; // nollaa pisteet
+    nextButton.textContent = "Seuraava"; //asettaa napin tekstin
+    nextButton.style.display = "block";
+    updateScore(); //Päivittää pistetilanteen
+    showQuestion(); //näyttää ensimmäisen kysymyksen
+    document.getElementById("endscreen").style.display = "none";
 }
 //näyttää ensimmäisen kysymyksen
 function showQuestion(){
-    resetState();
-  let currentQuestion = questions[currentQuestionIndex];
-  let questionNo = currentQuestionIndex + 1;
-  questionElement.textContent = questionNo + ". " + currentQuestion.question;
+    resetState(); // tyhjentää edelliset vastaukset ja piilottaa napit
+  let currentQuestion = questions[currentQuestionIndex]; //hakee nykyisen kysymyksen
+  let questionNo = currentQuestionIndex + 1; //näyttää kysymyksen numeron
+  questionElement.textContent = questionNo + ". " + currentQuestion.question; // kysymyksen teksti
 
 
-  currentQuestion.answers.forEach(answer => {
+  currentQuestion.answers.forEach(answer => { //käy kaikki vastaukset läpi
     const button = document.createElement("button");
     button.textContent= answer.text;
     button.classList.add("btntwo");
@@ -125,7 +130,7 @@ function showQuestion(){
 
 
 function resetState(){
-    nextButton.style.display = "none";
+    nextButton.style.display = "none"; //piilottaa seuraava-napin
     while(vastausnapit.firstChild){
         vastausnapit.removeChild(vastausnapit.firstChild);
     }
@@ -133,22 +138,22 @@ function resetState(){
 }
 
 function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
-    const selectBtn = e.target;
-    const isCorrect = selectBtn.dataset.correct === "true";
+    const selectBtn = e.target; //hakee valitun napin
+    const isCorrect = selectBtn.dataset.correct === "true"; //tarkistaa onko vastaus oikein
 
     if(isCorrect){
-        selectBtn.classList.add("correct"); //oikein
+        selectBtn.classList.add("correct"); //oikean tyyli
         score++; //Oikeasta vastauksesta piste
     }else{
-        selectBtn.classList.add("incorrect"); //väärin
+        selectBtn.classList.add("incorrect"); //väärän tyyli
 
         
     }
 
-    updateScore();
+    updateScore(); //päivittää pistetilanteen
 
 
-
+    //estää muiden nappien painamisen ja näyttää oikeat vastaukset
      Array.from(vastausnapit.children).forEach(button => {
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
@@ -158,14 +163,21 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
         nextButton.style.display = "block";  
     } 
 
+    
+    function showEndScreen() {
+        document.getElementById("endscreen").style.display = "block";
+    
+    }
 
     //näyttää loppupisteet
     function showScore(){
         resetState();
         questionElement.textContent = `Pisteet ${score}/${questions.length}`; //Pisteet 
-        nextButton.textContent = "Yritä uudelleen";
-        nextButton.style.display = "block"; 
+        //nextButton.textContent = "Yritä uudelleen";//
+        nextButton.style.display = "none";  //muokatty
         restartButton.style.display= "block"; //näytetään "palaa alkuun" nappi
+        scoreElement.style.display = "none"; //piilottaa pisteet kun peli loppuu
+        showEndScreen();
     }
 
     restartButton.addEventListener("click", () => {
@@ -198,7 +210,7 @@ startButton.addEventListener("click", startQuiz);
         if(currentQuestionIndex < questions.length){
            handleNextButton();
         }else{
-            startQuiz();
+            showScore(); //muokattu from startQuiz
         }
         
     });
