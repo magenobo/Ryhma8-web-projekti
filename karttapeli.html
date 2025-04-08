@@ -28,7 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./matikkapeli.html">Matikkapeli</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./karttapeli.html">Maantietopeli</a></li>
+                        <a class="nav-link" href="./karttapeli.html">Karttapeli</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="./lippupeli.html">Lippupeli</a></li>
                     <li class="nav-item">
@@ -42,7 +42,7 @@
     </header>
 
     
-    <h1>Maantietopeli</h1>
+    <h1>Karttapeli</h1>
     <div class="ohjeet_ja_peli">
 
         <!--OHJEET-->
@@ -62,10 +62,11 @@
         </div>
 
         <!--Vinkkinapit-->
-        <div class="vinkit">
-            <button class="vihje1_btn" type="button">Vihje 1</button>
-            <button class="vihje2_btn" type="button">Vihje 2</button>
-            <button class="vihje3_btn" type="button">Vihje 3</button>
+        <div id="vinkit">
+            <button class="vihje1_btn" onclick="showHint(0)">Vihje 1</button>
+            <button class="vihje2_btn" onclick="showHint(1)">Vihje 2</button>
+            <button class="vihje3_btn" onclick="showHint(2)">Vihje 3</button>
+            <ul id="hintList"></ul>
         </div>
 
         <!--Vastaus-->
