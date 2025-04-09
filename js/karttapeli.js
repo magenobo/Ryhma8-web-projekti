@@ -1,28 +1,29 @@
 
 //QUESTIONS = IMAGES AND THEIR ANSWERS
 var questions =[
-    { src: " ", answer: "Italia",
+    { src: "./img/papukaija3.jpg", answer: "Italia",
     hints: ["PIZZA", "Venetsia", "Jotai muuta siistiä"]},
 
-    { src: " ", answer: "Thaimaa",
+
+    { src: "./img/papukaija3.jpg", answer: "Thaimaa",
+    hints: ["Kuuma", "Siisti", "Jossai"]},
+
+    { src: "./img/papukaija3.jpg", answer: "Algeria",
     hints: [" ", " ", " "]},
 
-    { src: " ", answer: "Algeria",
+    { src: "./img/papukaija3.jpg", answer: "Meksiko",
     hints: [" ", " ", " "]},
 
-    { src: " ", answer: "Meksiko",
+    { src: "./img/papukaija3.jpg", answer: "Liettua",
     hints: [" ", " ", " "]},
 
-    { src: " ", answer: "Liettua",
+    { src: "./img/papukaija3.jpg", answer: "Brasilia",
     hints: [" ", " ", " "]},
 
-    { src: " ", answer: "Brasilia",
-    hints: [" ", " ", " "]},
+    { src: "./img/papukaija3.jpg", answer: "Papua-Uusi-Guinea",
+    hints: ["./img/papukaija3.jpg", " ", " "]},
 
-    { src: " ", answer: "Papua-Uusi-Guinea",
-    hints: [" ", " ", " "]},
-
-    { src: " ", answer: "Portugali",
+    { src: "./img/papukaija3.jpg", answer: "Portugali",
     hints: [" ", " ", " "]},
 
 
@@ -39,6 +40,13 @@ function loadImage() {
     document.getElementById('image').src = image.src; //gets the image
     document.getElementById("feedback").textContent= ""; //clears previous feedback
     document.getElementById("answer").value = ""; //clears previous answer
+    document.getElementById("hihntList").textContent = ""; //clears hints
+
+
+    //hint buttons work
+    for (let i = 0; i < 3; i++) {
+        document.getElementById(`vihjeBtn${i}`).disabled = false;
+      }
 }
 
 
@@ -57,11 +65,28 @@ function checkAnswer() {
 
 }
 
+
 //goes to the next question
 function nextImage() {
+
     currentImage = (currentImage + 1) % questions.length
-  loadImage();  // Reload the new image
+  loadImage();  // reloads next image
 }
+
+function showHint(index) {
+    const hintList = document.getElementById("vinkit");
+    const hint = questions[currentImage].hints[index];
+    const li = document.createElement("li");
+    li.textContent = hint;
+    hintList.appendChild(li)
+
+    document.getElementById(`vihjeBtn${index}`).disabled = true;
+}
+
+
+loadImage()
+
+
 
 
 function showHint(index) {
@@ -75,5 +100,3 @@ function showHint(index) {
         hintList.appendChild(li);
       }
 }
-
-loadImage()

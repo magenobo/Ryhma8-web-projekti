@@ -27,10 +27,15 @@ h1 {
     margin-bottom: 0;
     border: 2px solid black;
     border-radius: 2px;
-    
-  
 }
 
+img {
+    width: 100%;
+    margin-top: 4%;
+    background-color:#a8c9a5 ;
+    border-radius: 20px;
+
+}
 
 .ohjeet_ja_peli {
     padding: 10%;
@@ -50,13 +55,7 @@ h1 {
 
 }
 
-.itsepeli {
-    margin-top: 4%;
-    background-color:#a8c9a5 ;
-    text-align: center;
-    width: auto;
-    height: 400px;
-}
+
 
 .vihje1_btn, .vihje2_btn, .vihje3_btn {
     background-color: #a8c9a5;
