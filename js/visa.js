@@ -70,6 +70,7 @@ const questionElement = document.getElementById("kysymys");
 const vastausnapit = document.getElementById("vastausnapit");
 const nextButton = document.getElementById("next-btn");
 const laatikko = document.getElementById("kysymyslaatikko");
+const pisteet = document.getElementById("pistelasku");
 const scoreElement = document.getElementById("score");
 const restartButton = document.getElementById("restart-btn");
 const EndScreen = document.getElementById("endscreen");
@@ -90,6 +91,7 @@ let score = 0;
  //päivittää pisteet
  function updateScore(){
  scoreElement.textContent = `Pisteet: ${score}`;
+ pisteet.textContent = `Pisteet: ${score}`;
  }
 
     //pelin alku
@@ -99,6 +101,7 @@ function startQuiz(){
     laatikko.style.display = "block"; //näyttää kysymyslaatikon
     restartButton.style.display = "none"; //piilottaa restart-napin
     scoreElement.style.display = "block"; //näyttää pisteet 
+    pisteet.style.display="block";
     currentQuestionIndex = 0; //resettaa kysymyksen
     score = 0; // nollaa pisteet
     nextButton.textContent = "Seuraava"; //asettaa napin tekstin
@@ -177,6 +180,7 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
         nextButton.style.display = "none";  //muokatty
         restartButton.style.display= "block"; //näytetään "palaa alkuun" nappi
         scoreElement.style.display = "none"; //piilottaa pisteet kun peli loppuu
+        pisteet.style.display = "none";
         showEndScreen();
     }
 

@@ -13,7 +13,7 @@ body{
 background-color: #e0e0e0;
 border: 1px solid #000;
 margin-bottom: 10%;
-padding: 2rem; /*tsekkkkaa*/
+padding: 2rem;
 
 }
 #kielivisa h1 {
@@ -37,7 +37,7 @@ border:solid #000 2px;
 }
 
 #startscreen {
-    background-color: #d6c6bb;
+    background-color: #cbbfb7fb;
     padding-top: 20%;
     padding-bottom: 20%;
     padding-left: 20px;
@@ -73,6 +73,10 @@ border:solid #000 2px;
     padding:20px;
     border-radius: 10px; 
     display: none;
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 80%;
+    align-items: center;
     
     
 }
@@ -87,7 +91,7 @@ border:solid #000 2px;
 }
 
 #visa-container{
-    padding: 20px ; 
+    padding: 40px ; 
     font-size: 18px;
     font-weight: 600;
     justify-content: flex-end;
@@ -102,13 +106,14 @@ border:solid #000 2px;
     border: 3px solid #000;
     border-radius: 10px; 
     text-align: center;
+    
  
     
 
 }
 
 #vastausnapit{
-    padding: 40px;
+    padding: 20px;
 }
 
 
@@ -117,7 +122,7 @@ border:solid #000 2px;
     color: black;
     font-weight: 500;
     width: 100%;
-    padding: 30px;
+    padding: 15px;
     margin: 10px 0;
     border-radius: 10px;
     cursor: pointer;
@@ -143,13 +148,16 @@ border:solid #000 2px;
     border: 0;
     border-radius: 4px; 
     cursor: pointer;
-    align-items: center;
     text-align: center;
     padding: 5px;
     display: none; /*PIILOSSA*/
     cursor: pointer;
     transition: 0.3s;
-    float: right;
+    cursor: pointer;
+    margin-left: 65%;
+ 
+    
+   
 
 }
 
@@ -159,7 +167,17 @@ border:solid #000 2px;
 }
     
      
-
+#pistelasku{
+    max-width: 30%;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 30px;
+    color: #000;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+   
+    
+}
 
 .correct{
     background-color: rgb(8, 194, 8) ;
@@ -184,20 +202,21 @@ border:solid #000 2px;
     border-radius: 10px;
     text-align: center;
     align-items: center;
- 
+    height: 10vh;
+
 }
 
 #restart-btn{
     background-color: #bda492;
     padding: 10px;
-    border-radius: 4px;
-    margin-top: 15%;
+    border-radius: 7px;
+    margin-top: 19%;
     align-items: center;
     text-align: center;
-    position: absolute; /* Asettaa napin suhteessa lähimpään suhteellisesti sijoitettuun elementtiin */
-    top: 50%; /* Siirtää napin pystysuoraan keskelle */
-    left: 50%; /* Siirtää napin vaakasuoraan keskelle */
-    transform: translate(-50%, -50%); /* Täsmällinen keskitys */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
     cursor: pointer;
     max-width: 100%;
  
@@ -217,38 +236,60 @@ border:solid #000 2px;
 @media screen and (min-width: 641px) {
 
 #kysymyslaatikko{
-    max-width: 100%;
+    max-width:70%;
     margin-left: 20%;
     margin-right: 20%;
+    align-items: center;
+    
 }
+#pistelasku{
+margin-bottom: 20px;
+font-size: 20px;
+font-family:'Times New Roman', Times, serif
+}
+
+.btn, .btntwo{
+    padding: 15px;
+}
+
+#next-btn{
+    margin-left: 70%;
+}
+
 #restart-btn{
-    margin-top: 13%;
+    margin-top: 17%;
     align-items: center;
     text-align: center;
-    position: absolute; /* Asettaa napin suhteessa lähimpään suhteellisesti sijoitettuun elementtiin */
-    top: 50%; /* Siirtää napin pystysuoraan keskelle */
-    left: 50%; /* Siirtää napin vaakasuoraan keskelle */
-    transform: translate(-50%, -50%); /* Täsmällinen keskitys */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     cursor: pointer;
     max-width: 100%;
    
 }
 
+#endscreen{
+    height: 10vh;
+}
+
  #visa-container{
-        padding: 30px ; 
+       
         font-size: 18px;
         font-weight: 100;
+       
    
     }
     
      #kysymys{
         padding: 10px 0;
-        margin-bottom: 20px ;
+        margin-bottom: 10px ;
        
  
 }
 #vastausnapit{
-    padding: 20px;
+    padding: 10px;
+    
 }
 
 #kysymys{
@@ -277,12 +318,12 @@ border:solid #000 2px;
 }
 
     #restart-btn{
-        margin-top: 13%;
+        margin-top: 17%;
         align-items: center;
         text-align: center;
         position: absolute;
-        top: 50%; /* Siirtää napin pystysuoraan keskelle */
-        left: 50%; /* Siirtää napin vaakasuoraan keskelle */
+        top: 50%; 
+        left: 50%; 
         transform: translate(-50%, -50%); 
         cursor: pointer;
         max-width: 100%;
@@ -314,6 +355,19 @@ border:solid #000 2px;
         max-width: 70%;
        
     }
+
+    #restart-btn{
+        margin-top: 16%;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        cursor: pointer;
+        max-width: 100%;
+    }
+
 }
 
 

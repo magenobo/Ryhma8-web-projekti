@@ -19,13 +19,54 @@ padding: 2%;
 #etusivu h1{
 text-align: center;
 word-spacing: 10px;
+margin-top: 20px;
 }
 
 #etusivu p {
     text-align: justify;
+    margin-top: 20px;
     
 
 }
+
+/*hyvin pienet näytöt ovat normaalia koodia/
+/*isommat puhelimet sekä tabletit 641-994*/
+@media screen and (min-width: 641px) {
+
+#etusivukuva {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+#etusivu p{
+    margin: 20px;
+}
+}
+
+/*isot näytöt, kannettavat tietokoneet 995-13199*/
+@media screen and (min-width: 992px) {
+
+    #etusivu p {
+        margin: 20px;
+    }
+
+}
+
+/*tosi isot näytöt 1199->*/
+@media screen and (min-width: 1200px) {
+
+    #etusivu p {
+        text-align: justify;
+        margin: 60px;
+        
+    
+    }
+}
+
+
+
 
 footer {
     bottom: 0;
