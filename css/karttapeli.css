@@ -67,6 +67,11 @@ img {
 
 }
 
+.vihje1_btn:hover, .vihje2_btn:hover, .vihje3_btn:hover {
+    background-color: #bee9c5;
+
+}
+
 #answer {
     background-color: rgb(200, 200, 200);
     padding: 2%;
