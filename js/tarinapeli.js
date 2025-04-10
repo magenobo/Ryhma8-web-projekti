@@ -68,8 +68,17 @@ function startGame() {
 function changeWords() {
     
     let wordsArray = possibleWords[index]
-    showWords.textContent = wordsArray.join(" ")
-    words.textContent = "Sana " + wordCount + "/10"
+    showWords.textContent = ""
+
+    wordsArray.forEach (word => {
+        const wordElement = document.createElement("p")
+        wordElement.textContent = word
+        showWords.appendChild(wordElement)
+        wordElement.classList.add("listed-words")
+    })
+
+    words.textContent = "Sana " + wordCount + " / " + possibleWords.length
+    points.textContent = "Pisteet " + pointCount + " / " + possibleWords.length
 }
 
 
@@ -78,6 +87,11 @@ function checkWord() {
 
     if (checkButton.textContent == "Jatka eteenpäin") {
         nextWords()
+        return
+    }
+
+    if (checkButton.textContent == "Lue tarina") {
+        showStory()
         return
     }
 
@@ -96,24 +110,37 @@ function checkWord() {
 
             givenWord.disabled = true
 
-            response.textContent = "Sana kelpaa! Ansaitsit 0.5 pistettä. Jatka eteenpäin."
-            response.classList.remove("answer", "correct", "incorrect")
-            response.classList.add("correct")
-            checkButton.textContent = "Jatka eteenpäin"
-            points.textContent = "Pisteet " + pointCount + "/10"
-            storyWords.push(givenWord.value)
+            if (wordCount == possibleWords.length) {
+                response.textContent = "Sana kelpaa ja ansaitsit 0.5 pistettä! Tämä oli viimeisen sana. Jatka eteenpäin nähdäksesi tarinan."
+                response.classList.remove("answer", "correct", "incorrect")
+                response.classList.add("correct")
+                checkButton.textContent = "Lue tarina"
+            } else {
+                response.textContent = "Sana kelpaa ja ansaitsit 0.5 pistettä! Jatka eteenpäin."
+                response.classList.remove("answer", "correct", "incorrect")
+                response.classList.add("correct")
+                checkButton.textContent = "Jatka eteenpäin"
+            }
+
         } else {
             
             givenWord.disabled = true
 
-            response.textContent = "Sana kelpaa! Ansaitsit 1 pisteen. Jatka eteenpäin."
-            response.classList.remove("answer", "correct", "incorrect")
-            response.classList.add("correct")
-            checkButton.textContent = "Jatka eteenpäin"
-            points.textContent = "Pisteet " + pointCount + "/10"
-            storyWords.push(givenWord.value)
+            if (wordCount == possibleWords.length) {
+                response.textContent = "Sana kelpaa ja ansaitsit 1 pisteen! Annoit viimeisen sanon. Jatka eteenpäin nähdäksesi tarinan."
+                response.classList.remove("answer", "correct", "incorrect")
+                response.classList.add("correct")
+                checkButton.textContent = "Lue tarina"
+            } else {
+                response.textContent = "Sana kelpaa ja ansaitsit 1 pisteen. Jatka eteenpäin."
+                response.classList.remove("answer", "correct", "incorrect")
+                response.classList.add("correct")
+                checkButton.textContent = "Jatka eteenpäin"
+            }
         }
 
+        points.textContent = "Pisteet " + pointCount + " / " + possibleWords.length
+        storyWords.push(givenWord.value)
 
     } else {
         if (pointCount >= 0.5) {
@@ -125,6 +152,19 @@ function checkWord() {
 
             givenWord.disabled = true
 
+            if (wordCount == possibleWords.length) {
+                response.textContent = "Sana ei kelpaa! Käytit viimeisen yrityksen etkä ansainnut pisteitä. Tämä oli viimeinen sana. Jatka eteenpäin nähdäksesi tarinan."
+                response.classList.remove("answer", "correct", "incorrect")
+                response.classList.add("incorrect")
+                checkButton.textContent = "Lue tarina"
+
+                if (index < 9) {
+                    storyWords.push(possibleWords[index][index])
+                } else {
+                    storyWords.push(possibleWords[index][index-1])
+                }
+            } else {
+
             response.textContent = "Sana ei kelpaa! Käytit viimeisen yrityksen etkä ansainnut pisteitä. Jatka eteenpäin."
             response.classList.remove("answer", "correct", "incorrect")
             response.classList.add("incorrect")
@@ -135,10 +175,11 @@ function checkWord() {
             } else {
                 storyWords.push(possibleWords[index][index-1])
             }
+            }
             
         } else {
             
-            document.querySelector("#word-input").value = ""
+            givenWord.value = ""
             response.textContent = "Sana ei kelpaa! Yksi yritys jäljellä. Oikealla sanalla voit ansaita 0.5 pistettä."
             response.classList.remove("answer", "correct", "incorrect")
             response.classList.add("incorrect")
@@ -152,35 +193,33 @@ function nextWords() {
     wordCount++
     index++
 
-    if (wordCount <= possibleWords.length) {
+    givenWord.disabled = false
 
-        givenWord.disabled = false
-
-        document.querySelector("#word-input").value = ""
-        checkButton.textContent = "Tarkista sana"
-        response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
-        response.classList.remove("answer", "correct", "incorrect")
-        response.classList.add("answer")
-        changeWords()
-    } else {
-
-        document.querySelector("#game-board").style.display = "none"
-        document.querySelector("#result-board").style.display = "block"
-
-        document.querySelector("#final-points").textContent = "Yhteispisteet " + pointCount + " / 10"
-
-        let finalStory = document.querySelector("#final-story")
-        
-        finalStory.textContent = "Olipa kerran " + storyWords[0] + ", joka halusi " + storyWords[1] + " ulkomaille "
-        + storyWords[2] + " kanssa. Hän ei kuitenkaan osannut " + storyWords[3] + " paikallista kieltä ja joutui sen vuoksi "
-        + storyWords[4] + ". Siellä " + storyWords[0] + " tapasi kokin, joka väitti osaavansa tehdä " + storyWords[5] + ". Päästäkseen maistamaan kokin tekeleitä "
-        + storyWords[0] + " seurasi tätä keittiöön, jonka katosta roikkui " + storyWords[6] + " lippu. 'Miksi sinulla on tuo lippu tuossa?' kysyi " + storyWords[0]
-        + ". 'Ystäväni vieraili " + storyWords[7] + " ja toi sen minulle', kokki vastasi tuodessaan valmista ruokaa pöytään. " 
-        + storyWords[0] + " tuijotti tortilloja ihmeissään, koska ne näyttivät " + storyWords[8] + ". Hän alkoi kuitenkin " 
-        + storyWords[9] + " ruokaa lopulta suurella ruokahalulla, kunnes pystyi vatsa pullottaen lysähtämään takaisin tuoliin."
-
-    }
+    givenWord.value = ""
+    checkButton.textContent = "Tarkista sana"
+    response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
+    response.classList.remove("answer", "correct", "incorrect")
+    response.classList.add("answer")
+    changeWords()
 }
+
+function showStory() {
+    document.querySelector("#game-board").style.display = "none"
+    document.querySelector("#result-board").style.display = "block"
+
+    document.querySelector("#final-points").textContent = "Yhteispisteet " + pointCount + " / " + possibleWords.length
+
+    let finalStory = document.querySelector("#final-story")
+    
+    finalStory.textContent = "Olipa kerran " + storyWords[0] + ", joka halusi " + storyWords[1] + " ulkomaille "
+    + storyWords[2] + " kanssa. Hän ei kuitenkaan osannut " + storyWords[3] + " paikallista kieltä ja joutui sen vuoksi "
+    + storyWords[4] + ". Siellä " + storyWords[0] + " tapasi kokin, joka väitti osaavansa tehdä " + storyWords[5] + ". Päästäkseen maistamaan kokin tekeleitä "
+    + storyWords[0] + " seurasi tätä keittiöön, jonka katosta roikkui " + storyWords[6] + " lippu. 'Miksi sinulla on tuo lippu tuossa?' kysyi " + storyWords[0]
+    + ". 'Ystäväni vieraili " + storyWords[7] + " ja toi sen minulle', kokki vastasi tuodessaan valmista ruokaa pöytään. " 
+    + storyWords[0] + " tuijotti " + storyWords[5] + " ihmeissään, koska ne näyttivät " + storyWords[8] + ". Hän alkoi kuitenkin " 
+    + storyWords[9] + " ruokaa lopulta suurella ruokahalulla, kunnes pystyi vatsa pullottaen lysähtämään takaisin tuoliin."
+}
+
 
 function gameAgain() {
     tries = 0
@@ -188,13 +227,20 @@ function gameAgain() {
     pointCount = 0
     index = 0
 
-    response.classList.remove("answer", "correct", "incorrect")
+    changeWords()
+
+    response.classList.remove("answer", "correct", "incorrect", "ready")
     response.classList.add("answer")
     response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
 
+    points.textContent = "Pisteet " + pointCount + " / " + possibleWords.length
+
     checkButton.textContent = "Tarkista sana"
-    words.textContent = "Sana " + wordCount + "/10"
+    words.textContent = "Sana " + wordCount + " / " + possibleWords.length
 
     document.querySelector("#game-board").style.display = "block"
     document.querySelector("#result-board").style.display = "none"
+
+    givenWord.value = ""
+    givenWord.disabled = false
 }
