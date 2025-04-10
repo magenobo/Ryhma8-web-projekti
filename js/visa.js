@@ -176,8 +176,7 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
     function showScore(){
         resetState();
         questionElement.textContent = `Pisteet ${score}/${questions.length}`; //Pisteet 
-        //nextButton.textContent = "Yritä uudelleen";//
-        nextButton.style.display = "none";  //muokatty
+        nextButton.style.display = "none"; 
         restartButton.style.display= "block"; //näytetään "palaa alkuun" nappi
         scoreElement.style.display = "none"; //piilottaa pisteet kun peli loppuu
         pisteet.style.display = "none";
@@ -214,7 +213,7 @@ startButton.addEventListener("click", startQuiz);
         if(currentQuestionIndex < questions.length){
            handleNextButton();
         }else{
-            showScore(); //muokattu from startQuiz
+            showScore(); 
         }
         
     });

@@ -73,9 +73,7 @@ border:solid #000 2px;
     padding:20px;
     border-radius: 10px; 
     display: none;
-    margin-right: 10%;
-    margin-left: 10%;
-    max-width: 80%;
+    max-width: 100%;
     align-items: center;
     
     
