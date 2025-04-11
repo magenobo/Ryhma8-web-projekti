@@ -2,65 +2,65 @@ const questions = [
     {
         question: "Bonjour!", 
         answers: [
-            { text: "Saksa", correct: false},
-            { text: "Ranska", correct: true},
-            { text: "Puola", correct: false},
+            { text: "saksa", correct: false},
+            { text: "ranska", correct: true},
+            { text: "puola", correct: false},
         ]
     },
     {
         question: "こんにちは (Kon'nichiwa)", 
         answers: [
-            { text: "Japani", correct: true},
-            { text: "Kiina", correct: false},
-            { text: "Vietnam", correct: false},
+            { text: "japani", correct: true},
+            { text: "kiina", correct: false},
+            { text: "vietnam", correct: false},
         ]
     },
     {
         question: "Hola!", 
         answers: [
-            { text: "Espanja", correct: true},
-            { text: "Portugali", correct: false},
-            { text: "Italia", correct: false},
+            { text: "espanja", correct: true},
+            { text: "portugali", correct: false},
+            { text: "italia", correct: false},
         ] 
     },
     {
         question: "Guten Tag!", 
         answers: [
-            { text: "Saksa", correct: true},
-            { text: "Portugali", correct: false},
-            { text: "Italia", correct: false},
+            { text: "saksa", correct: true},
+            { text: "portugali", correct: false},
+            { text: "italia", correct: false},
         ]  
     },
     {
         question: "Ciao!", 
         answers: [
-            { text: "Portugali", correct: false},
-            { text: "Espanja", correct: false},
-            { text: "Italia", correct: true},
+            { text: "portugali", correct: false},
+            { text: "espanja", correct: false},
+            { text: "italia", correct: true},
         ] 
     },
     {
         question: "Merhaba!", 
         answers: [
-            { text: "Kreikka", correct: false},
+            { text: "kreikka", correct: false},
             { text: "turkki", correct: true},
-            { text: "Arabiankieli", correct: false},
+            { text: "arabia", correct: false},
         ] 
     },
     {
         question: "Namaste!", 
         answers: [
-            { text: "Intia", correct: true},
-            { text: "Nepal", correct: false},
+            { text: "intia", correct: true},
+            { text: "nepal", correct: false},
             { text: "kreikka", correct: false},
         ]   
     },
     {
         question: "Aloha!", 
         answers: [
-            { text: "Kreikka", correct: false},
-            { text: "Portugali", correct: false},
-            { text: "Havaijii", correct: true},
+            { text: "kreikka", correct: false},
+            { text: "portugali", correct: false},
+            { text: "havaijii", correct: true},
         ]  
     }
 ];
