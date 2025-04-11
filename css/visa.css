@@ -208,11 +208,10 @@ border:solid #000 2px;
     background-color: #bda492;
     padding: 10px;
     border-radius: 7px;
-    margin-top: 19%;
     align-items: center;
     text-align: center;
-    position: fixed;
-    top: 50%; 
+    position: absolute;
+    top: 70%;  /*muutettu 50%*/
     left: 50%;
     transform: translate(-50%, -50%); 
     cursor: pointer;
@@ -255,11 +254,9 @@ font-family:'Times New Roman', Times, serif
 }
 
 #restart-btn{
-    margin-top: 17%;
-    align-items: center;
     text-align: center;
-    position: fixed; 
-    top: 50%; 
+    position: absolute; 
+    top: 75%;               /*muutettu top 50% ja position fixed*/
     left: 50%; 
     transform: translate(-50%, -50%);
     cursor: pointer;
@@ -319,7 +316,7 @@ font-family:'Times New Roman', Times, serif
         margin-top: 17%;
         align-items: center;
         text-align: center;
-        position: fixed;
+        position: absolute;
         top: 50%; 
         left: 50%; 
         transform: translate(-50%, -50%); 
@@ -358,7 +355,7 @@ font-family:'Times New Roman', Times, serif
         margin-top: 16%;
         align-items: center;
         text-align: center;
-        position: fixed;
+        position: absolute;
         top: 50%; 
         left: 50%; 
         transform: translate(-50%, -50%); 
