@@ -71,6 +71,9 @@ img {
     background-color: #bee9c5;
 
 }
+#hintList {
+    list-style: none;
+}
 
 #answer {
     background-color: rgb(200, 200, 200);

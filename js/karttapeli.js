@@ -2,29 +2,27 @@
 //QUESTIONS = IMAGES AND THEIR ANSWERS
 var questions =[
     { src: "./img/papukaija1.jpg", answer: "Italia",
-    hints: ["PIZZA", "Venetsia", "Jotai muuta siistiä"]},
-
-
+    hints: ["Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]},
     { src: "./img/papukaija2.jpg", answer: "Thaimaa",
-    hints: ["Kuuma", "Siisti", "Jossai"]},
+    hints: ["Suosittu matkailukohde Aasiassa", "Valuutta: baht ฿ (บาท)", "Suurimmat kaupungit pääkaupungin lisäksi: Samut Prakan, Udon Thani ja Chon Buri"]},
 
     { src: "./img/papukaija3.jpg", answer: "Algeria",
-    hints: [" ", " ", " "]},
+    hints: ["Jotai vois keksii viel tähän", "Pinta-alaltaan Afrikan suurin", "Pääkaupunki: Alger"]},
 
     { src: "./img/papukaija4.jpg", answer: "Meksiko",
-    hints: [" ", " ", " "]},
+    hints: ["Tulivuori Popocatépetl", "Perhe on hyvin tärkeä", "Kuolleiden päivä (Día de los muertos)"]},
 
     { src: "./img/papukaija5.jpg", answer: "Liettua",
-    hints: [" ", " ", " "]},
+    hints: ["Suosituin urheilulaji: koripallo", "Yksi Euroopan vanhimmista puhuituista kielistä", "Pääkaupunki: Vilna"]},
 
     { src: "./img/papukaija1.jpg", answer: "Brasilia",
-    hints: [" ", " ", " "]},
+    hints: ["Kansallislaji: capoeira", "Suosituin sukunimi: Silva", "Valtava Kristus-patsas"]},
 
     { src: "./img/papukaija2.jpg", answer: "Papua-Uusi-Guinea",
-    hints: ["", " ", " "]},
+    hints: ["Tyynenmeren suurin saari", "yli 850 kotimaista kieltä", "Pääkaupunki: Port Moresby"]},
 
     { src: "./img/papukaija3.jpg", answer: "Portugali",
-    hints: [" ", " ", " "]},
+    hints: ["Joku hyvä tähä viel", "Euroopan pisin silta Vasco da Gama", "Cristiano Ronaldo"]},
 
 
 
@@ -40,7 +38,8 @@ var currentRound = 0;
 //current points
 var currentPoint = 0;
 
-
+//current answer tries
+var answerTry = 0
 //function, current image and answer
 function loadImage() {
     const image = questions[currentImage];
@@ -48,6 +47,7 @@ function loadImage() {
     document.getElementById("feedback").textContent= ""; //clears previous feedback
     document.getElementById("answer").value = ""; //clears previous answer
     document.getElementById("hintList").textContent = ""; //clears hints
+    document.getElementById("tries").textContent= ""; //clears the tries
 }
 
 
@@ -61,8 +61,10 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer;
     } else {
-        feedback.textContent = "Väärin. Oikea vastaus olisi ollut  " + correctAnswer;
+        feedback.textContent = "Väärin: " + correctAnswer;
     }
+    
+    answerTry += 1
 
 }
 
@@ -89,6 +91,10 @@ function showHint(index) {
 
 function updateRound() {
     const currentRound = document.getElementById("kierrokset");
+    
+}
+
+function updateTries() {
     
 }
 
