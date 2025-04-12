@@ -211,9 +211,10 @@ border:solid #000 2px;
     align-items: center;
     text-align: center;
     position: absolute;
-    top: 70%;  /*muutettu 50%*/
+      /*top muutettu 50%, poistettu    transform: translate(-50%, -50%);*/
     left: 50%;
-    transform: translate(-50%, -50%); 
+    margin-top: 4%;
+    transform: translate(-50%, -50%);
     cursor: pointer;
     max-width: 100%;
  
@@ -255,8 +256,9 @@ font-family:'Times New Roman', Times, serif
 
 #restart-btn{
     text-align: center;
-    position: absolute; 
-    top: 75%;               /*muutettu top 50% ja position fixed*/
+    position: absolute;      
+     /*muutettu top 50% ja position fixed*/
+     margin-top: 30px;
     left: 50%; 
     transform: translate(-50%, -50%);
     cursor: pointer;
@@ -313,11 +315,10 @@ font-family:'Times New Roman', Times, serif
 }
 
     #restart-btn{
-        margin-top: 17%;
+        margin-top: 4%;
         align-items: center;
         text-align: center;
-        position: absolute;
-        top: 50%; 
+        position: absolute; 
         left: 50%; 
         transform: translate(-50%, -50%); 
         cursor: pointer;
@@ -352,12 +353,11 @@ font-family:'Times New Roman', Times, serif
     }
 
     #restart-btn{
-        margin-top: 16%;
         align-items: center;
         text-align: center;
         position: absolute;
-        top: 50%; 
         left: 50%; 
+        margin-top: 3%;
         transform: translate(-50%, -50%); 
         cursor: pointer;
         max-width: 100%;
