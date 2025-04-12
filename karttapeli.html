@@ -43,12 +43,13 @@
 
     
     <h1>Karttapeli</h1>
+
     <div class="ohjeet_ja_peli">
 
         <!--OHJEET-->
         <div class="ohjeet">
             <h3>Ohjeet</h3>
-            <p>Pelissä on tehtävänä tunnistaa karttaan merkitty maa. Vihjeet voivat auttaa! <br> Entäs pisteet?</p>
+            <p>Pelissä on tehtävänä tunnistaa karttaan merkitty maa. Sinulla on kolme yritystä jokaisella kierroksella. Kierroksia on 8 (kahdeksan). Vihjeet voivat auttaa! <br> Entäs pisteet?</p>
         </div>
         <div class="tulokset">
             <div id="kierrokset">Kierrokset: </div>
@@ -69,18 +70,30 @@
             <button class="vihje3_btn" id="vihjeBtn2" onclick="showHint(2)">Vihje 3</button>
             <ul id="hintList"></ul>
         </div>
+       
+        
+
 
         <!--Vastaus-->
         <div class="kysymyslaatikko">
             <input type="text" id="answer" placeholder="Kirjoita vastauksesi tähän...">
         </div>
-    
-        <button id="send_btn" onclick="checkAnswer()">Lähetä</button>
-        <button id="next_btn" onclick="nextImage()">Seuraava</button>
         <p id="feedback"></p>
-        <p id="tries">Tries:</p>
+        <button id="send_btn" onclick="checkAnswer()">Tarkista</button>
+        <button id="next_btn" onclick="nextImage()">Seuraava</button>
+       
+      
     </div>
-    
+
+
+    <div class="pelin_tulokset">
+
+        <p>Läpäisit pelin pistein: </p>
+        <a href="./karttapeli.html">Pelaa uudestaan</a>
+
+        <p>Tästä pääset katsomaan kaikkien pelisi tuloksia: <a href="./tulokset.html">Kaikki tulokset</a></p>
+
+    </div>
 
     
 

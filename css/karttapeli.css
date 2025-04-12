@@ -31,7 +31,7 @@ h1 {
 
 img {
     width: 100%;
-    margin-top: 4%;
+    margin-top: 1%;
     background-color:#a8c9a5 ;
     border-radius: 20px;
 
@@ -39,7 +39,7 @@ img {
 
 .ohjeet_ja_peli {
     padding: 10%;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 .tulokset {
@@ -47,53 +47,84 @@ img {
 }
 
 #kierrokset, #pisteet {
-    background-color: #a8c9a5;
+    background-color: #a7ddb9;
     text-align: center;
+    margin-top: 1%;
     padding: 2%;
-    width: 40vw;
+    width: 23vw;
     border-radius: 20px;
-
 }
 
 
 
 .vihje1_btn, .vihje2_btn, .vihje3_btn {
-    background-color: #a8c9a5;
+    background-color: rgb(223, 223, 223);
     text-align: center;
-    margin-top: 3%;
+    margin-top: 1%;
     padding: 2%;
-    width: 25vw;
+    width: 25.5vw;
     border-radius: 20px;
+    margin-bottom: 1%;
 
 }
 
 .vihje1_btn:hover, .vihje2_btn:hover, .vihje3_btn:hover {
-    background-color: #bee9c5;
+    text-decoration: none;
 
 }
+
+
 #hintList {
     list-style: none;
+  
 }
 
 #answer {
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(223, 223, 223);
     padding: 2%;
-    margin-top: 2%;
     width: 100%;
     border-radius: 20px;
     text-align: center;
 }
 
+#feedback {
+    margin-right: 19%;
+    margin-left: 19%;
+    margin-top: 1%;
+    width: 48vw;
+    text-align: center;
+}
 
 
 #next_btn, #send_btn {
-  background-color: #a8c9a5;
+    background-color: rgb(47, 47, 47);
+    color: white;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 1%;
     padding: 2%;
     width: 24vw;
     border-radius: 20px;
 }
+
+#restart {
+    background-color: rgb(223, 223, 223);
+    text-align: center;
+    margin-top: 1%;
+    padding: 2%;
+    width: 24vw;
+    border-radius: 20px;
+}
+
+
+.ohjeet_ja_peli {
+    display: none;
+}
+
+.pelin_tulokset {
+    display: none;
+}
+
+
 
 .tumma-taustavari {
     background-color: #e0e0e0;
@@ -107,7 +138,13 @@ img {
 
 /*isot näytöt, kannettavat tietokoneet 995-13199*/
 @media screen and (min-width: 992px) {
-
+    .vihje1_btn:hover, .vihje2_btn:hover, .vihje3_btn:hover {
+        background-color: #a7ddb9;
+    
+    }
+    #next_btn:hover, #send_btn:hover {
+        background-color: #546d5c;
+    }
 }
 
 /*tosi isot näytöt 1199->*/
