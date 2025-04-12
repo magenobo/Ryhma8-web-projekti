@@ -14,8 +14,8 @@ div.container {
 }
 
 #aloitus_sivun_kuva img {
-    max-width: 100%;
-    height: auto;
+    max-width: 70%;
+    height: 30%;
 }
 
 h1 {
@@ -26,4 +26,27 @@ h1 {
     margin: 30px auto;
     border: 2px solid black;
     border-radius: 2px;
+}
+
+#etusivu {
+    text-align: center;
+}
+
+h2.nappi {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 4%;
+    width: 60vw;
+    margin: 30px auto;
+    border: 3px solid black;
+    border-radius: 20vw;
+}
+
+#etusivu p {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 6%;
+    width: 70vw;
+    margin: 30px auto;
+    font-size: medium;
 }
