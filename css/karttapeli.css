@@ -142,8 +142,12 @@ img {
         background-color: #a7ddb9;
     
     }
-    #next_btn:hover, #send_btn:hover {
+    #next_btn:hover:not([disabled]), #send_btn:hover {
         background-color: #546d5c;
+    }
+
+    #next_btn:disabled {
+        cursor: no-drop;
     }
 }
 

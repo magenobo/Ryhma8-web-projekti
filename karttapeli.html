@@ -49,11 +49,13 @@
         <!--OHJEET-->
         <div class="ohjeet">
             <h3>Ohjeet</h3>
-            <p>Pelissä on tehtävänä tunnistaa karttaan merkitty maa. Sinulla on kolme yritystä jokaisella kierroksella. Kierroksia on 8 (kahdeksan). Vihjeet voivat auttaa! <br> Entäs pisteet?</p>
+            <p>Pelissä on tehtävänä tunnistaa karttaan merkitty maa. Sinulla on 3 (kolme) yritystä jokaisella kierroksella. Kierroksia on 8 (kahdeksan). <br> Jokaisella kierroksella on kolme vihjettä,
+                mutta jos käytät vihjeen menetät 1 (yhden) pisteen. Yhdeltä kierrokselta voi saada yhteensä 4 (neljä) pistettä. Et saa väärästä vastauksesta miinuspisteitä
+                eikä miinukselle ei voi mennä. Onnea matkaan!</p>
         </div>
         <div class="tulokset">
-            <div id="kierrokset">Kierrokset: </div>
-            <div id="pisteet">Pisteet: </div>
+            <div id="kierrokset"></div>
+            <div id="pisteet"></div>
            
         </div>
 
@@ -88,7 +90,7 @@
 
     <div class="pelin_tulokset">
 
-        <p>Läpäisit pelin pistein: </p>
+        <div id="kaikkipisteet"></div>
         <a href="./karttapeli.html">Pelaa uudestaan</a>
 
         <p>Tästä pääset katsomaan kaikkien pelisi tuloksia: <a href="./tulokset.html">Kaikki tulokset</a></p>
