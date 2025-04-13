@@ -50,3 +50,29 @@ h2.nappi {
     margin: 30px auto;
     font-size: medium;
 }
+
+#aloita_alusta {
+    padding: 2%;
+    margin: 4%;
+    
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: column;
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+.game {
+    width: 440px;
+    height: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
