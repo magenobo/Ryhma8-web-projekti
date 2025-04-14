@@ -239,7 +239,23 @@ function showAllPoints() {
     sessionStorage.setItem("pelit", JSON.stringify(peliData));
     
 
+    if (peliData.length === 0 ) {
+        peliData.push({peli: "OMA PELINIMI", tulos: points});
+        sessionStorage.setItem("pelit", JSON.stringify(peliData));
+    } else {
+        for (let index = 0; index < peliData.length; index++) {
+            if ("OMA PELINIMI" == peliData[index].peli) {
+                if (points>= peliData[index].tulos) {
+                    peliData[index].tulos = points;
+                    sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                    return
+                } else {
+                    alert("TSEK")
+                    //allPoints.textContent = "Läpäisit pelin pistein: " + points + ". Se oli parhain tuloksesi tähän mennessä";
 
+                }
+        }
+    }}
 }
 //-----------------------------------
 
