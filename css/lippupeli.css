@@ -84,6 +84,26 @@ footer {
 
 }
 
+#etusivu img {
+    max-width: 70%;
+    max-height: 70%;
+    
+}
+
+#peli_itse img {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+#laatikko {
+    display: wrap;
+    align-content: space-between;
+    flex-flow: wrap;
+}
+
+
+
+
 /*hyvin pienet näytöt ovat normaalia koodia*/
 /*isommat puhelimet sekä tabletit 641-994*/
 @media screen and (min-width: 641px) {
