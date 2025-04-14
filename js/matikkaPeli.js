@@ -111,6 +111,7 @@ seuraavaKysymysNappi.addEventListener("click", function () {
             paivitaPeli(); 
         } else {
             alert("Peli loppui! Pisteesi: " + pisteet + "/" + "5");
+            sessionStorage.setItem("matikkaTulos", pisteet);
         }
         paivitaPisteet(); 
     }

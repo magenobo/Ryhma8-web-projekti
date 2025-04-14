@@ -2,8 +2,15 @@
     background-color: #e0e0e0;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0;
+}
+
 body{
-    background-color: #f8f7f6;
+    background-color: #e8e5dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -40,12 +47,14 @@ h1 { /* otsikko "tarinapeli" */
 
 #etusivu{
 padding: 3%;
+background-color: #e8e5dd;
 }
 
 #etusivukuva{
 height: auto;
 width: 100%;
 padding: 2%;
+background-color: #e8e5dd;
 }
 
 #etusivu h1{
@@ -58,6 +67,7 @@ font-family:'Times New Roman', Times, serif;
 #etusivu p {
     text-align: justify;
     margin-top: 20px;
+    background-color: #e8e5dd;
 }
 
 footer {

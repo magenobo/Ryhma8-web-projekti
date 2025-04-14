@@ -2,6 +2,13 @@
     background-color: #e0e0e0;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #E0E0E0;
+}
+
 body{
     background-color: #e8e5dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -188,6 +195,7 @@ div.viisi {
     margin: auto;
     padding: 1em;
     border-radius: 10px;
+    margin-bottom: 3em;
   }
 
 
@@ -210,6 +218,10 @@ footer {
 /*hyvin pienet näytöt ovat normaalia koodia*/
 /*isommat puhelimet sekä tabletit 641-994*/
 @media screen and (min-width: 641px) {
+
+    .navbar-nav {
+        font-size: 1.4em;
+    }
 
     .muunnos-laatikko {
         background-color: rgb(255, 194, 82);
@@ -271,6 +283,8 @@ footer {
 
 /*tosi isot näytöt 1199->*/
 @media screen and (min-width: 1200px) {
+
+
 
     #navbarNav {
         border-top: 0;

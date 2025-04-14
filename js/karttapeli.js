@@ -45,6 +45,7 @@ let answerTry = 3
 //counts the clues used
 let usedClue = 0
 
+let peliData = JSON.parse(sessionStorage.getItem("matikkaTulos"))|| []
 //-----------------------------------
 
 
@@ -231,6 +232,13 @@ function showPoints () {
 function showAllPoints() {
     let allPoints = document.getElementById("kaikkipisteet");
     allPoints.textContent = "Läpäisit pelin pistein: " + points;
+    
+
+    if (finishedScore >= sessari) {
+        sessionStorage.setItem("karttaTulos", points);
+    }
+
+
 }
 //-----------------------------------
 
