@@ -234,29 +234,40 @@ function showAllPoints() {
     let allPoints = document.getElementById("kaikkipisteet");
     allPoints.textContent = "Läpäisit pelin pistein: " + points;
     
-
-    peliData.push({peli: "karttapeli", tulos: points});
-    sessionStorage.setItem("pelit", JSON.stringify(peliData));
     
-
-    if (peliData.length === 0 ) {
-        peliData.push({peli: "OMA PELINIMI", tulos: points});
-        sessionStorage.setItem("pelit", JSON.stringify(peliData));
-    } else {
-        for (let index = 0; index < peliData.length; index++) {
-            if ("OMA PELINIMI" == peliData[index].peli) {
+    for (let index = 0; index < 5; index++) {
+        if (peliData[index] === undefined) {
+            peliData.push({peli: "karttapeli", tulos: points});
+            sessionStorage.setItem("pelit", JSON.stringify(peliData));
+            break
+        } else {
+            if (peliData[index].peli == "karttapeli")
                 if (points>= peliData[index].tulos) {
                     peliData[index].tulos = points;
                     sessionStorage.setItem("pelit", JSON.stringify(peliData));
-                    return
-                } else {
-                    alert("TSEK")
-                    //allPoints.textContent = "Läpäisit pelin pistein: " + points + ". Se oli parhain tuloksesi tähän mennessä";
-
-                }
+                    break
         }
-    }}
-}
+    }
+    }
+
+
+    //if (peliData.length === 0 ) {
+    //   peliData.push({peli: "karttapeli", tulos: points});
+    //    sessionStorage.setItem("pelit", JSON.stringify(peliData));
+    //for (let index = 0; index < 5; index++) {
+    //    if ("karttapeli" == peliData[index].peli) {
+    //        if (points>= peliData[index].tulos) {
+    //           peliData[index].tulos = points;
+    //            sessionStorage.setItem("pelit", JSON.stringify(peliData));
+    //            return
+    //        } else {
+    //            alert("TSEK")
+    //            //allPoints.textContent = "Läpäisit pelin pistein: " + points + ". Se oli parhain tuloksesi tähän mennessä";
+
+    //        }
+    //    }
+    }
+    
 //-----------------------------------
 
 

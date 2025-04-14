@@ -111,25 +111,27 @@ seuraavaKysymysNappi.addEventListener("click", function () {
         if (nykyinenIndeksi < ruoat.length) {
             paivitaPeli(); 
         } else {
-            alert("Peli loppui! Pisteesi: " + pisteet + "/" + "5");
+            alert("Peli loppui! Pisteesi: " + pisteet + "/5");
 
-
-            
-                if (peliData.length === 0 ) {
+            for (let index = 0; index < 5; index++) {
+                if (peliData[index] === undefined) {
                     peliData.push({peli: "matikkapeli", tulos: pisteet});
                     sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                    break
                 } else {
-                    for (let index = 0; index < peliData.length; index++) {
-                        if ("matikkapeli" == peliData[index].peli) {
-                            if (pisteet >= peliData[index].tulos) {
-                                peliData[index].tulos = pisteet;
-                                sessionStorage.setItem("pelit", JSON.stringify(peliData));
-                                return
-                            } else {
-                                alert("ENNÄTYKSESI ON JO SUUREMPI!")
-                            }
+                    if (peliData[index].peli == "matikkapeli")
+                        if (pisteet>= peliData[index].tulos) {
+                            peliData[index].tulos = pisteet;
+                            sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                            break
+                    } else {
+                        alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                        break
+
                     }
-                }
+            }
+            
+                
                 
             }
         }
