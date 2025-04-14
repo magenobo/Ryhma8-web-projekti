@@ -1,5 +1,5 @@
 //QUESTIONS = IMAGES AND THEIR ANSWERS
-var questions =[
+var questions = [
     { src: "./img/papukaija1.jpg", answer: "Italia",
     hints: ["Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]},
 
@@ -69,7 +69,7 @@ function loadImage() {
     document.getElementById("hintList").textContent = "";   //clears hints
     document.getElementById("pisteet").value = 0;           //clears points back to zero
     
-    document.getElementById('next_btn').disabled = true;
+    document.getElementById('next_btn').disabled = true;    //you can't go to the next question
 
 
     //shows round and points every round
@@ -142,7 +142,8 @@ function checkAnswer() {
             showPoints()
 
         }
-        
+
+        //you can go to the next question
         document.getElementById('next_btn').disabled = false;
         
     }
@@ -164,8 +165,9 @@ function checkAnswer() {
         //answer is wrong AND your guesses are done
         if (answerTry < 1) {
             feedback.textContent = "Väärä vastaus. Oikea vastaus olisi ollut  " + correctAnswer + '. Et saanut tältä kierrokselta pisteitä. Voit nyt mennä seuraavaan kysymykseen painamalla "Seuraava"';
-        document.getElementById('next_btn').disabled = false;
-
+            
+            //you can go to the next question
+            document.getElementById('next_btn').disabled = false;
         }       
     }
 }
