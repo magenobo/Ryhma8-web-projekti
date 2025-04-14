@@ -18,8 +18,18 @@ function showRecords() {
 
     for (let i = 0; i < gameResults.length; i++) {
         points += gameResults[i].tulos
-        if (gameResults[i].tulos == 10) {
-            bagdecount++
+        if (gameResults[i].peli == "tarinapeli" || gameResults[i].peli == "lippupeli" || gameResults[i].peli == "matikkapeli") {
+            if (gameResults[i].tulos == 10) {
+                bagdecount++
+            }
+        } else if (gameResults[i].peli == "kielipeli") {
+            if (gameResults[i].tulos == 8) {
+                bagdecount++
+            }
+        } else if (gameResults[i].peli == "karttapeli") {
+            if (gameResults[i].tulos == 32) {
+                bagdecount++
+            }
         }
     }
 

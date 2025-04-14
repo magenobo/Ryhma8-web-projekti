@@ -111,8 +111,6 @@ function checkWord() {
             givenWord.disabled = true
             pointCount += 1
 
-            alert("tuletko tänne")
-
             if (wordCount == possibleWords.length) {
                 pointCount-= 0.5
                 
