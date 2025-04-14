@@ -8,6 +8,7 @@ checkButton.addEventListener("click", checkWord)
 const againButton = document.querySelector("#start-again")
 againButton.addEventListener("click", gameAgain)
 
+let gameResults = JSON.parse(sessionStorage.getItem("pelit")) || []
 
 // taulukko, joka sisältää sanat, joiden joukosta käyttäjä valitsee haluamansa
 const possibleWords = [
@@ -30,7 +31,7 @@ const possibleWords = [
     ["ranskan", "kreikan", "kiinan",  "argentiinan", "suomen", "australian", "meksikon", "intian", "thaimaan"],
 
     ["Portugalissa", "Puolassa", "Tanskassa", "Unkarissa", "Sveitsissä", "Itävallassa", "Irlannissa", "Skotlannissa",
-    "Walesissa", "Norjassa"],
+    "Norjassa"],
 
     ["oudoilta", "hyviltä", "kauniilta", "hassuilta", "mielenkiintoisilta", "pelottavilta", "hirveiltä",
     "surullisilta", "tahmaisilta"],
@@ -103,19 +104,25 @@ function checkWord() {
 
     if (possibleWords[index].includes(givenWord.value)) {
         
-        pointCount++
         tries++
 
         if (tries == 2) {
 
             givenWord.disabled = true
+            pointCount += 1
+
+            alert("tuletko tänne")
 
             if (wordCount == possibleWords.length) {
+                pointCount-= 0.5
+                
                 response.textContent = "Sana kelpaa ja ansaitsit 0.5 pistettä! Tämä oli viimeisen sana. Jatka eteenpäin nähdäksesi tarinan."
                 response.classList.remove("answer", "correct", "incorrect")
                 response.classList.add("correct")
                 checkButton.textContent = "Lue tarina"
             } else {
+                pointCount-= 0.5
+
                 response.textContent = "Sana kelpaa ja ansaitsit 0.5 pistettä! Jatka eteenpäin."
                 response.classList.remove("answer", "correct", "incorrect")
                 response.classList.add("correct")
@@ -125,6 +132,7 @@ function checkWord() {
         } else {
             
             givenWord.disabled = true
+            pointCount++
 
             if (wordCount == possibleWords.length) {
                 response.textContent = "Sana kelpaa ja ansaitsit 1 pisteen! Annoit viimeisen sanon. Jatka eteenpäin nähdäksesi tarinan."
@@ -143,9 +151,7 @@ function checkWord() {
         storyWords.push(givenWord.value)
 
     } else {
-        if (pointCount >= 0.5) {
-            pointCount-= 0.5
-        }
+        
         tries++
 
         if (tries == 2) {
@@ -218,6 +224,24 @@ function showStory() {
     + ". 'Ystäväni vieraili " + storyWords[7] + " ja toi sen minulle', kokki vastasi tuodessaan valmista ruokaa pöytään. " 
     + storyWords[0] + " tuijotti " + storyWords[5] + " ihmeissään, koska ne näyttivät " + storyWords[8] + ". Hän alkoi kuitenkin " 
     + storyWords[9] + " ruokaa lopulta suurella ruokahalulla, kunnes pystyi vatsa pullottaen lysähtämään takaisin tuoliin."
+
+    for (let index = 0; index < 5; index++) {
+        if (gameResults[index] === undefined) {
+            gameResults.push({peli: "tarinapeli", tulos: pointCount});
+            sessionStorage.setItem("pelit", JSON.stringify(gameResults));
+            break
+        } else {
+            if (peliData[index].peli == "tarina")
+                if (pointCount>= gameResults[index].tulos) {
+                    gameResults[index].tulos = pointCount;
+                    sessionStorage.setItem("pelit", JSON.stringify(gameResults));
+                    break
+            } else {
+                alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                break
+            }
+        }
+    }   
 }
 
 
