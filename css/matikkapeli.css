@@ -3,7 +3,11 @@
 }
 
 body{
-    background-color: #f8f7f6;
+    background-color: #e8e5dd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav {
+    border-bottom: 1px solid #9b8372;
 }
 
 div.otsikko {
@@ -11,10 +15,13 @@ div.otsikko {
     justify-content: center;
     align-items: center;
     padding-top: 2em;
+    height: auto;
+    width: 70%;
+    margin: auto;
 }
 
 div.otsikko > div {
-    background-color: #ddd;
+    background-color: #f7f7f7;
     border: 1px solid black;
     width: 80%;
     height: 10vh;
@@ -96,12 +103,12 @@ div.muunnos {
 }
 
 #seuraavaKysymys:disabled {
-    background-color: #ccc; /* Tumma harmaa väri */
-    cursor: not-allowed; /* Muuttaa kursorin ristiin (ei sallittu) */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 #seuraavaKysymys:not(:disabled) {
-    background-color: #cecece; /* Vihreä väri aktivoituna */
-    cursor: pointer; /* Normaalikurssi */
+    background-color: #cecece;
+    cursor: pointer;
 }
 
 #seuraavaKysymys {
@@ -231,6 +238,16 @@ div.container {
 
 /*tosi isot näytöt 1199->*/
 @media screen and (min-width: 1200px) {
+
+    #navbarNav {
+        border-top: 0;
+        justify-content: right;
+    }
+    
+    .navbar-nav {
+        margin: 10px;
+        font-size: 1.2em;
+    }
 
     div.matematiikka {
         background-color: rgb(255, 194, 82);

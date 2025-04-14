@@ -43,6 +43,7 @@ const kuvaElementti = document.querySelector(".kuvatahan img");
 const maaLomake = document.querySelectorAll("form")[0];
 const muunnosLomake = document.querySelectorAll("form")[1];
 const maaInput = document.getElementById("tunnistus");
+const maaTunnistusNappi = document.getElementById("tunnistusNappi")
 const muunnosInput = document.getElementById("muunnos");
 const muunnosKysymys = document.getElementById("muunnosKysymys");
 const seuraavaKysymysNappi = document.getElementById("seuraavaKysymys");
@@ -57,7 +58,10 @@ function paivitaPeli() {
     muunnosKysymys.textContent = ruoka.kysymys;
     maaInput.value = "";
     muunnosInput.value = "";
-    muunnosLomake.querySelectorAll("input").forEach(input => input.disabled = false); // Aktivoi lomake
+    muunnosLomake.querySelectorAll("input").forEach(input => input.disabled = false);
+    maaInput.disabled = false;
+    maaInput.style.backgroundColor = "";
+    muunnosInput.style.backgroundColor = "";
     seuraavaKysymysNappi.disabled = true; 
     seuraavaKysymysNappi.style.backgroundColor = "#ccc"; 
 }
@@ -77,6 +81,7 @@ maaLomake.addEventListener("submit", function (e) {
     }
 
     maaInput.disabled = true;
+    maaTunnistusNappi.disabled = true;
 });
 
 //vastaa muunnoskysymyksestä
@@ -87,9 +92,11 @@ muunnosLomake.addEventListener("submit", function (e) {
 
     if (vastaus === oikeaVastaus) {
         pisteet++;
+        muunnosInput.style.backgroundColor = "#bdffbf";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "green";
+    } else {
+        muunnosInput.style.backgroundColor = "red";
     }
-
 
     seuraavaKysymysNappi.disabled = false; 
     seuraavaKysymysNappi.style.backgroundColor = "#cecece"; 
