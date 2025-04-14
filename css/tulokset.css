@@ -184,7 +184,7 @@ footer {
     }
     
     .navbar-nav {
-        margin: 15px;
+        margin: 10px;
         font-size: 1.2em;
     }
 
@@ -247,14 +247,20 @@ footer {
     }
 
     .row {
-        padding: 3vh 0;
+        padding: 6vh 0;
     }
 }
 
 @media screen and (min-width: 1200px) { /* suuret näytöt */
+    
+    
     .parrot-img {
         width: 125px;
         height: 125px;
         margin: 0.5rem;
+    }
+
+    .row {
+        padding: 3vh;
     }
 }
