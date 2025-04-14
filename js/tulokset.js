@@ -23,7 +23,7 @@ function showRecords() {
         }
     }
 
-    document.querySelector("#all-results").textContent = "Yhteispisteet " + points + " / 50"
+    document.querySelector("#all-results").textContent = "Yhteispisteet " + points + " / 70"
     document.querySelector("#all-parrots").textContent = "Ansaitut papukaijamerkit " + bagdecount + " / 5"
 
     for (let i = 1; i <= bagdecount; i++) {
@@ -37,9 +37,9 @@ function showRecords() {
         if (gameResults[i].peli == "matikkapeli") {
             mathResult.textContent = gameResults[i].tulos + " / 10"
         } else if (gameResults[i].peli == "kielipeli") {
-            languageResult.textContent = gameResults[i].tulos + " / 10"
+            languageResult.textContent = gameResults[i].tulos + " / 8"
         } else if (gameResults[i].peli == "karttapeli") {
-            mapResult.textContent = gameResults[i].tulos + " / 10"
+            mapResult.textContent = gameResults[i].tulos + " / 32"
         } else if (gameResults[i].peli == "lippupeli") {
             flagResult.textContent = gameResults[i].tulos + " / 10"
         } else if (gameResults[i].peli == "tarinapeli") {

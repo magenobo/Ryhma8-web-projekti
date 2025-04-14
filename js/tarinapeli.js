@@ -231,7 +231,7 @@ function showStory() {
             sessionStorage.setItem("pelit", JSON.stringify(gameResults));
             break
         } else {
-            if (peliData[index].peli == "tarina")
+            if (gameResults[index].peli == "tarinapeli")
                 if (pointCount>= gameResults[index].tulos) {
                     gameResults[index].tulos = pointCount;
                     sessionStorage.setItem("pelit", JSON.stringify(gameResults));
