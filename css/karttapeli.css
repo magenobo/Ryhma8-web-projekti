@@ -7,6 +7,24 @@ footer {
     margin-top: 5em;
 }
 
+nav {
+    border-bottom: 1px solid #9b8372;
+}
+
+.navbar-toggler {
+    margin: 10px;
+}
+
+#navbarNav {
+    border-top: 1px solid #9b8372;
+}
+
+.navbar-nav {
+    margin: 1.5rem;
+    font-size: 1.3em;
+    text-align: center;
+}
+
 div.container {
     max-width: 100%;
     padding-top: 1em;
@@ -133,7 +151,9 @@ img {
 /*hyvin pienet näytöt ovat normaalia koodia/
 /*isommat puhelimet sekä tabletit 641-994*/
 @media screen and (min-width: 641px) {
-
+    .navbar-nav {
+        font-size: 1.4em;
+    }
 }
 
 /*isot näytöt, kannettavat tietokoneet 995-13199*/
@@ -149,6 +169,22 @@ img {
     #next_btn:disabled {
         cursor: no-drop;
     }
+
+
+    #navbarNav {
+        border-top: 0;
+        justify-content: right;
+    }
+    
+    .navbar-nav {
+        margin: 10px;
+        font-size: 1.2em;
+    }
+    #empty {
+        margin: 0 1rem;
+    }
+    
+
 }
 
 /*tosi isot näytöt 1199->*/
