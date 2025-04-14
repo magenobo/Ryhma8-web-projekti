@@ -86,6 +86,7 @@ const correctAnswerSpan = document.getElementById("oikea-vastaus");
 
 let currentQuestionIndex = 0;
 let score = 0;
+let peliData = JSON.parse(sessionStorage.getItem("pelit"))|| []
 
 
  //päivittää pisteet
@@ -181,7 +182,22 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
         scoreElement.style.display = "none"; //piilottaa pisteet kun peli loppuu
         pisteet.style.display = "none";
         showEndScreen();
-    }
+        if (peliData.length === 0 ) {
+            peliData.push({peli: "kielipeli", tulos: score});
+            sessionStorage.setItem("pelit", JSON.stringify(peliData));
+        } else {
+            for (let index = 0; index < peliData.length; index++) {
+                if ("kielipeli" == peliData[index].peli) {
+                    if (score>= peliData[index].tulos) {
+                        peliData[index].tulos = score;
+                        sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                        return
+                    } else {
+                        alert("Olet saanut jo paremman tuloksen!")
+                    }
+            }
+        }
+    }}
 
     restartButton.addEventListener("click", () => {
        startScreen.style.display = "block"; // näyttää aloitusnäytön
