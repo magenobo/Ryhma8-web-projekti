@@ -95,8 +95,11 @@ muunnosLomake.addEventListener("submit", function (e) {
         pisteet++;
         muunnosInput.style.backgroundColor = "#bdffbf";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "green";
+        griddyLaatikot[nykyinenIndeksi].querySelector("img").setAttribute("src", "./img/oikein.png");
     } else {
         muunnosInput.style.backgroundColor = "red";
+        griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "red";
+        griddyLaatikot[nykyinenIndeksi].querySelector("img").setAttribute("src", "./img/vaarin.png");
     }
 
     seuraavaKysymysNappi.disabled = false; 
@@ -105,13 +108,14 @@ muunnosLomake.addEventListener("submit", function (e) {
     muunnosLomake.querySelectorAll("input").forEach(input => input.disabled = true);
 });
 
+//nappi seuraavaan tehtävään
 seuraavaKysymysNappi.addEventListener("click", function () {
     if (!seuraavaKysymysNappi.disabled) {
         nykyinenIndeksi++; 
         if (nykyinenIndeksi < ruoat.length) {
             paivitaPeli(); 
         } else {
-            alert("Peli loppui! Pisteesi: " + pisteet + "/5");
+            alert("Peli loppui! Pisteesi: " + pisteet + "/10");
 
             for (let index = 0; index < 5; index++) {
                 if (peliData[index] === undefined) {
