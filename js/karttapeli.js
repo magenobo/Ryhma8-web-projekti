@@ -45,7 +45,8 @@ let answerTry = 3
 //counts the clues used
 let usedClue = 0
 
-let peliData = JSON.parse(sessionStorage.getItem("matikkaTulos"))|| []
+//gets data from session storage
+let peliData = JSON.parse(sessionStorage.getItem("pelit"))|| []
 //-----------------------------------
 
 
@@ -234,9 +235,9 @@ function showAllPoints() {
     allPoints.textContent = "Läpäisit pelin pistein: " + points;
     
 
-    if (finishedScore >= sessari) {
-        sessionStorage.setItem("karttaTulos", points);
-    }
+    peliData.push({peli: "karttapeli", tulos: points});
+    sessionStorage.setItem("pelit", JSON.stringify(peliData));
+    
 
 
 }

@@ -36,6 +36,7 @@ const ruoat = [
 let nykyinenIndeksi = 0;
 let pisteet = 0;
 let papukaijapisteet = 0;
+let peliData = JSON.parse(sessionStorage.getItem("pelit"))|| []
 
 
 // Haetaan elementit
@@ -111,7 +112,26 @@ seuraavaKysymysNappi.addEventListener("click", function () {
             paivitaPeli(); 
         } else {
             alert("Peli loppui! Pisteesi: " + pisteet + "/" + "5");
-            sessionStorage.setItem("matikkaTulos", pisteet);
+
+
+            
+                if (peliData.length === 0 ) {
+                    peliData.push({peli: "matikkapeli", tulos: pisteet});
+                    sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                } else {
+                    for (let index = 0; index < peliData.length; index++) {
+                        if ("matikkapeli" == peliData[index].peli) {
+                            if (pisteet >= peliData[index].tulos) {
+                                peliData[index].tulos = pisteet;
+                                sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                                return
+                            } else {
+                                alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                            }
+                    }
+                }
+                
+            }
         }
         paivitaPisteet(); 
     }
