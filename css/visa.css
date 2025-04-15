@@ -296,7 +296,7 @@ footer {
     }
 
 #kysymyslaatikko{
-    max-width:70%;
+    max-width:60%;
     margin-left: 20%;
     margin-right: 20%;
     align-items: center;
@@ -317,7 +317,7 @@ font-family:'Times New Roman', Times, serif
 }
 
 #next-btn{
-    margin-left: 70%;
+    margin-left: 80%;
 }
 
 #restart-btn{
