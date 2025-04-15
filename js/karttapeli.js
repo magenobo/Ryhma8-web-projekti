@@ -1,30 +1,33 @@
 //QUESTIONS = IMAGES AND THEIR ANSWERS
 var questions = [
-    { src: "./img/papukaija1.jpg", answer: "Italia",
-    hints: ["Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]},
+    { src: "./noomitestaa.png", answer: "Italia", alt: "image, country in Europe, between France and ",
+    hints: ["Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]}, //https://commons.wikimedia.org/wiki/File:LocationItaly.svg#mw-jump-to-license
 
-    { src: "./img/papukaija2.jpg", answer: "Thaimaa",
+    { src: "./noomitestaa2.png", answer: "Thaimaa", alt: "",
     hints: ["Suosittu matkailukohde Aasiassa", "Valuutta: baht ฿ (บาท)", "Suurimmat kaupungit pääkaupungin lisäksi: Samut Prakan, Udon Thani ja Chon Buri"]},
 
-    { src: "./img/papukaija3.jpg", answer: "Algeria",
+    { src: "./img/papukaija3.jpg", answer: "Algeria", alt: "",
     hints: ["Jotai vois keksii viel tähän", "Pinta-alaltaan Afrikan suurin", "Pääkaupunki: Alger"]},
 
-    { src: "./img/papukaija4.jpg", answer: "Meksiko",
+    { src: "./img/papukaija4.jpg", answer: "Meksiko", alt: "",
     hints: ["Tulivuori Popocatépetl", "Perhe on hyvin tärkeä", "Kuolleiden päivä (Día de los muertos)"]},
 
-    { src: "./img/papukaija5.jpg", answer: "Liettua",
+    { src: "./img/papukaija5.jpg", answer: "Liettua", alt: "",
     hints: ["Suosituin urheilulaji: koripallo", "Yksi Euroopan vanhimmista puhuituista kielistä", "Pääkaupunki: Vilna"]},
 
-    { src: "./img/papukaija1.jpg", answer: "Brasilia",
+    { src: "./img/papukaija1.jpg", answer: "Brasilia", alt: "",
     hints: ["Kansallislaji: capoeira", "Suosituin sukunimi: Silva", "Valtava Kristus-patsas"]},
 
-    { src: "./img/papukaija2.jpg", answer: "Papua-Uusi-Guinea",
+    { src: "./img/papukaija2.jpg", answer: "Papua-Uusi-Guinea", alt: "",
     hints: ["Tyynenmeren suurin saari", "yli 850 kotimaista kieltä", "Pääkaupunki: Port Moresby"]},
 
-    { src: "./img/papukaija3.jpg", answer: "Portugali",
+    { src: "./img/papukaija3.jpg", answer: "Portugali", alt: "",
     hints: ["Joku hyvä tähä viel", "Euroopan pisin silta Vasco da Gama", "Cristiano Ronaldo"]},
 ];
 //-----------------------------------
+
+//ADD WHERE DID YOU GET THE IMAGES
+
 
 
 //
@@ -64,14 +67,26 @@ function loadImage() {
  
     
     const image = questions[currentImage];                  //takes the image wanted
+    document.getElementById('karttakuva').src = image.src;  //gets the image
 
-    document.getElementById('image').src = image.src;       //gets the image
+  img.alt = `Image related to ${q.answer}`; // or use hints to generate a richer description
+
     document.getElementById("feedback").textContent= "";    //clears previous feedback
     document.getElementById("answer").value = "";           //clears previous answer
     document.getElementById("hintList").textContent = "";   //clears hints
     document.getElementById("pisteet").value = 0;           //clears points back to zero
     
     document.getElementById('next_btn').disabled = true;    //you can't go to the next question
+    document.getElementById('send_btn').disabled = false;   //you can submit the answer
+
+    
+    document.getElementById('answer').style.backgroundColor = ""; //clears the colour from last round
+
+
+    //you can use the buttons
+    document.getElementById('vihjeBtn0').disabled = false; 
+    document.getElementById('vihjeBtn1').disabled = false;
+    document.getElementById('vihjeBtn2').disabled = false;
 
 
     //shows round and points every round
@@ -100,10 +115,12 @@ function checkAnswer() {
     const feedback = document.getElementById("feedback");
     const correctAnswer = questions[currentImage].answer.toUpperCase(); //answer from the questions
 
-    //FIGURE THIS OUT_____________________
-    if (userAnswer.value == "") {
-        feedback.textContent = "Vastaus ei voi olla tyhjä."
-    }
+    //you can't submit empty
+    if (userAnswer === '') {
+        feedback.textContent = 'Vastaus ei voi olla tyhjä.';
+        return;
+      }
+   
     //____________________________________
 
     //the answer is right
@@ -122,7 +139,7 @@ function checkAnswer() {
 
         //the answer is right but used 1 clue
         if (usedClue === 1) {
-            feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer + '. Sait 3 (kolme) pistettä, koska käytit yhden vihjeen. Voit nyt jatkaa seuraavaan painamalla "Seuraava".';
+            feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer + '. Sait 3 (kolme) pistettä, koska käytit 1 (yhden) vihjeen. Voit nyt jatkaa seuraavaan painamalla "Seuraava".';
             points++
             points++
             points++
@@ -131,7 +148,7 @@ function checkAnswer() {
 
         //the answer is right but used 2 clues
         if (usedClue === 2) {
-            feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer + '. Sait 2 (kaksi) pistettä, koska käytit kaksi vihjettä. Voit nyt jatkaa seuraavaan painamalla "Seuraava".';
+            feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer + '. Sait 2 (kaksi) pistettä, koska käytit 2 (kaksi) vihjettä. Voit nyt jatkaa seuraavaan painamalla "Seuraava".';
             points++
             points++
             showPoints()
@@ -142,11 +159,21 @@ function checkAnswer() {
             feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer + '. Sait vain 1 (yhden) pisteen, koska käytit kaikki vihjeet. Voit nyt jatkaa seuraavaan painamalla "Seuraava".';
             points++
             showPoints()
+            
 
         }
 
+        //you can't submit it again
+        document.getElementById('send_btn').disabled = true;
         //you can go to the next question
         document.getElementById('next_btn').disabled = false;
+        //you cant use the vihje buttons when you already answered
+        document.getElementById('vihjeBtn0').disabled = true;
+        document.getElementById('vihjeBtn1').disabled = true;
+        document.getElementById('vihjeBtn2').disabled = true;
+
+
+        document.getElementById('answer').style.backgroundColor = "#7CFC00";
         
     }
     
@@ -155,6 +182,7 @@ function checkAnswer() {
 
         //-1 tries
         answerTry--
+        document.getElementById('answer').style.backgroundColor = "rgb(255, 125, 125)";
     
         //answer is wrong AND you still have guesses left
         if (answerTry === 2) {
@@ -170,6 +198,12 @@ function checkAnswer() {
             
             //you can go to the next question
             document.getElementById('next_btn').disabled = false;
+            //you can't submit it again
+            document.getElementById('send_btn').disabled = true;
+            //you cant use the vihje buttons when you already answered
+            document.getElementById('vihjeBtn0').disabled = true;
+            document.getElementById('vihjeBtn1').disabled = true;
+            document.getElementById('vihjeBtn2').disabled = true;
         }       
     }
 }
@@ -199,18 +233,40 @@ function showHint(index) {
 }
 //-----------------------------------
 
-//notices when clue buttons are pressed and counts them so the points are right
+
+
+
+
+//notices when clue buttons are pressed and counts them
 const vihje1_btn = document.getElementById("vihjeBtn0")
 const vihje2_btn = document.getElementById("vihjeBtn1")
 const vihje3_btn = document.getElementById("vihjeBtn2")
 
-vihje1_btn.addEventListener("click", countHints);
-vihje2_btn.addEventListener("click", countHints);
-vihje3_btn.addEventListener("click", countHints);
+vihje1_btn.addEventListener("click", countHints1);
+vihje2_btn.addEventListener("click", countHints2);
+vihje3_btn.addEventListener("click", countHints3);
 
-function countHints() {
+
+function countHints1() {
     usedClue++
+    document.getElementById('vihjeBtn0').disabled = true;
+
 }
+function countHints2() {
+    usedClue++
+    document.getElementById('vihjeBtn1').disabled = true;
+
+}
+function countHints3() {
+    usedClue++
+    document.getElementById('vihjeBtn2').disabled = true;
+
+}
+//-----------------------------------
+
+
+
+
 
 
 //shows the round number
@@ -223,12 +279,12 @@ function showRounds() {
 
 //shows points
 function showPoints () {
-    currentPoints.textContent = "Pisteet: " + points + '/100';
+    currentPoints.textContent = "Pisteet: " + points + '/32';
 }
 //-----------------------------------
 
 
-
+//-----------------------------------
 //shows the final score
 function showAllPoints() {
     let allPoints = document.getElementById("kaikkipisteet");
@@ -247,28 +303,10 @@ function showAllPoints() {
                     sessionStorage.setItem("pelit", JSON.stringify(peliData));
                     break
         }
-    }
-    }
-
-
-    //if (peliData.length === 0 ) {
-    //   peliData.push({peli: "karttapeli", tulos: points});
-    //    sessionStorage.setItem("pelit", JSON.stringify(peliData));
-    //for (let index = 0; index < 5; index++) {
-    //    if ("karttapeli" == peliData[index].peli) {
-    //        if (points>= peliData[index].tulos) {
-    //           peliData[index].tulos = points;
-    //            sessionStorage.setItem("pelit", JSON.stringify(peliData));
-    //            return
-    //        } else {
-    //            alert("TSEK")
-    //            //allPoints.textContent = "Läpäisit pelin pistein: " + points + ". Se oli parhain tuloksesi tähän mennessä";
-
-    //        }
-    //    }
-    }
+    }}
+}
     
-//-----------------------------------
+
 
 
 //shows the whole game

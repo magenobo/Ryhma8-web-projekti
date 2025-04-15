@@ -1,5 +1,3 @@
-
-
 nav {
     border-bottom: 1px solid #9b8372;
 }
@@ -28,24 +26,34 @@ div.container {
 body {
     text-align: center;
     align-items: center;
+    background-color: #e8e5dd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
 
 h1 {
-    background-color: #e0e0e0;
-    text-align: center;
-    padding: 4%;
     width: 80vw;
-    margin: 30px auto;
-    margin-bottom: 0;
-    border: 2px solid black;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center; 
+
+    background-color: #f5f5f5;
+    border: 1px solid black;
     border-radius: 2px;
 }
+#logo {
+    max-height: 10vh;
+    margin-left: 2vh;
+}
 
-img {
+#karttakuva {
     width: 100%;
     margin-top: 1%;
     background-color:#a8c9a5 ;
-    border-radius: 20px;
+    border-radius: 0px;
 
 }
 
@@ -59,7 +67,7 @@ img {
 }
 
 #kierrokset, #pisteet {
-    background-color: #a7ddb9;
+    background-color: #ff9752;
     text-align: center;
     margin-top: 1%;
     padding: 2%;
@@ -77,11 +85,6 @@ img {
     width: 25.5vw;
     border-radius: 20px;
     margin-bottom: 1%;
-
-}
-
-.vihje1_btn:hover, .vihje2_btn:hover, .vihje3_btn:hover {
-    text-decoration: none;
 
 }
 
@@ -187,16 +190,21 @@ footer {
     }
 
     .vihje1_btn:hover, .vihje2_btn:hover, .vihje3_btn:hover {
-        background-color: #a7ddb9;
-    
-    }
-    #next_btn:hover:not([disabled]), #send_btn:hover {
-        background-color: #546d5c;
+        background-color: none;
     }
 
-    #next_btn:disabled {
+    
+
+
+
+    #next_btn:hover:not([disabled]), #send_btn:hover:not([disabled]) {
+        background-color: #ff9752;
+    }
+
+    #next_btn:disabled, #send_btn:disabled {
         cursor: no-drop;
     }
+
 
 
     
