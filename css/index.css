@@ -32,6 +32,11 @@ nav {
     text-align: center;
 }
 
+#logo {
+    max-height: 10vh;
+    margin-left: 2vh;
+}
+
 h1 { /* otsikko "tarinapeli" */
     width: 80vw;
     margin: 1.5rem auto;
