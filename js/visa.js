@@ -51,7 +51,7 @@ const questions = [
         question: "Namaste!", 
         answers: [
             { text: "intia", correct: true},
-            { text: "nepal", correct: false},
+            { text: "nepali", correct: false},
             { text: "kreikka", correct: false},
         ]   
     },
@@ -60,7 +60,7 @@ const questions = [
         answers: [
             { text: "kreikka", correct: false},
             { text: "portugali", correct: false},
-            { text: "havaijii", correct: true},
+            { text: "havaiji", correct: true},
         ]  
     }
 ];
@@ -192,11 +192,8 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
                         peliData[index].tulos = score;
                         sessionStorage.setItem("pelit", JSON.stringify(peliData));
                         return
-                    } else {
-                        alert("Olet saanut jo paremman tuloksen!")
-                    }
             }
-        }
+        }}
     }}
 
     restartButton.addEventListener("click", () => {
