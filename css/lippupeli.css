@@ -96,11 +96,27 @@ footer {
 }
 
 #laatikko {
-    display: wrap;
-    align-content: space-between;
-    flex-flow: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
+.kortti_kuvat {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+.kortti_kuvat img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+}
 
 
 
