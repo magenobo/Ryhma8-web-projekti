@@ -182,18 +182,24 @@ function selectAnswer(e){    //vastausvaihtoehdot tulee näkyviin
         scoreElement.style.display = "none"; //piilottaa pisteet kun peli loppuu
         pisteet.style.display = "none";
         showEndScreen();
-        if (peliData.length === 0 ) {
-            peliData.push({peli: "kielipeli", tulos: score});
-            sessionStorage.setItem("pelit", JSON.stringify(peliData));
-        } else {
-            for (let index = 0; index < peliData.length; index++) {
-                if ("kielipeli" == peliData[index].peli) {
+        
+        for (let index = 0; index < 5; index++) {
+            if (peliData[index] === undefined) {
+                peliData.push({peli: "kielipeli", tulos: score});
+                sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                break
+            } else {
+                if (peliData[index].peli == "kielipeli")
                     if (score>= peliData[index].tulos) {
                         peliData[index].tulos = score;
                         sessionStorage.setItem("pelit", JSON.stringify(peliData));
-                        return
-            }
-        }}
+                        break
+                } else {
+                    alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                    break
+
+                }
+        }
     }}
 
     restartButton.addEventListener("click", () => {
