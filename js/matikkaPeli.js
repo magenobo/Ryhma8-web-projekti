@@ -124,9 +124,9 @@ seuraavaKysymysNappi.addEventListener("click", function () {
                             peliData[index].tulos = pisteet;
                             sessionStorage.setItem("pelit", JSON.stringify(peliData));
                             break
-                    } else {
-                        alert("ENNÄTYKSESI ON JO SUUREMPI!")
-                        break
+                        } else {
+                            alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                            break
 
                     }
             }
