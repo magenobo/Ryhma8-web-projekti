@@ -13,6 +13,11 @@ body{
     background-color: #e0e0e0;
 }
 
+#logo {
+    max-height: 10vh;
+    margin-left: 2vh;
+}
+
 nav {
     border-bottom: 1px solid #9b8372;
 }
@@ -361,9 +366,9 @@ font-family:'Times New Roman', Times, serif
 }
 
 #startscreen{
-    max-width: 80%;
+    max-width:80%;
     margin-left: 10%;
-    margin-bottom: 90px;
+    margin-bottom: 100px;
 
 }
 }
