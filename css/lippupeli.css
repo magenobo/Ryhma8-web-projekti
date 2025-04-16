@@ -91,34 +91,64 @@ footer {
 }
 
 #peli_itse img {
-    max-width: 25%;
-    max-height: 25%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #laatikko {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 10px;
+    grid-template-columns: repeat(4, 80px);
+    gap: 14%;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 16%;
 }
 
-.kortti_kuvat {
-    width: 100px;
-    height: 100px;
+
+
+.kortti {
+    width: 120px;
+    height: 120px;
     position: relative;
+    transition: transform 1s;
     cursor: pointer;
+    transform-style: preserve-3d;
 }
 
-.kortti_kuvat img {
+.etu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
     position: absolute;
+}
+
+.taka {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
     backface-visibility: hidden;
 }
 
+.kortti img {
+    width: 68%;
+    height: 100%;
+    object-fit: cover;
+}
 
+.kortti.active {
+    transform: perspective(300px) rotateY(180deg);
+}
 
 /*hyvin pienet näytöt ovat normaalia koodia*/
 /*isommat puhelimet sekä tabletit 641-994*/
@@ -128,6 +158,12 @@ footer {
         font-size: 1.4em;
     }
 
+
+    #etusivu img {
+        max-width: 40%;
+        max-height: 40%;
+        
+    }
 }
 
 /*isot näytöt, kannettavat tietokoneet 992-1199*/
@@ -156,6 +192,12 @@ footer {
         padding: 6vh 0;
     }
 
+    #etusivu img {
+        max-width: 30%;
+        max-height: 30%;
+        
+    }
+
 }
 
 /*tosi isot näytöt 1199->*/
@@ -175,5 +217,11 @@ footer {
 
     .row {
         padding: 3vh;
+    }
+
+    #etusivu img {
+        max-width: 20%;
+        max-height: 200%;
+        
     }
 }
