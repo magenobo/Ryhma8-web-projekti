@@ -51,8 +51,8 @@ h1 {
 
 #karttakuva {
     width: 100%;
-    margin-top: 1%;
-    background-color:#a8c9a5 ;
+    margin-top: 5%;
+    margin-bottom: 5%;
     border-radius: 0px;
 
 }
@@ -207,6 +207,17 @@ footer {
 
 
 
+    .ohjeet_ja_peli {
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
+
+    #karttakuva {
+        width: 90%;
+  
+    }
+
     
     
 
@@ -229,4 +240,8 @@ footer {
         padding: 3vh;
     }
 
+    
+    
+
+    
 }

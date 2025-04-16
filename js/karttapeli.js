@@ -1,28 +1,48 @@
 //QUESTIONS = IMAGES AND THEIR ANSWERS
 var questions = [
-    { src: "./noomitestaa.png", answer: "Italia", alt: "image, country in Europe, between France and ",
-    hints: ["Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]}, //https://commons.wikimedia.org/wiki/File:LocationItaly.svg#mw-jump-to-license
+    { src: "./img/karttapeli_italia.png", answer: "Italia", alt: "Kuva, jossa tummalla merkitty valtio. viereisiä maita:",
+    hints: ["Aamupala: Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]},
 
-    { src: "./noomitestaa2.png", answer: "Thaimaa", alt: "",
+    //https://en.wikipedia.org/wiki/Italy#/media/File:EU-Italy_(orthographic_projection).svg
+
+
+    { src: "./img/karttapeli_thaimaa.png", answer: "Thaimaa", alt: "",
     hints: ["Suosittu matkailukohde Aasiassa", "Valuutta: baht ฿ (บาท)", "Suurimmat kaupungit pääkaupungin lisäksi: Samut Prakan, Udon Thani ja Chon Buri"]},
 
-    { src: "./img/papukaija3.jpg", answer: "Algeria", alt: "",
+    //https://en.wikipedia.org/wiki/Thailand#/media/File:Thailand_(orthographic_projection).svg
+
+
+    { src: "./img/karttapeli_algeria.png", answer: "Algeria", alt: "",
     hints: ["Jotai vois keksii viel tähän", "Pinta-alaltaan Afrikan suurin", "Pääkaupunki: Alger"]},
 
-    { src: "./img/papukaija4.jpg", answer: "Meksiko", alt: "",
+    //https://en.wikipedia.org/wiki/Algeria#/media/File:Algeria_(centered_orthographic_projection).svg
+
+
+    { src: "./img/karttapeli_meksiko.png", answer: "Meksiko", alt: "",
     hints: ["Tulivuori Popocatépetl", "Perhe on hyvin tärkeä", "Kuolleiden päivä (Día de los muertos)"]},
 
-    { src: "./img/papukaija5.jpg", answer: "Liettua", alt: "",
-    hints: ["Suosituin urheilulaji: koripallo", "Yksi Euroopan vanhimmista puhuituista kielistä", "Pääkaupunki: Vilna"]},
+    //https://fi.wikipedia.org/wiki/Meksiko#/media/Tiedosto:Mexico_(orthographic_projection).svg
 
-    { src: "./img/papukaija1.jpg", answer: "Brasilia", alt: "",
+
+    { src: "./img/karttapeli_puola.png", answer: "Puola", alt: "",
+    hints: ["o", "Valuutta: Złoty zł", "Tunnetuimmat kaupungit: Gdnask ja Krakova"]},
+
+    //https://en.wikipedia.org/wiki/Poland#/media/File:EU-Poland_(orthographic_projection).svg
+
+    { src: "./img/karttapeli_brasilia.png", answer: "Brasilia", alt: "",
     hints: ["Kansallislaji: capoeira", "Suosituin sukunimi: Silva", "Valtava Kristus-patsas"]},
 
-    { src: "./img/papukaija2.jpg", answer: "Papua-Uusi-Guinea", alt: "",
+    //https://fi.wikipedia.org/wiki/Brasilia#/media/Tiedosto:BRA_orthographic.svg 
+
+    { src: "./img/karttapeli_pug.png", answer: "Papua-Uusi-Guinea", alt: "",
     hints: ["Tyynenmeren suurin saari", "yli 850 kotimaista kieltä", "Pääkaupunki: Port Moresby"]},
 
-    { src: "./img/papukaija3.jpg", answer: "Portugali", alt: "",
+    //https://en.wikipedia.org/wiki/Papua_New_Guinea#/media/File:PNG_orthographic.svg
+
+    { src: "./img/karttapeli_portugal.png", answer: "Portugali", alt: "",
     hints: ["Joku hyvä tähä viel", "Euroopan pisin silta Vasco da Gama", "Cristiano Ronaldo"]},
+
+    //https://en.wikipedia.org/wiki/Portugal#/media/File:EU-Portugal_(orthographic_projection).svg
 ];
 //-----------------------------------
 
@@ -69,7 +89,7 @@ function loadImage() {
     const image = questions[currentImage];                  //takes the image wanted
     document.getElementById('karttakuva').src = image.src;  //gets the image
 
-  img.alt = `Image related to ${q.answer}`; // or use hints to generate a richer description
+  
 
     document.getElementById("feedback").textContent= "";    //clears previous feedback
     document.getElementById("answer").value = "";           //clears previous answer
@@ -305,6 +325,7 @@ function showAllPoints() {
         }
     }}
 }
+
     
 
 
