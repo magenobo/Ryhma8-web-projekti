@@ -25,12 +25,12 @@ const possibleWords = [
     ["vankilaan", "juustokellariin", "kauppaan", "teatteriin", "museoon",
     "kirjastoon", "puistoon", "hotelliin", "sairaalaan"],
 
-    ["tortilloja", "papuja", "sushia", "sämpylöitä", "piiraita", "hampurilaisia",
-    "pannukakkuja", "nuudeleita", "jauhelihapihvejä"],
+    ["tortilloja", "papuja", "kananmunia", "sämpylöitä", "lihapullia", "hampurilaisia",
+    "pannukakkuja", "nuudeleita", "pihvejä"],
 
-    ["ranskan", "kreikan", "kiinan",  "argentiinan", "suomen", "australian", "meksikon", "intian", "thaimaan"],
+    ["ranskan", "kreikan", "kiinan",  "argentiinan", "ruotsin", "yhdysvaltojen", "meksikon", "venäjän", "thaimaan"],
 
-    ["Portugalissa", "Puolassa", "Tanskassa", "Unkarissa", "Sveitsissä", "Itävallassa", "Irlannissa", "Skotlannissa",
+    ["Portugalissa", "Puolassa", "Tanskassa", "Unkarissa", "Sveitsissä", "Itävallassa", "Irlannissa", "Englannissa",
     "Norjassa"],
 
     ["oudoilta", "hyviltä", "kauniilta", "hassuilta", "mielenkiintoisilta", "pelottavilta", "hirveiltä",
@@ -133,7 +133,7 @@ function checkWord() {
             pointCount++
 
             if (wordCount == possibleWords.length) {
-                response.textContent = "Sana kelpaa ja ansaitsit 1 pisteen! Annoit viimeisen sanon. Jatka eteenpäin nähdäksesi tarinan."
+                response.textContent = "Sana kelpaa ja ansaitsit 1 pisteen! Annoit viimeisen sanan. Jatka eteenpäin nähdäksesi tarinan."
                 response.classList.remove("answer", "correct", "incorrect")
                 response.classList.add("correct")
                 checkButton.textContent = "Lue tarina"
@@ -219,8 +219,8 @@ function showStory() {
     + storyWords[2] + " kanssa. Hän ei kuitenkaan osannut " + storyWords[3] + " paikallista kieltä ja joutui sen vuoksi "
     + storyWords[4] + ". Siellä " + storyWords[0] + " tapasi kokin, joka väitti osaavansa tehdä " + storyWords[5] + ". Päästäkseen maistamaan kokin tekeleitä "
     + storyWords[0] + " seurasi tätä keittiöön, jonka katosta roikkui " + storyWords[6] + " lippu. 'Miksi sinulla on tuo lippu tuossa?' kysyi " + storyWords[0]
-    + ". 'Ystäväni vieraili " + storyWords[7] + " ja toi sen minulle', kokki vastasi tuodessaan valmista ruokaa pöytään. " 
-    + storyWords[0] + " tuijotti " + storyWords[5] + " ihmeissään, koska ne näyttivät " + storyWords[8] + ". Hän alkoi kuitenkin " 
+    + ". 'Ystäväni vieraili " + storyWords[7] + " ja toi sen minulle', kokki vastasi tuodessaan valmista ruokaa pöytään. Ihmeissään " 
+    + storyWords[0] + " tuijotti " + storyWords[5] + ", koska ne näyttivät " + storyWords[8] + ". Hän alkoi kuitenkin " 
     + storyWords[9] + " ruokaa lopulta suurella ruokahalulla, kunnes pystyi vatsa pullottaen lysähtämään takaisin tuoliin."
 
     for (let index = 0; index < 5; index++) {
