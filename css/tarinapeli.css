@@ -10,6 +10,10 @@ body {
     background-color: #e8e5dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#logo {
+    max-height: 10vh;
+    margin-left: 2vh;
+}
 
 nav {
     border-bottom: 1px solid #9b8372;

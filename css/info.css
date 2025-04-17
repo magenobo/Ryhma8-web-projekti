@@ -8,7 +8,10 @@
     padding: 0;
     background-color: #E0E0E0;
 }
-
+#logo {
+    max-height: 10vh;
+    margin-left: 2vh;
+}
 body {
     background-color: #e8e5dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
