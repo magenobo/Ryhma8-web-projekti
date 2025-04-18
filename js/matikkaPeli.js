@@ -35,6 +35,41 @@ const ruoat = [
         kysymys: "yksi ja puoli kuppia sokeria, kuinka monta millilitraa (ml) se on?",
         oikeaMuunnos: "360",
     },
+    {
+        kuva:".img/paella.jpg",
+        maa:"espanja",
+        lore:"PAELLA",
+        kysymys:"kaksitoista ja puoli millilitraa paprikaa, kuinka monta teelusikallista (tsp) se on?",
+        oikeaMuunnos:["2.5", "2,5"],
+    },
+    {
+        kuva:".img/suvlaki.jpg",
+        maa:"kypros",
+        lore:"JIIRO",
+        kysymys:,
+        oikeaMuunnos:,
+    },
+    {
+        kuva:,
+        maa:,
+        lore:,
+        kysymys:,
+        oikeaMuunnos:,
+    },
+    {
+        kuva:,
+        maa:,
+        lore:,
+        kysymys:,
+        oikeaMuunnos:,
+    },
+    {
+        kuva:,
+        maa:,
+        lore:,
+        kysymys:,
+        oikeaMuunnos:,
+    }
 ];
 
 // Globaali muuttujat
