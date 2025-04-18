@@ -2,11 +2,7 @@
     background-color: #e0e0e0;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 #logo {
     max-height: 10vh;
     margin-left: 2vh;
@@ -62,6 +58,20 @@ p.bold {
     background-color: rgb(230, 175, 74)
 }
 
+div.aloitus {
+    padding: 1em;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 10px;
+    width: 30;
+    text-align: center;
+    font-size: 2em;
+}
+div.aloitus button {
+    padding: 3em;
+    background-color: rgb(230, 175, 74);
+}
+
 div.laatikko {
     display: flex;
     align-items: center;
@@ -76,6 +86,7 @@ div.matematiikka {
     border-radius: 5px;
     text-align: center;
     padding-top: 2%;
+    display: none;
     
 }
 
@@ -148,6 +159,7 @@ div.griddy {
     margin: auto;
     padding-top: 1em;
     background-color: #e8e5dd;
+    display: none;
 }
 
 div.griddy > div {

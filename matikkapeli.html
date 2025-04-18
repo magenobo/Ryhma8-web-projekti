@@ -59,26 +59,27 @@
 
     <p class="ohjeet keskitys">HUPS! Kaikki mittayksiköt ovat menneet sekaisin resepteissämme. Auta meitä korjaamaan ne.</h1>
     <p class="keskitys">(mittayksiköille löydät apua pelin alapuolelta)</p>
+    
+    <div class="aloitus">
+        <button id="aloitus">ALOITA</button>
+    </div>
 
     <div class="laatikko">  
+        
         <div class="matematiikka">
             <div class="kuvatahan">
                 <img src="./img/pasta.jpg" alt="Pasta">
             </div>
             <div class="tunnista-maa">
-                <p class="bold">Mihin maahan kyseinen ruoka yhdistetään?</p>
-                <form>
-                    <input type="text" id="tunnistus" name="tunnistus">
-                    <input type="submit" value="Submit" id="tunnistusNappi">
-                </form>
-                
+                <p class="bold" id="mikamikamaa"></p>
+                <p class="loredump"></p>
             </div>
             <div class="muunnos">
                 <p class="bold">Resepti tarvitsee:</p>
                 <p id="muunnosKysymys"></p>
                 <form>
                     <input type="text" id="muunnos" name="muunnos">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="muunnosSubmit">
                 </form> 
             </div>
             <button id="seuraavaKysymys" disabled style="background-color: #ccc;">Seuraava kysymys</button>
@@ -86,16 +87,16 @@
     </div>
     <div class="keskitys">  
         <div class="griddy">
-            <div class="yksi"><img></div>
-            <div class="kaksi"><img></div>
-            <div class="kolme"><img></div>
-            <div class="nelja"><img></div>
-            <div class="viisi"><img></div>
-            <div class="kuusi"><img></div>
-            <div class="seitsaman"><img></div>
-            <div class="kahdeksan"><img></div>
-            <div class="yhdeksan"><img></div>
-            <div class="kymmenen"><img></div>
+            <div class="yksi"><img src=""></div>
+            <div class="kaksi"><img  src=""></div>
+            <div class="kolme"><img  src=""></div>
+            <div class="nelja"><img  src=""></div>
+            <div class="viisi"><img  src=""></div>
+            <div class="kuusi"><img  src=""></div>
+            <div class="seitsaman"><img  src=""></div>
+            <div class="kahdeksan"><img  src=""></div>
+            <div class="yhdeksan"><img  src=""></div>
+            <div class="kymmenen"><img  src=""></div>
         </div>
         <p class="pisteet"></p>
     </div>
