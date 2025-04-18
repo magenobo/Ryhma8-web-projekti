@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/matikkaPeli.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./js/matikkapeli.js" defer></script>
-    <title>Ryhmä8 webprojekti</title>
+    <title>Mittasoppa</title>
 </head>
 <body>
 
@@ -34,19 +34,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./matikkapeli.html">Matikkapeli</a>
+                        <a class="nav-link" href="./matikkapeli.html">Mittasoppa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./karttapeli.html">Karttapeli</a>
+                        <a class="nav-link" href="./karttapeli.html">Karttakaija</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./lippupeli.html">Lippupeli</a>
+                        <a class="nav-link" href="./lippupeli.html">Lippuhulina</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./tarinapeli.html">Tarinapeli</a>
+                        <a class="nav-link" href="./tarinapeli.html">Satuhetki</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./visa.html">Kielipeli</a>
+                        <a class="nav-link" href="./visa.html">Kielikoulu</a>
                     </li>
                 </ul>
             </div>
@@ -55,7 +55,7 @@
         
     </header>
 
-    <h1>Matikkapeli</h1>
+    <h1>Mittasoppa</h1>
 
     <p class="ohjeet keskitys">HUPS! Kaikki mittayksiköt ovat menneet sekaisin resepteissämme. Auta meitä korjaamaan ne.</h1>
     <p class="keskitys">(mittayksiköille löydät apua pelin alapuolelta)</p>
@@ -66,15 +66,15 @@
 
     <div class="laatikko">  
         
-        <div class="matematiikka">
+        <div class="matematiikka" id="matematiikka">
             <div class="kuvatahan">
                 <img src="./img/pasta.jpg" alt="Pasta">
             </div>
-            <div class="tunnista-maa">
+            <div class="tunnista-maa" id="tunnistaMaa">
                 <p class="bold" id="mikamikamaa"></p>
                 <p class="loredump"></p>
             </div>
-            <div class="muunnos">
+            <div class="muunnos" id="muunnistaMaa">
                 <p class="bold">Resepti tarvitsee:</p>
                 <p id="muunnosKysymys"></p>
                 <form>
@@ -83,10 +83,14 @@
                 </form> 
             </div>
             <button id="seuraavaKysymys" disabled style="background-color: #ccc;">Seuraava kysymys</button>
+            <div class="voititPelin" id="voititPelin" style="display:none">
+                <p class="lopputulos" id="lopputulos"></p>
+                <button id="lopetus">Aloita alusta</button>
+            </div>
         </div>
     </div>
     <div class="keskitys">  
-        <div class="griddy">
+        <div class="griddy" id="griddy">
             <div class="yksi"><img src=""></div>
             <div class="kaksi"><img  src=""></div>
             <div class="kolme"><img  src=""></div>
@@ -98,7 +102,6 @@
             <div class="yhdeksan"><img  src=""></div>
             <div class="kymmenen"><img  src=""></div>
         </div>
-        <p class="pisteet"></p>
     </div>
 
     <div class="muunnos-laatikko">

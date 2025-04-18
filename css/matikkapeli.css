@@ -60,17 +60,16 @@ p.bold {
 
 div.aloitus {
     padding: 1em;
-    margin-left: 35%;
-    margin-right: 35%;
-    border-radius: 10px;
-    width: 30;
+    margin-left: auto;
     text-align: center;
     font-size: 2em;
 }
 div.aloitus button {
     padding: 3em;
     background-color: rgb(230, 175, 74);
+    border-radius: 1em;
 }
+
 
 div.laatikko {
     display: flex;
