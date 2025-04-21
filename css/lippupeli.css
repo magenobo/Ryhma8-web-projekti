@@ -102,10 +102,11 @@ footer {
 
 #laatikko {
     display: grid;
-    grid-template-columns: repeat(4, 80px);
-    gap: 14%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2%;
     justify-content: center;
     margin-bottom: 16%;
+    padding: 2%;
 }
 
 
@@ -128,7 +129,7 @@ footer {
     text-align: center;
     padding: 20px;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     backface-visibility: hidden;
@@ -146,9 +147,9 @@ footer {
 }
 
 .kortti img {
-    width: 68%;
-    height: 100%;
-    object-fit: cover;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .kortti.active {
@@ -168,6 +169,15 @@ footer {
         max-width: 40%;
         max-height: 40%;
         
+    }
+
+    .kortti {
+        width: 140px;
+        height: 140px;
+        position: relative;
+        transition: transform 1s;
+        cursor: pointer;
+        transform-style: preserve-3d;
     }
 }
 
@@ -203,6 +213,15 @@ footer {
         
     }
 
+    .kortti {
+        width: 170px;
+        height: 170px;
+        position: relative;
+        transition: transform 1s;
+        cursor: pointer;
+        transform-style: preserve-3d;
+    }
+
 }
 
 /*tosi isot näytöt 1199->*/
@@ -229,4 +248,14 @@ footer {
         max-height: 200%;
         
     }
+
+    .kortti {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transition: transform 1s;
+        cursor: pointer;
+        transform-style: preserve-3d;
+    }
+
 }
