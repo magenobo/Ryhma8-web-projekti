@@ -290,6 +290,8 @@ function showStory() {
                     gameResults[index].tulos = pointCount;
                     sessionStorage.setItem("pelit", JSON.stringify(gameResults));
                     break
+                } else {
+                    break
             }
         }
     }   
