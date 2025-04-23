@@ -91,11 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
             firstCard.classList.add('matched') 
             secondCard.classList.add('matched')
             matches++;
-                
+
+            let pisteytys = document.querySelector("#pisteytys");
+            pisteytys.textContent = ("PISTEET " + matches + "/6")
+
             if (matches === totalPairs) {
                 setTimeout(() => {
                     alert("Hyvin pelattu! Löysit kaikki parit");
                 }, 500);
+
                 for (let index = 0; index < 5; index++) {
                     if (peliData[index] === undefined) {
                         peliData.push({peli: "lippupeli", tulos: matches});

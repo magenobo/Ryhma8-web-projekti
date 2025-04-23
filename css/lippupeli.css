@@ -6,7 +6,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #E0E0E0;
 }
 
 #logo {
@@ -36,7 +35,7 @@ nav {
     text-align: center;
 }
 
-h1 { /* otsikko "tarinapeli" */
+h1 { 
     width: 80vw;
     margin: 1.5rem auto;
     padding: 1.5rem;
@@ -50,6 +49,7 @@ h1 { /* otsikko "tarinapeli" */
 }
 #etusivu {
     text-align: center;
+    background-color: #e8e5dd;
 }
 
 h2.nappi {
@@ -62,37 +62,38 @@ h2.nappi {
     border-radius: 20vw;
 }
 
-#etusivu p {
-    background-color: #e0e0e0;
+#etusivu p.ohjeet {
     text-align: center;
-    padding: 6%;
+    padding: 1em;
     width: 70vw;
     margin: 30px auto;
     font-size: medium;
 }
 
+etusivu p{
+    background-color: #e8e5dd;
+}
+
 #aloita_alusta {
     padding: 2%;
     margin: 4%;
-    
 }
 
 
 footer {
     border-top: 1px solid #9b8372;
-
+    background-color: #e0e0e0;
 }
 
 
 .row {
     padding: 3vh 0;
-
 }
 
 #etusivu img {
     max-width: 70%;
     max-height: 70%;
-    
+    margin: 2%;
 }
 
 #peli_itse img {
@@ -286,4 +287,14 @@ footer {
         padding: 2%;
     }
 
+    h2.nappi {
+        background-color: #e0e0e0;
+        text-align: center;
+        padding: 4%;
+        width: 40vw;
+        margin: 30px auto;
+        border: 3px solid black;
+        border-radius: 20vw;
+    }
+    
 }
