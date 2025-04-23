@@ -76,7 +76,12 @@ etusivu p{
 
 #aloita_alusta {
     padding: 2%;
-    margin: 4%;
+}
+
+#uudestaan {
+    margin-bottom: 5%;
+    justify-content: center;
+    display: flex;
 }
 
 
@@ -106,7 +111,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 2%;
     justify-content: center;
-    margin-bottom: 16%;
+    margin-bottom: 2%;
     padding: 2%;
 }
 
@@ -119,6 +124,7 @@ footer {
     transition: transform 1s;
     cursor: pointer;
     transform-style: preserve-3d;
+    margin: auto;
 }
 
 .etu {
@@ -186,7 +192,6 @@ footer {
         grid-template-columns: repeat(4, 1fr);
         gap: 2%;
         justify-content: center;
-        margin-bottom: 16%;
         padding: 2%;
     }
     
@@ -238,7 +243,6 @@ footer {
         grid-template-columns: repeat(4, 1fr);
         gap: 2%;
         justify-content: center;
-        margin-bottom: 16%;
         padding: 2%;
     }
 
@@ -283,7 +287,6 @@ footer {
         grid-template-columns: repeat(4, 1fr);
         gap: 2%;
         justify-content: center;
-        margin-bottom: 16%;
         padding: 2%;
     }
 
@@ -296,5 +299,5 @@ footer {
         border: 3px solid black;
         border-radius: 20vw;
     }
-    
+
 }
