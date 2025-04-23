@@ -102,7 +102,7 @@ footer {
 
 #laatikko {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2%;
     justify-content: center;
     margin-bottom: 16%;
@@ -179,6 +179,16 @@ footer {
         cursor: pointer;
         transform-style: preserve-3d;
     }
+
+    #laatikko {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2%;
+        justify-content: center;
+        margin-bottom: 16%;
+        padding: 2%;
+    }
+    
 }
 
 /*isot näytöt, kannettavat tietokoneet 992-1199*/
@@ -222,6 +232,15 @@ footer {
         transform-style: preserve-3d;
     }
 
+    #laatikko {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2%;
+        justify-content: center;
+        margin-bottom: 16%;
+        padding: 2%;
+    }
+
 }
 
 /*tosi isot näytöt 1199->*/
@@ -256,6 +275,15 @@ footer {
         transition: transform 1s;
         cursor: pointer;
         transform-style: preserve-3d;
+    }
+
+    #laatikko {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2%;
+        justify-content: center;
+        margin-bottom: 16%;
+        padding: 2%;
     }
 
 }

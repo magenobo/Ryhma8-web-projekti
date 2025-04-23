@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let matches = 0
     let lockBoard = false
     const totalPairs = 6
-    
+    let peliData = JSON.parse(sessionStorage.getItem("pelit")) || []
 
     peli_itse_div.style.display = "none"
 
@@ -114,4 +114,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    for (let index = 0; index < 5; index++) {
+        if (peliData[index] === undefined) {
+            peliData.push({peli: "lippupeli", tulos: matches});
+            sessionStorage.setItem("pelit", JSON.stringify(peliData));
+            break
+        } else {
+            if (peliData[index].peli == "lippupeli")
+                if (matches>= peliData[index].tulos) {
+                    peliData[index].tulos = matches;
+                    sessionStorage.setItem("pelit", JSON.stringify(peliData));
+                    break
+            } else {
+                alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                break
+
+            }
+        }
+    }
+    
+
 });
+
