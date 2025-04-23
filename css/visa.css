@@ -36,8 +36,6 @@ nav {
     text-align: center;
 }
 
-
-
 #kielivisa{
     background-color: #e8e5dd;
 }
@@ -55,18 +53,14 @@ h1 { /* otsikko "tarinapeli" */
 }
 
 #esittely{
-font-size: 1.2rem;
-text-align: center;
-width: 100%;
-margin: 0 auto 2rem auto;
-line-height: 1.5;
-background-color: #faf8f5;
-padding: 20px; 
-border:solid #000 2px;
-
-
-
-    
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    line-height: 1.5;
+    background-color: #faf8f5;
+    padding: 20px; 
+    border:solid #000 2px;
 }
 
 #startscreen {
@@ -77,11 +71,8 @@ border:solid #000 2px;
     padding-right: 20px;
     text-align: center;
     margin-bottom: 6em;
-   margin-left: 1.2em;
-   margin-right: 1.2em;
-
-  
-
+    margin-left: 1.2em;
+    margin-right: 1.2em;
 }
 
 #start-btn{
@@ -93,17 +84,12 @@ border:solid #000 2px;
     cursor: pointer;
     transition: 0.3s;
     background-color: #faf8f5 ;
-   
-
 }
 
 #start-btn:hover{
-
-  background-color:#8d7d6f ;
+    background-color:#8d7d6f ;
     color: #fff;
 }
-
-
 
 #kysymyslaatikko{
     background-color: #bda492;
@@ -113,18 +99,13 @@ border:solid #000 2px;
     max-width: 100%;
     align-items: center;
     margin-bottom: 40px;
-   
-    
-    
 }
 
 #visa{
     background-color: #c6bbb2;
     border-radius: 10px; 
     width: 100%;
-    display: none;
-   
-    
+    display: none;   
 }
 
 #visa-container{
@@ -132,10 +113,7 @@ border:solid #000 2px;
     font-size: 18px;
     font-weight: 600;
     justify-content: flex-end;
-    background-color:  #c6bbb2;
- 
-    
-    
+    background-color:  #c6bbb2;   
 }
 
  #kysymys{
@@ -145,16 +123,12 @@ border:solid #000 2px;
     border-radius: 10px; 
     text-align: center;
     margin-bottom: 0; /*check*/
- 
-    
-
 }
 
 #vastausnapit{
     padding: 20px;
     background-color: #c6bbb2;
 }
-
 
 .btn, .btntwo{
     background: #fff;
@@ -168,7 +142,6 @@ border:solid #000 2px;
     transition: 0.3s;
     text-align: center;
     border: 3px solid #000;
- 
 }  
 
 .btn:hover:not([disabled]), .btntwo:hover:not([disabled]){
@@ -199,19 +172,12 @@ border:solid #000 2px;
     transition: 0.3s;
     cursor: pointer;
     margin-left: 65%;
- 
-    
- 
-    
-   
-
 }
 
 #next-btn:hover{
-  background-color:#8d7d6f ;
+    background-color:#8d7d6f ;
     color: #fff;
 }
-    
      
 #pistelasku{
     border-radius: 4px;
@@ -219,22 +185,14 @@ border:solid #000 2px;
     color: #000;
     font-family: 'Times New Roman', Times, serif;
     background-color: #c6bbb2;
-
-   
-    
 }
 
 #pisteenlasku-container{
     background-color: #c6bbb2;
-    
-   
 }
-
-
 
 .correct{
     background-color: rgb(8, 194, 8) ;
-   
 }
 
 .incorrect{
@@ -248,8 +206,6 @@ border:solid #000 2px;
     text-align: center;
 }
 
-
-
 #endscreen {
     display: none; /* Piilottaa loppunäytön aluksi */
     border-radius: 10px;
@@ -257,7 +213,6 @@ border:solid #000 2px;
     align-items: center;
     height: 10vh;
     background-color: #c6bbb2;
-
 }
 
 #restart-btn{
@@ -272,27 +227,23 @@ border:solid #000 2px;
     transform: translate(-50%, -50%);
     cursor: pointer;
     max-width: 100%;
- 
-   
 }
 
 #restart-btn:hover{
     background-color:#8d7d6f ;
-      color: #fff;
+    color: #fff;
   }
 
 footer {
     border-top: 1px solid #9b8372;
-
 }
 
 .row {
     padding: 3vh 0;
-
 }
 
 
-/*hyvin pienet näytöt ovat normaalia koodia/
+/* sivun responsiivisuus */
 /*isommat puhelimet sekä tabletit 641-994*/
 @media screen and (min-width: 641px) {
 
@@ -300,78 +251,72 @@ footer {
         font-size: 1.4em;
     }
 
-#kysymyslaatikko{
-    max-width:60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    align-items: center;
-    
-}
+    #kysymyslaatikko{
+        max-width:60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        align-items: center;
+    }
 
-h1{
-    width: 80vw; /*muutettu 80vw*/
-}
-#pistelasku{
-margin-bottom: 20px;
-font-size: 20px;
-font-family:'Times New Roman', Times, serif
-}
+    h1{
+        width: 80vw; /*muutettu 80vw*/
+    }
 
-.btn, .btntwo{
-    padding: 15px;
-}
+    #pistelasku{
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-family:'Times New Roman', Times, serif
+    }
 
-#next-btn{
-    margin-left: 80%;
-}
+    .btn, .btntwo{
+        padding: 15px;
+    }
 
-#restart-btn{
-    text-align: center;
-    position: absolute;      
-     /*muutettu top 50% ja position fixed*/
-     margin-top: 30px;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    max-width: 100%;
-   
-}
+    #next-btn{
+        margin-left: 80%;
+    }
 
-#endscreen{
-    height: 10vh;
-}
+    #restart-btn{
+        text-align: center;
+        position: absolute;      
+        /*muutettu top 50% ja position fixed*/
+        margin-top: 30px;
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        max-width: 100%;
+    }
 
- #visa-container{
-       
+    #endscreen{
+        height: 10vh;
+    }
+
+    #visa-container{
         font-size: 18px;
         font-weight: 100;
-       
-   
-    }
-    
-     #kysymys{
+        }
+        
+    #kysymys{
         padding: 10px 0;
         margin-bottom: 10px ;
-       
- 
-}
-#vastausnapit{
-    padding: 10px;
-    
+    }
+
+    #vastausnapit{
+        padding: 10px;   
+    }
+
+    #kysymys{
+        max-width: 80%;
+        margin-left: 10%;
+    }
+
+    #startscreen{
+        max-width:80%;
+        margin-left: 10%;
+        margin-bottom: 100px;
+    }
 }
 
-#kysymys{
-    max-width: 80%;
-    margin-left: 10%;
-}
-
-#startscreen{
-    max-width:80%;
-    margin-left: 10%;
-    margin-bottom: 100px;
-
-}
-}
 
 /*isot näytöt, kannettavat tietokoneet min-width: 995-1199px*/
 @media screen and (min-width: 992px) {
@@ -395,7 +340,6 @@ font-family:'Times New Roman', Times, serif
         padding: 1rem;
     }
 
-
     #kysymyslaatikko{
         max-width: 80%;
         margin-left: 20%;
@@ -403,8 +347,8 @@ font-family:'Times New Roman', Times, serif
     }
 
     #esittely{
-    max-width: 80%;
-}
+        max-width: 80%;
+    }
 
     #restart-btn{
         margin-top: 1.5em;
@@ -417,7 +361,6 @@ font-family:'Times New Roman', Times, serif
         max-width: 100%;
     }
 
-
     #kysymys{
         max-width: 80%;
         margin-left: 10%;
@@ -426,7 +369,6 @@ font-family:'Times New Roman', Times, serif
     #startscreen{
         max-width: 80%;
         margin-left: 10%;
-
     }
 
     #startscreen{
@@ -436,8 +378,8 @@ font-family:'Times New Roman', Times, serif
     .row {
         padding: 6vh 0;
     }
-
 }
+
 
 /*tosi isot näytöt 1199->*/
 @media screen and (min-width: 1200px) {
@@ -460,7 +402,6 @@ font-family:'Times New Roman', Times, serif
 
     #esittely{
         max-width: 70%;
-       
     }
 
     #restart-btn{
@@ -474,8 +415,6 @@ font-family:'Times New Roman', Times, serif
         max-width: 100%;
     }
 
-   
-
     #startscreen{
         padding: 50px;
     }
@@ -483,9 +422,4 @@ font-family:'Times New Roman', Times, serif
     .row {
         padding: 3vh;
     }
-
 }
-
-
-
-

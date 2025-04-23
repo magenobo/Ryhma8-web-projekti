@@ -9,10 +9,12 @@ body {
     background-color: #e8e5dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 #logo {
     max-height: 10vh;
     margin-left: 2vh;
 }
+
 nav {
     border-bottom: 1px solid #9b8372;
 }
@@ -168,8 +170,11 @@ footer {
     padding: 3vh 0;
 }
 
+
+
 /* sivun responsiivisuus */
 @media screen and (min-width: 640px) { /* puhelin vaaka-asennossa, pieni tabletti pysty- ja vaaka-asennossa */
+    
     .navbar-nav {
         font-size: 1.4em;
     }
@@ -184,7 +189,9 @@ footer {
 
 }
 
+
 @media screen and (min-width: 992px) { /* läppärit ja pienet pöytäkoneet */
+    
     #navbarNav {
         border-top: 0;
         justify-content: right;
@@ -258,8 +265,8 @@ footer {
     }
 }
 
+
 @media screen and (min-width: 1200px) { /* suuret näytöt */
-    
     
     .parrot-img {
         width: 125px;

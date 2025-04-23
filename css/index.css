@@ -37,7 +37,7 @@ nav {
     margin-left: 2vh;
 }
 
-h1 { /* otsikko "tarinapeli" */
+h1 {
     width: 80vw;
     margin: 1.5rem auto;
     padding: 1.5rem;
@@ -87,17 +87,16 @@ span {
 
 footer {
     border-top: 1px solid #9b8372;
-
 }
-
 
 .row {
     padding: 3vh 0;
-
 }
 
-/*hyvin pienet näytöt ovat normaalia koodia/
-/*isommat puhelimet sekä tabletit 641-994*/
+
+
+/* sivun responsiivisuus */
+/* isommat puhelimet sekä tabletit */
 @media screen and (min-width: 641px) {
 
     .navbar-nav {
@@ -109,14 +108,15 @@ footer {
         height: 300px;
         overflow: hidden;
         object-fit: cover;
-}
+    }
 
     #etusivu p{
         margin: 20px;
     }
 }
 
-/*isot näytöt, kannettavat tietokoneet 995-13199*/
+
+/*isot näytöt, kannettavat tietokoneet*/
 @media screen and (min-width: 992px) {
 
     #navbarNav {
@@ -153,18 +153,18 @@ footer {
     }
     
     #etusivu h1{
-    padding-left: 30px;
-    padding-right: 30px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 300px;
-    left: 50%;
-    text-align: center;
-    word-spacing: 5px;
-    color: rgb(0, 0, 0);
-    font-size: 3rem;
-    background-color:white ;
-    z-index: 1;
+        padding-left: 30px;
+        padding-right: 30px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 300px;
+        left: 50%;
+        text-align: center;
+        word-spacing: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 3rem;
+        background-color:white ;
+        z-index: 1;
     }
 
     .row {
@@ -172,7 +172,8 @@ footer {
     }
 }
 
-/*tosi isot näytöt 1199->*/
+
+/*tosi isot näytöt*/
 @media screen and (min-width: 1200px) {
 
     #info-teksti {
@@ -189,18 +190,18 @@ footer {
     }
     
     #etusivu h1{
-    padding-left: 30px;
-    padding-right: 30px;
-    position: absolute;
-    top: 300px; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    word-spacing: 5px;
-    color: rgb(0, 0, 0);
-    font-size: 3rem;
-    background-color:white ;
-    z-index: 1;
+        padding-left: 30px;
+        padding-right: 30px;
+        position: absolute;
+        top: 300px; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        word-spacing: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 3rem;
+        background-color:white ;
+        z-index: 1;
     }
 
     #navbarNav {
@@ -216,8 +217,6 @@ footer {
     .row {
         padding: 3vh;
     }
-
-
 }
 
 
