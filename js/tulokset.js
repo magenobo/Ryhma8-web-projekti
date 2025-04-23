@@ -25,7 +25,7 @@ function showRecords() {
         // tarinan nimen mukaan tarkistetaan, onko käyttäjä saanut kyseisestä pelistä täydet pisteet
         // papukaijamerkkien määrään lisätään yksi, jos täydet pisteet on saanut
 
-        if (gameResults[i].peli == "tarinapeli" || gameResults[i].peli == "lippupeli" || gameResults[i].peli == "matikkapeli") {
+        if (gameResults[i].peli == "tarinapeli" || gameResults[i].peli == "matikkapeli") {
             if (gameResults[i].tulos == 10) {
                 bagdecount++
             }
@@ -37,11 +37,15 @@ function showRecords() {
             if (gameResults[i].tulos == 32) {
                 bagdecount++
             }
+        } else if (gameResults[i].peli == "lippupeli") {
+            if (gameResults[i].tulos == 6) {
+                bagdecount++
+            }
         }
     }
 
     // tuodaan sivulle näytille yhteispisteiden ja papukaijamerkkien määrät
-    document.querySelector("#all-results").textContent = "Yhteispisteet " + points + " / 70"
+    document.querySelector("#all-results").textContent = "Yhteispisteet " + points + " / 66"
     document.querySelector("#all-parrots").textContent = "Ansaitut papukaijamerkit " + bagdecount + " / 5"
 
     // silmukan avulla tuodaan sivulle näkyviin niin monta papukaijamerkkiä kuin monestako pelistä käyttäjä on saanut täydet pisteet
@@ -61,7 +65,7 @@ function showRecords() {
         } else if (gameResults[i].peli == "karttapeli") {
             mapResult.textContent = gameResults[i].tulos + " / 32"
         } else if (gameResults[i].peli == "lippupeli") {
-            flagResult.textContent = gameResults[i].tulos + " / 10"
+            flagResult.textContent = gameResults[i].tulos + " / 6"
         } else if (gameResults[i].peli == "tarinapeli") {
             storyResult.textContent = gameResults[i].tulos + " / 10"
         }
