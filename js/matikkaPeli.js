@@ -49,27 +49,27 @@ const ruoat = [
         kysymys:"Montako suvlakia on olemassa?",
         oikeaMuunnos:"kymmenentuhattaloputonta",
     },
-    /* {
-        kuva:,
-        maa:,
-        lore:,
-        kysymys:,
-        oikeaMuunnos:,
+    {
+        kuva:"./img/suvlaki.jpg",
+        maa:"kypros",
+        lore:"JIIRO",
+        kysymys:"Montako suvlakia on olemassa?",
+        oikeaMuunnos:"kymmenentuhattaloputonta",
     },
     {
-        kuva:,
-        maa:,
-        lore:,
-        kysymys:,
-        oikeaMuunnos:,
+        kuva:"./img/suvlaki.jpg",
+        maa:"kypros",
+        lore:"JIIRO",
+        kysymys:"Montako suvlakia on olemassa?",
+        oikeaMuunnos:"kymmenentuhattaloputonta",
     },
     {
-        kuva:,
-        maa:,
-        lore:,
-        kysymys:,
-        oikeaMuunnos:,
-    } */
+        kuva:"./img/suvlaki.jpg",
+        maa:"kypros",
+        lore:"JIIRO",
+        kysymys:"Montako suvlakia on olemassa?",
+        oikeaMuunnos:"kymmenentuhattaloputonta",
+    }
 ];
 
 // Globaali muuttujat
@@ -93,6 +93,7 @@ const muunnosKysymys = document.getElementById("muunnosKysymys");
 const seuraavaKysymysNappi = document.getElementById("seuraavaKysymys");
 const voititPelin = document.getElementById("voititPelin");
 const lopputulos = document.getElementById("lopputulos");
+const ennatys = document.getElementById("ennatys")
 const aloitaAlusta = document.getElementById("lopetus");
 const griddyLaatikot = document.querySelectorAll(".griddy > div");
 const oikeinvaarin = document.getElementById("griddy");
@@ -115,6 +116,7 @@ function paivitaPeli() {
 //aloitusnappi
 alota.addEventListener("click", function (e){
     e.preventDefault();
+    paivitaPeli()
     alota.style.display = "none";
     peli.style.display = "initial";
     oikeinvaarin.style.display = "grid";
@@ -122,16 +124,26 @@ alota.addEventListener("click", function (e){
     tunnistaMaa.style.display = "";
     muunnosLaatikko.style.display = "";
     seuraavaKysymysNappi.style.display = "initial";
+    aloitaAlusta.style.display = "none";
+    lopputulos.textContent = "";
+    ennatys.textContent = "";
 });
 
 //aloitaalusta
 aloitaAlusta.addEventListener("click", function (e){
     e.preventDefault();
-    oikeinvaarin.style.display = "none";
+    
     alota.style.display = "initial";
     peli.style.display = "none";
     nykyinenIndeksi = 0;
     pisteet = 0;
+    for (let index = 0; index < 10; index++) {
+        const element = index;
+        griddyLaatikot[element].style.backgroundColor = "";
+        griddyLaatikot[element].style.backgroundColor = "white";
+        griddyLaatikot[element].querySelector("img").setAttribute("src", "");
+    }
+    oikeinvaarin.style.display = "none";
 });
 
 //toivottavasti korjattu muunnoskysymys
@@ -140,7 +152,7 @@ muunnosInput.addEventListener("click", function (e){
     const vastaus = muunnosLomake.value.trim();
     const oikeaVastaus = ruoat[nykyinenIndeksi].oikeaMuunnos;
 
-    if(oikeaVastaus.includes(vastaus)){
+    if(vastaus !== "" && oikeaVastaus.includes(vastaus)){
         pisteet++;
         muunnosLomake.style.backgroundColor = "#bdffbf";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "green";
@@ -172,7 +184,11 @@ seuraavaKysymysNappi.addEventListener("click", function () {
             muunnosLaatikko.style.display = "none";
             seuraavaKysymysNappi.style.display = "none";
             voititPelin.style.display = "initial"
+            aloitaAlusta.style.display = "initial"
             lopputulos.textContent = "Peli loppui! Pisteesi: " + pisteet + "/10";
+            if (pisteet == "10"){
+                ennatys.textContent = "Ansaitsit papukaijamerkin!";
+            }
         
 
             for (let index = 0; index < 5; index++) {
@@ -187,7 +203,7 @@ seuraavaKysymysNappi.addEventListener("click", function () {
                             sessionStorage.setItem("pelit", JSON.stringify(peliData));
                             break
                         } else {
-                            alert("ENNÄTYKSESI ON JO SUUREMPI!")
+                            ennatys.textContent = "Ennatyksesi oli jo suurempi! Parempi onni ensi kerralla!";
                             break
 
                     }

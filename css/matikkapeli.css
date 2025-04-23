@@ -64,6 +64,7 @@ div.aloitus {
     text-align: center;
     font-size: 2em;
 }
+
 div.aloitus button {
     padding: 3em;
     background-color: rgb(230, 175, 74);
@@ -143,6 +144,12 @@ div.muunnos {
     margin-bottom: 2em;
 }
 
+#voititPelin button {
+    padding: 3em;
+    background-color: rgb(230, 175, 74);
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
 
 p.pisteet {
     text-align: center;
@@ -157,6 +164,7 @@ div.griddy {
     width: 75%;
     margin: auto;
     padding-top: 1em;
+    padding-bottom: 1em;
     background-color: #e8e5dd;
     display: none;
 }
@@ -338,7 +346,7 @@ footer {
     div.matematiikka {
         background-color: rgb(255, 194, 82);
         width: 90vw;
-        height: 60vw;
+        height: auto;
         border-radius: 5px;
         text-align: center;
         padding-top: 2%;
