@@ -1,28 +1,77 @@
+# Pelisivusto
 
-Projektimme on suunnattu nuorille laajentamaan heidän oppimistaan maailmasta mukavilla peleillä. Pelit ovat monentasoisia,
-mutta vaikka ei osaa, antavat pelit oikeat vastaukset, joten niistä pystyy silti oppimaan. Sivustolta löytyy viisi erilaista 
-peliä ja se tallentaa parhaat suoritukset, joita pystyy tarkastelemaan tulokset sivulta. Kannustamme käyttäjiä kokeilemaan 
-uudestaan ja saamaan täydet pisteet, sillä täydellisille suorituksille on tarjolla papukaijamerkit.
+Sivustomme **Papukaija kartalla** on luotu osana Web-projekti-opintojaksoa keväällä 2025. Se on suunniteltu testaamaan ja laajentamaan nuorten tietoutta maista ja maiden kulttuureista mukavilla peleillä.
 
+---
 
-Sivustomme on valmis, mutta olemme valmiita ottamaan vastaan palautetta ja kriitikkiä, ja sen myötä parantelemaan sivuston
-toimivuutta ja käyttäjäkokemusta. 
+## Käyttöönotto
 
+Sivuston käyttöönottoon on kaksi vaihtoehtoa.
 
-INSERT JULKAISU LINKKI Tässä on linkki sivustollemme ja tarvittaessa myös linkki [GitHubiin](https://github.com/magenobo/Ryhma8-web-projekti), josta saa lähdekoodin cloonaamalla repositorion ja avaamalla sen esimerkiksi Visual Studio Codella.
+### 1. vaihtoehto: internetiin julkaistu sivusto
 
+Siirry students-palvelimelle julkaistuun projektikansioon alla olevasta linkistä ja avaa index.html tiedosto.
 
-Johannes Manninen
-Magenobo
+> LINKKI TÄHÄN
 
-Mici Strandman
-TheStrandman04
+### 2. vaihtoehto: kloonaaminen omalle koneelle
 
-Johanna Ranki
-johannaranki
+Tässä vaihtoehdossa tarvitset tietokoneellesi jonkinlaisen kehitysympäristön, kuten Visual Studio Coden. Avaa valitsemassasi ympäristössä haluamasi kansio ja anna terminaalissa alla oleva käsky.
 
-Noomi Ylä-Ilomäki
-nuum1
+```
+git clone https://github.com/magenobo/Ryhma8-web-projekti
+```
+Projekti kloonautuu valitsemaasi kansioon ja voit nyt avata index.html tiedoston verkkoon esimerkiksi live serverillä.
 
-Nella Mustonen
-nellamustonen
+---
+
+## Sivuston rakenne
+### Etusivu
+Index.html tiedosto aukeaa etusivulle, jossa on lyhyt kuvaus sivuston toiminnasta ja josta pääsee helposti navigointipalkin kautta siirtymään muille sivuille.
+
+### Infosivu
+Infosivulta löytyy kuva jokaisesta sivuston tekijästä sekä lyhyt kuvaus henkilön osuudesta projektissa.
+
+### Tulossivu
+Pelien parhaimmat pistemäärät tallennetaan sivuston sessionStorageen, josta ne tuodaan näkyville tulossivulle sekä yksittäisten pelien tuloksina että kaikista peleistä saatuina yhteispisteinä. Jokaisesta pelistä on mahdollista saada täysillä pisteillä papukaijamerkit, joiden määrä ja kuvat tulevat myös näkyviin tulossivulle.
+
+### Pelit
+Sivustolla on viisi erilaista peliä, joiden vaikeustasot vaihtelevat Satuhetken helpoista tehtävistä aina Karttakaijan ja Mittasopan haastavampiin tehtäviin. Vaikka kaikkia vastauksia ei saisikaan oikein, pelit kertovat oikeat vastaukset, minkä takia uuden oppiminen on todennäköistä. Pelejä voi kokeilla niin monta kertaa kuin haluaa eli saatuja pistemääriä on mahdollista parantaa.
+
+#### Mittasoppa
+Mittasopassa testataan pelaajan laskutaitoja reseptien mittayksiköiden muunnoksissa. Mukana olevat ruoat ovat joko eri maiden suosittuja ruokalaleja tai niiden kansallisruokia.
+
+#### Karttakaija
+Karttakaija on maiden tunnistukseen liittyvä peli, jossa pelaajan tulee tunnistaa maa sijainnin ja valtion muodon mukaan. Tarvittaessa pelaajalle on tarjolla kolme vinkkiä, jotka auttavat tunnistamisessa.
+
+#### Lippuhulina
+Lippuhulina on perinteinen muistipeli, jossa pelaajan on tarkoitus löytää maan nimi ja oikea lippu.
+
+#### Satuhetki
+Satuhetkessä pelaaja pääsee muodostamaan hauskan tarinan iloisesta matkaajasta valitsemillaan sanoilla.
+
+#### Kielikoulu
+Kielikoulu testaa pelaajan tietämystä eri maiden tervehdyksistä, kun tehtävänä on tunnistaa, millä kielellä tervehdys on kirjoitettu.
+
+---
+
+## Tekijät
+
+|        Nimi         |  GitHub käyttäjätunnus  |
+| ------------------- | ----------------------- |
+|  Johannes Manninen  |        Magenobo         |
+|   Mici Strandman    |     TheStrandman04      |
+|    Johanna Ranki    |      johannaranki       |
+|  Noomi Ylä-Ilomäki  |         nuum1           |
+|   Nella Mustonen    |      nellamustonen      |
+
+---
+
+## Käytetyt teknologiat
+
+- HTML5
+- CSS3
+- Javascript
+- Bootstrap
+- SessionStorage
+
