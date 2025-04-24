@@ -1,13 +1,18 @@
+#infotext { /*infoteksti sivusta*/
+    color: #E0E0E0;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    text-align: center;
+    background-color: #856955;
+}
+
 .tumma-taustavari {
     background-color: #e0e0e0;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #E0E0E0;
-}
 #logo {
     max-height: 10vh;
     margin-left: 2vh;
@@ -48,76 +53,71 @@ h1 { /* otsikko "tarinapeli" */
     border-radius: 2px;
 }
 
-.infoa { /*infoteksti sivusta*/
-    align-items: center;
-    text-align: center;
-    background-color: #f5f5f5;
-    border: 2px solid rgb(231, 150, 107);
-    margin: 30px auto;
-    max-width: fit-content;
-
-}
-
-.infoa p {
-    background-color: #f5f5f5;
-}
-
 .koko_profiili { /*kaikki profiilit*/
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3%;
     margin: 5%;
-    background-color: #e8e5dd;
+    grid-gap: 3%;
+    
 }
 
-.profiilit { /*profiilikokonaisuus, jossa kuva, nimi ja tekeminen*/
-    align-items: center;
-    
+.profiilit {
+    max-height: fit-content;
 }
 
 .profiili_kuva {
-    background-color: #e8e5dd;
+    border-radius: 150px 150px 0px 0px;
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
 }
 
-img{ /*valokuvat ihmisistä*/
-    max-width: 100%;
-    border-radius: 150px 150px 0px 0px;
+#special_profiili {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/3;
     
-   
+    justify-self: center;
+    align-items: center;
+
+    width: 50%;
+}
+
+#special_profiili div.profiili_nimi {
+    background-color: #856955;
+    width: 100%;
+
+
+}
+#special_profiili div.profiili_tekeminen {
+    width: 100%;
+    margin-bottom: 7rem;
+}
+#special_profiili div.profiili_kuva{
+    object-fit: cover;
 }
 
 .profiili_nimi { /*Tila, jossa lukee käyttäjän nimi*/
     background-color: #856955;
     text-align: center;    
-    font-size: large;
+    font-size: larger;
     margin-top: 2%;
     margin-bottom: 3%;
+   
     color: white;
 }
 
 .profiili_tekeminen { /*Tila, jossa lukee mitä käyttäjä on tehnyt*/
-    background-color: #a17d60;
+    background-color:  #a17d60;
     text-align: center;
-    font-size: small;
+    font-size: large;
     color: white;
-    height: 60px;
+    padding: 1vh;
 }
 
-.special_two {
-    
-    max-width: 100%;
-    padding-left: 25%;
-    padding-right: 25%;
-    padding-top: 3%;
-
-
+p {
+    margin: 0%;
 }
-
-.special_one {
-    display: none;
-}
-
-
 footer {
     border-top: 1px solid #9b8372;
 
@@ -131,16 +131,25 @@ footer {
 
 
 /*hyvin pienet näytöt ovat normaalia koodia*/
-/*isommat puhelimet sekä tabletit 641-994*/
+/*isommat puhelimet sekä tabletit 641-992*/
 @media screen and (min-width: 641px) {
 
     .navbar-nav {
         font-size: 1.4em;
     }
+
+    .profiili_kuva {
+        height: 60vh;
+        border-radius: 200px 200px 0px 0px;
+    }
+    #special_profiili div.profiili_tekeminen {
+       
+        margin-bottom: 9rem;
+    }
 }
 
-/*isot näytöt, kannettavat tietokoneet 995-1199*/
-@media screen and (min-width: 995px) {
+/*isot näytöt, kannettavat tietokoneet 993-1199*/
+@media screen and (min-width: 993px) {
 
     #navbarNav {
         border-top: 0;
@@ -164,6 +173,31 @@ footer {
     .row {
         padding: 6vh 0;
     }
+
+    .koko_profiili { /*kaikki profiilit*/
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    #special_profiili {
+        grid-column: 5/6;
+        width: 100%;
+    }
+
+    .profiili_nimi {
+            font-size: 1rem;
+    }
+
+    .profiili_kuva {
+        height: 40vh;
+    }
+
+    #infotext {
+        width: 60vw;
+
+    }
+   
+
 }
 
 /*tosi isot näytöt 1199->*/
@@ -179,22 +213,7 @@ footer {
         font-size: 1.2em;
     }
 
-    .koko_profiili { /*kaikki profiilit*/
-        display: flex;
-        margin: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
 
-    }
-
-    
-    .special_two {
-        display: none;
-    }
-    
-    .special_one {
-        display: inline;
-    }
    
     .infoa {
         max-width: fit-content;
@@ -203,5 +222,16 @@ footer {
     
     .row {
         padding: 3vh;
+    }
+
+    .koko_profiili { /*kaikki profiilit*/
+        margin-bottom: 0%;
+    }
+
+    .profiili_kuva {
+        border-radius: 150px 150px 0px 0px;
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
     }
 }

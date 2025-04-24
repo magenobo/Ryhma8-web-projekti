@@ -1,54 +1,50 @@
 //QUESTIONS = IMAGES AND THEIR ANSWERS
 var questions = [
-    { src: "./img/karttapeli_italia.png", answer: "Italia", alt: "Kuva, jossa tummalla merkitty valtio. viereisiä maita:",
+    { src: "./img/karttapeli_italia.png", answer: "Italia", alt: "Kuva, jossa tummalla merkitty valtio. Viereisiä maita: Ranska ja Itävalta",
     hints: ["Aamupala: Cappuccino", "Romulus ja Remus", "Pasta sekä pizza"]},
 
     //https://en.wikipedia.org/wiki/Italy#/media/File:EU-Italy_(orthographic_projection).svg
 
 
-    { src: "./img/karttapeli_thaimaa.png", answer: "Thaimaa", alt: "",
+    { src: "./img/karttapeli_thaimaa.png", answer: "Thaimaa", alt: "Kuva, jossa tummalla merkitty valtio. Viereisiä maita: Malesia ja Laos",
     hints: ["Suosittu matkailukohde Aasiassa", "Valuutta: baht ฿ (บาท)", "Suurimmat kaupungit pääkaupungin lisäksi: Samut Prakan, Udon Thani ja Chon Buri"]},
 
     //https://en.wikipedia.org/wiki/Thailand#/media/File:Thailand_(orthographic_projection).svg
 
 
-    { src: "./img/karttapeli_algeria.png", answer: "Algeria", alt: "",
-    hints: ["Jotai vois keksii viel tähän", "Pinta-alaltaan Afrikan suurin", "Pääkaupunki: Alger"]},
+    { src: "./img/karttapeli_algeria.png", answer: "Algeria", alt: "Kuva, jossa tummalla merkitty valtio. Viereisiä maita: Marokko ja Libya",
+    hints: ["Saharan autiomaa peittää valtiosta suuren osan", "Pinta-alaltaan Afrikan suurin", "Pääkaupunki: Alger"]},
 
     //https://en.wikipedia.org/wiki/Algeria#/media/File:Algeria_(centered_orthographic_projection).svg
 
 
-    { src: "./img/karttapeli_meksiko.png", answer: "Meksiko", alt: "",
+    { src: "./img/karttapeli_meksiko.png", answer: "Meksiko", alt: "Kuva, jossa tummalla merkitty valtio. Viereisiä maita: Guatemala ja Yhdysvallat",
     hints: ["Tulivuori Popocatépetl", "Perhe on hyvin tärkeä", "Kuolleiden päivä (Día de los muertos)"]},
 
     //https://fi.wikipedia.org/wiki/Meksiko#/media/Tiedosto:Mexico_(orthographic_projection).svg
 
 
-    { src: "./img/karttapeli_puola.png", answer: "Puola", alt: "",
-    hints: ["o", "Valuutta: Złoty zł", "Tunnetuimmat kaupungit: Gdnask ja Krakova"]},
+    { src: "./img/karttapeli_puola.png", answer: "Puola", alt: "Kuva, jossa tummalla merkitty valtio. Viereisiä maita: Saksa ja Valko-Venäjä",
+    hints: ["Tunnetuimmat kaupungit: Gdnask ja Krakova", "Valuutta: Złoty zł", "Pääkaupunki Varsova on Itä-Euroopan vanhimpia"]},
 
     //https://en.wikipedia.org/wiki/Poland#/media/File:EU-Poland_(orthographic_projection).svg
 
-    { src: "./img/karttapeli_brasilia.png", answer: "Brasilia", alt: "",
+    { src: "./img/karttapeli_brasilia.png", answer: "Brasilia", alt: "Kuva, jossa tummalla merkitty valtio. Viereisiä maita: Bolivia ja Kolumbia",
     hints: ["Kansallislaji: capoeira", "Suosituin sukunimi: Silva", "Valtava Kristus-patsas"]},
 
     //https://fi.wikipedia.org/wiki/Brasilia#/media/Tiedosto:BRA_orthographic.svg 
 
-    { src: "./img/karttapeli_pug.png", answer: "Papua-Uusi-Guinea", alt: "",
+    { src: "./img/karttapeli_pug.png", answer: "Papua-Uusi-Guinea", alt: "Kuva, jossa tummalla merkitty valtio. Viereinen maa: Indonesia",
     hints: ["Tyynenmeren suurin saari", "yli 850 kotimaista kieltä", "Pääkaupunki: Port Moresby"]},
 
     //https://en.wikipedia.org/wiki/Papua_New_Guinea#/media/File:PNG_orthographic.svg
 
-    { src: "./img/karttapeli_portugal.png", answer: "Portugali", alt: "",
-    hints: ["Joku hyvä tähä viel", "Euroopan pisin silta Vasco da Gama", "Cristiano Ronaldo"]},
+    { src: "./img/karttapeli_portugal.png", answer: "Portugali", alt: "Kuva, jossa tummalla merkitty valtio. Viereinen maa: Espanja.",
+    hints: ["Euroopan pisin silta Vasco da Gama", "Jalkapallotähti Cristiano Ronaldo", "Vain yksi naapurimaa: Espanja"]},
 
     //https://en.wikipedia.org/wiki/Portugal#/media/File:EU-Portugal_(orthographic_projection).svg
 ];
 //-----------------------------------
-
-//ADD WHERE DID YOU GET THE IMAGES
-
-
 
 //
 let questionNumber = 9
@@ -308,7 +304,7 @@ function showPoints () {
 //shows the final score
 function showAllPoints() {
     let allPoints = document.getElementById("kaikkipisteet");
-    allPoints.textContent = "Läpäisit pelin pistein: " + points;
+    allPoints.textContent = "Läpäisit pelin pistein: " + points + "/32";
     
     
     for (let index = 0; index < 5; index++) {
