@@ -300,6 +300,11 @@ footer {
         margin: 10px;
         font-size: 1.2em;
     }
+
+    div.matematiikka {
+        width: 75vw;
+    }
+
     div.tunnista-maa {
         font-size: 1.5em;
     }

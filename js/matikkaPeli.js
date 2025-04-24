@@ -4,21 +4,21 @@ const ruoat = [
         kuva: "./img/pasta.jpg",
         maa: "Italia",
         lore: "pasta",
-        kysymys: "120 ml maitoa, kuinka monta kuppia se on?",
-        oikeaMuunnos: ["0.5", "1/2", "0,5"],
+        kysymys: "120 millimitraa maitoa, kuinka monta kuppia se on?",
+        oikeaMuunnos: ["0,5", "1/2", "0.5"],
     },
     {
         kuva: "./img/macarons.jpg",
         maa: "Ranska",
         lore: "macarons",
-        kysymys: "30 ml soijakastiketta, kuinka monta unssia (fl oz) se on?",
+        kysymys: "30 millilitraa soijakastiketta, kuinka monta unssia (fl oz) se on?",
         oikeaMuunnos: "1",
     },
     {
         kuva: "./img/lihapullat.jpg",
         maa: "Ruotsi",
         lore: "lihapullat",
-        kysymys: "kolme neljäsosa kupin verran maitoa, kuinka monta millilitraa (ml) se on?",
+        kysymys: "kolme neljäsosaa kuppia maitoa, kuinka monta millilitraa (ml) se on?",
         oikeaMuunnos: "180",
     },
     {
@@ -32,15 +32,15 @@ const ruoat = [
         kuva: "./img/omenapiiras.jpg",
         maa: "Yhdysvallat",
         lore: "omenapiiras",
-        kysymys: "yksi ja puoli kuppia sokeria, kuinka monta millilitraa (ml) se on?",
-        oikeaMuunnos: "360",
+        kysymys: "300 millilitraa sokeria, kuinka monta kuppia se on?",
+        oikeaMuunnos: ["1,25", "1.25"],
     },
     {
         kuva:"./img/paella.jpg",
         maa:"Espanja",
         lore:"paella",
         kysymys:"kaksitoista ja puoli millilitraa (ml) paprikaa, kuinka monta teelusikallista (tsp) se on?",
-        oikeaMuunnos:["2.5", "2,5"],
+        oikeaMuunnos:["2,5", "2.5"],
     },
     {
         kuva:"./img/suvlaki.jpg",
@@ -54,14 +54,14 @@ const ruoat = [
         maa:"Thaimaa",
         lore:"Pad thai",
         kysymys:"8 unssia (oz) riisinuudeleita, montako grammaa (g) se on?",
-        oikeaMuunnos:["226.8", "226,8"],
+        oikeaMuunnos:["226,8", "226.8"],
     },
     {
         kuva:"./img/kothuRoti.jpg",
         maa:"Sri lanka",
         lore:"Kothu roti",
         kysymys:"puoli teelusikallista (tsp) cayanne pippuria, montako millilitraa (ml) se on?",
-        oikeaMuunnos:["2.5", "2,5"],
+        oikeaMuunnos:["2,5", "2.5"],
     },
     {
         kuva:"./img/pavlova.jpg",
@@ -98,6 +98,7 @@ const aloitaAlusta = document.getElementById("lopetus");
 const griddyLaatikot = document.querySelectorAll(".griddy > div");
 const oikeinvaarin = document.getElementById("griddy");
 const loredump = document.getElementById("loredump");
+const korjattuVastaus = document.getElementById("korjattuVastaus")
 
 function paivitaPeli() {
     const ruoka = ruoat[nykyinenIndeksi];
@@ -112,7 +113,8 @@ function paivitaPeli() {
     muunnosLomake.style.backgroundColor = "white";
     muunnosInput.style.backgroundColor = "";
     seuraavaKysymysNappi.disabled = true; 
-    seuraavaKysymysNappi.style.backgroundColor = "#ccc"; 
+    seuraavaKysymysNappi.style.backgroundColor = "#ccc";
+    korjattuVastaus.style.visibility = "hidden"; 
 }
 
 //aloitusnappi
@@ -153,21 +155,32 @@ muunnosInput.addEventListener("click", function (e){
     e.preventDefault();
     const vastaus = muunnosLomake.value.trim();
     const oikeaVastaus = ruoat[nykyinenIndeksi].oikeaMuunnos;
-
+    korjattuVastaus.style.visibility = "visible"; 
     if(vastaus !== "" && oikeaVastaus.includes(vastaus)){
         pisteet++;
         muunnosLomake.style.backgroundColor = "#bdffbf";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "green";
         griddyLaatikot[nykyinenIndeksi].querySelector("img").setAttribute("src", "./img/oikein.png");
+        korjattuVastaus.textContent ="OIKEIN!"
+        
     } else {
         muunnosLomake.style.backgroundColor = "red";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "red";
         griddyLaatikot[nykyinenIndeksi].querySelector("img").setAttribute("src", "./img/vaarin.png");
-    
+        
+        if (oikeaVastaus[0].includes(",")){
+            korjattuVastaus.textContent = "Oikea vastaus oli: " + ruoat[nykyinenIndeksi].oikeaMuunnos[0]
+        } else {
+            korjattuVastaus.textContent = "Oikea vastaus oli: " + oikeaVastaus;
+        }
+
+        
+        
+        
     }
     seuraavaKysymysNappi.disabled = false; 
     seuraavaKysymysNappi.style.backgroundColor = "#cecece"; 
-    muunnosLomake.disabled = true;
+    muunnosInput.disabled = true;
 
 });
 
