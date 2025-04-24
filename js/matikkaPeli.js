@@ -2,73 +2,73 @@
 const ruoat = [
     {
         kuva: "./img/pasta.jpg",
-        maa: "italia",
-        lore: "PASTA ON IHAN TÖRKEEN HYVÄÄ!",
+        maa: "Italia",
+        lore: "pasta",
         kysymys: "120 ml maitoa, kuinka monta kuppia se on?",
         oikeaMuunnos: ["0.5", "1/2", "0,5"],
     },
     {
         kuva: "./img/macarons.jpg",
-        maa: "ranska",
-        lore: "PASTA ON IHAN TÖRKEEN HYVÄÄ!",
+        maa: "Ranska",
+        lore: "macarons",
         kysymys: "30 ml soijakastiketta, kuinka monta unssia (fl oz) se on?",
         oikeaMuunnos: "1",
     },
     {
         kuva: "./img/lihapullat.jpg",
-        maa: "ruotsi",
-        lore: "PASTA ON IHAN TÖRKEEN HYVÄÄ!",
-        kysymys: "1 kupin maitoa, kuinka monta millilitraa (ml) se on?",
-        oikeaMuunnos: "240",
+        maa: "Ruotsi",
+        lore: "lihapullat",
+        kysymys: "kolme neljäsosa kupin verran maitoa, kuinka monta millilitraa (ml) se on?",
+        oikeaMuunnos: "180",
     },
     {
         kuva: "./img/wieninleike.jpg",
-        maa: "itävalta",
-        lore: "PASTA ON IHAN TÖRKEEN HYVÄÄ!",
+        maa: "Itävalta",
+        lore: "wieninleike",
         kysymys: "1 kanafileen, joka painaa puolen naulan (lb) verran, montako grammaa (g) se on?",
         oikeaMuunnos: "227",
     },
     {
         kuva: "./img/omenapiiras.jpg",
-        maa: "pohjois-amerikka",
-        lore: "PASTA ON IHAN TÖRKEEN HYVÄÄ!",
+        maa: "Yhdysvallat",
+        lore: "omenapiiras",
         kysymys: "yksi ja puoli kuppia sokeria, kuinka monta millilitraa (ml) se on?",
         oikeaMuunnos: "360",
     },
     {
         kuva:"./img/paella.jpg",
-        maa:"espanja",
-        lore:"PAELLA",
-        kysymys:"kaksitoista ja puoli millilitraa paprikaa, kuinka monta teelusikallista (tsp) se on?",
+        maa:"Espanja",
+        lore:"paella",
+        kysymys:"kaksitoista ja puoli millilitraa (ml) paprikaa, kuinka monta teelusikallista (tsp) se on?",
         oikeaMuunnos:["2.5", "2,5"],
     },
     {
         kuva:"./img/suvlaki.jpg",
-        maa:"kypros",
-        lore:"JIIRO",
-        kysymys:"Montako suvlakia on olemassa?",
-        oikeaMuunnos:"kymmenentuhattaloputonta",
+        maa:"Kypros",
+        lore:"suvlaki",
+        kysymys:"kolme ruokalusikallista (tbsp) kuivattua oreganoa, kuinka monta millilitraa (ml) se on?",
+        oikeaMuunnos:"45",
     },
     {
-        kuva:"./img/suvlaki.jpg",
-        maa:"kypros",
-        lore:"JIIRO",
-        kysymys:"Montako suvlakia on olemassa?",
-        oikeaMuunnos:"kymmenentuhattaloputonta",
+        kuva:"./img/padThai.jpg",
+        maa:"Thaimaa",
+        lore:"Pad thai",
+        kysymys:"8 unssia (oz) riisinuudeleita, montako grammaa (g) se on?",
+        oikeaMuunnos:["226.8", "226,8"],
     },
     {
-        kuva:"./img/suvlaki.jpg",
-        maa:"kypros",
-        lore:"JIIRO",
-        kysymys:"Montako suvlakia on olemassa?",
-        oikeaMuunnos:"kymmenentuhattaloputonta",
+        kuva:"./img/kothuRoti.jpg",
+        maa:"Sri lanka",
+        lore:"Kothu roti",
+        kysymys:"puoli teelusikallista (tsp) cayanne pippuria, montako millilitraa (ml) se on?",
+        oikeaMuunnos:["2.5", "2,5"],
     },
     {
-        kuva:"./img/suvlaki.jpg",
-        maa:"kypros",
-        lore:"JIIRO",
-        kysymys:"Montako suvlakia on olemassa?",
-        oikeaMuunnos:"kymmenentuhattaloputonta",
+        kuva:"./img/pavlova.jpg",
+        maa:"Australia",
+        lore:"pavlova",
+        kysymys:"kaksi viidesosa naulaa (lb) mansikoita, montako grammaa (g) se on?",
+        oikeaMuunnos:["181,6", "181.6"],
     }
 ];
 
@@ -97,6 +97,7 @@ const ennatys = document.getElementById("ennatys")
 const aloitaAlusta = document.getElementById("lopetus");
 const griddyLaatikot = document.querySelectorAll(".griddy > div");
 const oikeinvaarin = document.getElementById("griddy");
+const loredump = document.getElementById("loredump");
 
 function paivitaPeli() {
     const ruoka = ruoat[nykyinenIndeksi];
@@ -104,6 +105,7 @@ function paivitaPeli() {
     kuvaElementti.alt = "Kuva ruuasta";
     muunnosKysymys.textContent = ruoka.kysymys;
     valtio.textContent = ruoka.maa;
+    loredump.textContent = ruoka.lore;
     muunnosLomake.value = "";
     muunnosLomake.disabled = false;
     muunnosInput.disabled = false;

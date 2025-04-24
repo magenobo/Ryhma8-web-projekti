@@ -46,6 +46,8 @@ h1 {
 p.ohjeet {
     font-size: 1.5em;
     margin-bottom: 0;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 p.keskitys {
@@ -64,21 +66,17 @@ div.aloitus {
     text-align: center;
     font-size: 2em;
 }
-
 div.aloitus button {
     padding: 3em;
     background-color: rgb(230, 175, 74);
     border-radius: 1em;
 }
-
-
 div.laatikko {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #e8e5dd;
 }
-
 div.matematiikka {
     background-color: rgb(255, 194, 82);
     width: 90vw;
@@ -113,6 +111,7 @@ div.tunnista-maa {
 
 div.tunnista-maa form, div.muunnos form {
     background-color:  rgb(230, 175, 74);
+    margin-bottom: 1em;
 }
 
 div.muunnos {
@@ -128,6 +127,9 @@ div.muunnos {
 .muunnos p, .tunnista-maa p {
     margin: 0.2em 0;
     background-color:  rgb(230, 175, 74);
+    padding-left: 1em;
+    padding-right: 1em
+    ;
 }
 
 #seuraavaKysymys:disabled {
@@ -191,23 +193,18 @@ div.griddy > div {
 div.yksi {
     background-color: white;
 }
-
 div.kaksi {
     background-color: white;
 }
-
 div.kolme {
     background-color: white;
 }
-
 div.nelja {
     background-color: white;
 }
-
 div.viisi {
     background-color: white;
 }
-
 div.kuusi {
     background-color: white;
 }
@@ -215,20 +212,15 @@ div.kuusi {
 div.seitsaman {
     background-color: white;
 }
-
 div.kahdeksan {
     background-color: white;
 }
-
 div.yhdeksan {
     background-color: white;
 }
-
 div.kymmenen {
     background-color: white;
 }
-
-
 .muunnos-laatikko {
     background-color: rgb(255, 194, 82);
     display: flex;
@@ -243,20 +235,15 @@ div.kymmenen {
     padding: 1em;
     border-radius: 10px;
   }
-
   .muunnos-laatikko div {
     background-color:  rgb(255, 194, 82);
   }
-
 footer {
     border-top: 1px solid #9b8372;
 }
-
 .row {
     padding: 3vh 0;
 }
-
-
 
 
 
@@ -268,23 +255,9 @@ footer {
     .navbar-nav {
         font-size: 1.4em;
     }
-
-    .muunnos-laatikko {
-        background-color: rgb(255, 194, 82);
-        display: flex;
-        flex-direction: column; 
-        align-items: center;     
-        gap: 0.5rem;
-        margin-top: 1rem;
-        font-size: 1em;
-        max-width: 70%;
-        margin: auto;
-        margin-bottom: 3em;
-        padding: 1em;
-        border-radius: 10px;
-      }
-
 }
+
+
 
 /*isot näytöt, kannettavat tietokoneet 992-1199*/
 @media screen and (min-width: 992px) {
@@ -293,33 +266,19 @@ footer {
         border-top: 0;
         justify-content: right;
     }
-    
     .navbar-nav {
         margin: 10px;
         font-size: 1.2em;
     }
-
     #empty {
         margin: 0 1rem;
     }
-
     h1 {
         width: 60vw;
         padding: 1rem;
     }
-
     .muunnos-laatikko {
-        background-color: rgb(255, 194, 82);
-        display: flex;
-        flex-direction: column; 
-        align-items: center;     
-        gap: 0.5rem;
-        margin-top: 1rem;
         font-size: 2em;
-        max-width: 70%;
-        margin: auto;
-        padding: 1em;
-        border-radius: 10px;
       }
 
     .row {
@@ -328,87 +287,29 @@ footer {
 
 }
 
+
+
 /*tosi isot näytöt 1199->*/
 @media screen and (min-width: 1200px) {
-
-
 
     #navbarNav {
         border-top: 0;
         justify-content: right;
     }
-    
     .navbar-nav {
         margin: 10px;
         font-size: 1.2em;
     }
-
-    div.matematiikka {
-        background-color: rgb(255, 194, 82);
-        width: 90vw;
-        height: auto;
-        border-radius: 5px;
-        text-align: center;
-        padding-top: 2%;
-        
-    }
-    
-    div.kuvatahan {
-        max-width: 50%;
-        margin: auto;
-        
-        
-        
-    }
-    
-    div.kuvatahan img {
-        max-width: 100%;
-        height: auto;    
-        border-radius: 3%;
-    
-    }
-    
     div.tunnista-maa {
-        background-color:  rgb(230, 175, 74);
-        max-width: 85%;
-        margin: auto;
-        border-radius: 10px;
-        margin-top: 3%;
-        margin-bottom: 3%;
         font-size: 1.5em;
-        padding: 1%;
     }
     
     div.muunnos {
-        background-color:  rgb(230, 175, 74);
-        max-width: 85%;
-        margin: auto;
-        border-radius: 10px;
         font-size: 1.5em;
-        padding: 1%;
-    
     }
-    
-    
-    
-    .muunnos p, .tunnista-maa p {
-        margin: 0.2em 0;
-    }
-    
     .muunnos-laatikko {
-        background-color: rgb(255, 194, 82);
-        display: flex;
-        flex-direction: column; 
-        align-items: center;     
-        gap: 0.5rem;
-        margin-top: 1rem;
         font-size: 2em;
-        max-width: 70%;
-        margin: auto;
-        padding: 1em;
-        border-radius: 10px;
     }
-
     .row {
         padding: 3vh;
     }
