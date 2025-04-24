@@ -39,8 +39,8 @@ const ruoat = [
         kuva:"./img/paella.jpg",
         maa:"Espanja",
         lore:"paella",
-        kysymys:"kaksitoista ja puoli millilitraa (ml) paprikaa, kuinka monta teelusikallista (tsp) se on?",
-        oikeaMuunnos:["2,5", "2.5"],
+        kysymys:"kaksitoista millilitraa (ml) paprikaa, kuinka monta teelusikallista (tsp) se on?",
+        oikeaMuunnos:["2,4", "2.4"],
     },
     {
         kuva:"./img/suvlaki.jpg",
@@ -181,6 +181,7 @@ muunnosInput.addEventListener("click", function (e){
     seuraavaKysymysNappi.disabled = false; 
     seuraavaKysymysNappi.style.backgroundColor = "#cecece"; 
     muunnosInput.disabled = true;
+    muunnosLomake.disabled = true;
 
 });
 
