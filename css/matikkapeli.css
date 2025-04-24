@@ -153,9 +153,10 @@ div.muunnos {
     margin-bottom: 1em;
 }
 
-p.pisteet {
+p.lopputulos, p.ennatys {
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
+    padding: 0.5em;
 
 }
 

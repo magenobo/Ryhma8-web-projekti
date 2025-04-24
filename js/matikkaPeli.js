@@ -100,6 +100,8 @@ const oikeinvaarin = document.getElementById("griddy");
 const loredump = document.getElementById("loredump");
 const korjattuVastaus = document.getElementById("korjattuVastaus")
 
+
+//funktio käynnistyy aina kierroksen välissä ja kun sivu avataan ensimmäisen kerran
 function paivitaPeli() {
     const ruoka = ruoat[nykyinenIndeksi];
     kuvaElementti.src = ruoka.kuva;
@@ -115,6 +117,10 @@ function paivitaPeli() {
     seuraavaKysymysNappi.disabled = true; 
     seuraavaKysymysNappi.style.backgroundColor = "#ccc";
     korjattuVastaus.style.visibility = "hidden"; 
+    if (nykyinenIndeksi == 9){
+        seuraavaKysymysNappi.textContent = "Näytä tulos"
+    }
+
 }
 
 //aloitusnappi
@@ -133,7 +139,8 @@ alota.addEventListener("click", function (e){
     ennatys.textContent = "";
 });
 
-//aloitaalusta
+//Tällä napilla peli alkaa alusta
+//se ilmestyy vasta kun peli on päättynyt
 aloitaAlusta.addEventListener("click", function (e){
     e.preventDefault();
     
@@ -141,7 +148,7 @@ aloitaAlusta.addEventListener("click", function (e){
     peli.style.display = "none";
     nykyinenIndeksi = 0;
     pisteet = 0;
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 10; index++) { //tyhjentää ja valkaisee oikeat ja väärät vastaukset
         const element = index;
         griddyLaatikot[element].style.backgroundColor = "";
         griddyLaatikot[element].style.backgroundColor = "white";
@@ -150,13 +157,13 @@ aloitaAlusta.addEventListener("click", function (e){
     oikeinvaarin.style.display = "none";
 });
 
-//toivottavasti korjattu muunnoskysymys
+//Muunnosnapin funktio
 muunnosInput.addEventListener("click", function (e){
     e.preventDefault();
     const vastaus = muunnosLomake.value.trim();
     const oikeaVastaus = ruoat[nykyinenIndeksi].oikeaMuunnos;
     korjattuVastaus.style.visibility = "visible"; 
-    if(vastaus !== "" && oikeaVastaus.includes(vastaus)){
+    if(vastaus !== "" && oikeaVastaus.includes(vastaus)){ //tarkistaa oikean vastauksen
         pisteet++;
         muunnosLomake.style.backgroundColor = "#bdffbf";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "green";
@@ -173,10 +180,6 @@ muunnosInput.addEventListener("click", function (e){
         } else {
             korjattuVastaus.textContent = "Oikea vastaus oli: " + oikeaVastaus;
         }
-
-        
-        
-        
     }
     seuraavaKysymysNappi.disabled = false; 
     seuraavaKysymysNappi.style.backgroundColor = "#cecece"; 
@@ -193,7 +196,7 @@ seuraavaKysymysNappi.addEventListener("click", function () {
     if (!seuraavaKysymysNappi.disabled) {
         nykyinenIndeksi++; 
         if (nykyinenIndeksi < ruoat.length) {
-            paivitaPeli(); 
+            paivitaPeli(); //päivittää muuttujia
         } else {
             kuvaElementti.style.display = "none";
             tunnistaMaa.style.display = "none";
@@ -205,36 +208,27 @@ seuraavaKysymysNappi.addEventListener("click", function () {
             if (pisteet == "10"){
                 ennatys.textContent = "Ansaitsit papukaijamerkin!";
             }
-        
-
-            for (let index = 0; index < 5; index++) {
+            //Puskee dataa session storageen
+            for (let index = 0; index < 5; index++) {//tarkistaa onko pelin data jo session storagessa
                 if (peliData[index] === undefined) {
                     peliData.push({peli: "matikkapeli", tulos: pisteet});
                     sessionStorage.setItem("pelit", JSON.stringify(peliData));
                     break
                 } else {
-                    if (peliData[index].peli == "matikkapeli")
-                        if (pisteet>= peliData[index].tulos) {
+                    if (peliData[index].peli == "matikkapeli")//varmistaa, että puskettava data menee oikeaan peliin
+                        if (pisteet>= peliData[index].tulos) {//tarkistaa onko tuloksesi parempi kuin olemassa oleva paras tulos
                             peliData[index].tulos = pisteet;
                             sessionStorage.setItem("pelit", JSON.stringify(peliData));
                             break
                         } else {
                             ennatys.textContent = "Ennatyksesi oli jo suurempi! Parempi onni ensi kerralla!";
                             break
-
                     }
-            }
-            
-                
-                
-            }
+            }}
         }
     }
 });
-
-
-
-
+//käynnistää funktion sivuston ladattaessa
 window.addEventListener("DOMContentLoaded", () => {
     paivitaPeli();
 });
