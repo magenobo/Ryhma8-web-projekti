@@ -1,5 +1,8 @@
 
 
+
+// Koodissa apuna olen käyttänyt opiskelijan Johanna Ranki harjoitustyötä: https://github.com/johannaranki/Web-ohjelmointi_harjoitustyo/tree/master 
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const aloita_peli_nappi = document.getElementById("aloita_peli")
@@ -41,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             kortti.style.visibility = 'visible' //korttien näkyvyys
         });
 
-        
         for (let i = kortit.length - 1; i > 0; i--) { //sekoitus algoritmi
             const sekoitus = Math.floor(Math.random() * (i + 1))
             laatikko.appendChild(kortit[sekoitus])
@@ -112,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 sessionStorage.setItem("pelit", JSON.stringify(peliData));
                                 break
                         } else {
-                            alert("ENNÄTYKSESI ON JO SUUREMPI!")
                             break
             
                         }
