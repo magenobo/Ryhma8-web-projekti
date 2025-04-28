@@ -81,11 +81,8 @@ let allPoints = document.getElementById("kaikkipisteet");
 function loadImage() {
     document.querySelector(".ohjeet_ja_peli").style.display = "block" //shows the game
  
-    
     const image = questions[currentImage];                  //takes the image wanted
     document.getElementById('karttakuva').src = image.src;  //gets the image
-
-  
 
     document.getElementById("feedback").textContent= "";    //clears previous feedback
     document.getElementById("answer").value = "";           //clears previous answer
@@ -94,21 +91,16 @@ function loadImage() {
     
     document.getElementById('next_btn').disabled = true;    //you can't go to the next question
     document.getElementById('send_btn').disabled = false;   //you can submit the answer
-
-    
     document.getElementById('answer').style.backgroundColor = ""; //clears the colour from last round
-
 
     //you can use the buttons
     document.getElementById('vihjeBtn0').disabled = false; 
     document.getElementById('vihjeBtn1').disabled = false;
     document.getElementById('vihjeBtn2').disabled = false;
 
-
     //shows round and points every round
     showRounds()
     showPoints()
-    
 
     answerTry = 3
     usedClue = 0
@@ -136,7 +128,6 @@ function checkAnswer() {
         feedback.textContent = 'Vastaus ei voi olla tyhjä.';
         return;
       }
-   
     //____________________________________
 
     //the answer is right
@@ -150,7 +141,6 @@ function checkAnswer() {
             points++
             points++
             showPoints()
-
         }
 
         //the answer is right but used 1 clue
@@ -175,8 +165,6 @@ function checkAnswer() {
             feedback.textContent = "Oikein! Oikea vastaus oli " + correctAnswer + '. Sait vain 1 (yhden) pisteen, koska käytit kaikki vihjeet. Voit nyt jatkaa seuraavaan painamalla "Seuraava".';
             points++
             showPoints()
-            
-
         }
 
         //you can't submit it again
@@ -187,15 +175,11 @@ function checkAnswer() {
         document.getElementById('vihjeBtn0').disabled = true;
         document.getElementById('vihjeBtn1').disabled = true;
         document.getElementById('vihjeBtn2').disabled = true;
-
-
         document.getElementById('answer').style.backgroundColor = "#7CFC00";
-        
     }
     
     //the answer is wrong
     if (userAnswer !== correctAnswer) {
-
         //-1 tries
         answerTry--
         document.getElementById('answer').style.backgroundColor = "rgb(255, 125, 125)";
@@ -207,7 +191,6 @@ function checkAnswer() {
         if (answerTry === 1) {
             feedback.textContent = "Väärä vastaus. Sinulla on 1 (yksi) yritys jäljellä.";
         }
-
         //answer is wrong AND your guesses are done
         if (answerTry < 1) {
             feedback.textContent = "Väärä vastaus. Oikea vastaus olisi ollut  " + correctAnswer + '. Et saanut tältä kierrokselta pisteitä. Voit nyt mennä seuraavaan kysymykseen painamalla "Seuraava"';
@@ -257,32 +240,23 @@ function showHint(index) {
 const vihje1_btn = document.getElementById("vihjeBtn0")
 const vihje2_btn = document.getElementById("vihjeBtn1")
 const vihje3_btn = document.getElementById("vihjeBtn2")
-
 vihje1_btn.addEventListener("click", countHints1);
 vihje2_btn.addEventListener("click", countHints2);
 vihje3_btn.addEventListener("click", countHints3);
 
-
 function countHints1() {
     usedClue++
     document.getElementById('vihjeBtn0').disabled = true;
-
 }
 function countHints2() {
     usedClue++
     document.getElementById('vihjeBtn1').disabled = true;
-
 }
 function countHints3() {
     usedClue++
     document.getElementById('vihjeBtn2').disabled = true;
-
 }
 //-----------------------------------
-
-
-
-
 
 
 //shows the round number
@@ -290,7 +264,6 @@ function showRounds() {
     currentRound.textContent = 'Kierros: ' + round + '/8'; 
 }
 //-----------------------------------
-
 
 
 //shows points
@@ -306,7 +279,6 @@ function showAllPoints() {
     let allPoints = document.getElementById("kaikkipisteet");
     allPoints.textContent = "Läpäisit pelin pistein: " + points + "/32";
     
-    
     for (let index = 0; index < 5; index++) {
         if (peliData[index] === undefined) {
             peliData.push({peli: "karttapeli", tulos: points});
@@ -321,10 +293,6 @@ function showAllPoints() {
         }
     }}
 }
-
-    
-
-
 
 //shows the whole game
 loadImage()

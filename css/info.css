@@ -103,7 +103,7 @@ h1 { /* otsikko "tarinapeli" */
     font-size: larger;
     margin-top: 2%;
     margin-bottom: 3%;
-   
+    padding:5%;
     color: white;
 }
 

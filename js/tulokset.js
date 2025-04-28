@@ -45,8 +45,8 @@ function showRecords() {
     }
 
     // tuodaan sivulle näytille yhteispisteiden ja papukaijamerkkien määrät
-    document.querySelector("#all-results").textContent = "Yhteispisteet " + points + " / 66"
-    document.querySelector("#all-parrots").textContent = "Ansaitut papukaijamerkit " + bagdecount + " / 5"
+    document.querySelector("#all-results").textContent = "Yhteispisteet: " + points + " / 66"
+    document.querySelector("#all-parrots").textContent = "Ansaitut papukaijamerkit: " + bagdecount + " / 5"
 
     // silmukan avulla tuodaan sivulle näkyviin niin monta papukaijamerkkiä kuin monestako pelistä käyttäjä on saanut täydet pisteet
     for (let i = 1; i <= bagdecount; i++) {
