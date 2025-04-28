@@ -4,7 +4,7 @@ const ruoat = [
         kuva: "./img/pasta.jpg",
         maa: "Italia",
         lore: "pasta",
-        kysymys: "120 millimitraa maitoa, kuinka monta kuppia se on?",
+        kysymys: "120 millilitraa maitoa, kuinka monta kuppia se on?",
         oikeaMuunnos: ["0,5", "1/2", "0.5"],
     },
     {
