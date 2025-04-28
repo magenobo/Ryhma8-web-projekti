@@ -83,8 +83,8 @@ function changeWords() {
     })
 
     // sanojen päivittyessä päivitetään sivulle myös kysyttyjen sanojen määrä ja pisteet
-    words.textContent = "Sana " + wordCount + " / " + possibleWords.length
-    points.textContent = "Pisteet " + pointCount + " / " + possibleWords.length
+    words.textContent = "Sana: " + wordCount + " / " + possibleWords.length
+    points.textContent = "Pisteet: " + pointCount + " / " + possibleWords.length
 }
 
 
@@ -174,7 +174,7 @@ function checkWord() {
             }
         }
 
-        points.textContent = "Pisteet " + pointCount + " / " + possibleWords.length
+        points.textContent = "Pisteet: " + pointCount + " / " + possibleWords.length
 
         // lisätään annettu sana taulukkoon, joka luotiin käyttäjän antamille sanoille
         storyWords.push(givenWord.value)
@@ -263,7 +263,7 @@ function showStory() {
     document.querySelector("#game-board").style.display = "none"
     document.querySelector("#result-board").style.display = "block"
 
-    document.querySelector("#final-points").textContent = "Yhteispisteet " + pointCount + " / " + possibleWords.length
+    document.querySelector("#final-points").textContent = "Yhteispisteet: " + pointCount + " / " + possibleWords.length
 
     let finalStory = document.querySelector("#final-story")
     
@@ -315,9 +315,9 @@ function gameAgain() {
     response.textContent = "Oikealla sanalla voit ansaita 1 pisteen."
 
     // päivitetty piste- ja sanatilanne tuodaan näkyville
-    points.textContent = "Pisteet " + pointCount + " / " + possibleWords.length
+    points.textContent = "Pisteet: " + pointCount + " / " + possibleWords.length
     checkButton.textContent = "Tarkista sana"
-    words.textContent = "Sana " + wordCount + " / " + possibleWords.length
+    words.textContent = "Sana: " + wordCount + " / " + possibleWords.length
 
     // pelialusta palautetaan näkyviin ja tulosalusta piilotetaan
     document.querySelector("#game-board").style.display = "block"
