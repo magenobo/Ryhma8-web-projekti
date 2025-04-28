@@ -10,9 +10,9 @@ Sivuston käyttöönottoon on kaksi vaihtoehtoa.
 
 ### 1. vaihtoehto: internetiin julkaistu sivusto
 
-Siirry students-palvelimelle julkaistuun projektikansioon alla olevasta linkistä ja avaa index.html tiedosto.
+Siirry students-palvelimelle julkaistuun sivustoon alla olevasta linkistä.
 
-> LINKKI TÄHÄN
+> https://www.students.oamk.fi/~jranki24/Ryhma8-web-projekti/
 
 ### 2. vaihtoehto: kloonaaminen omalle koneelle
 
