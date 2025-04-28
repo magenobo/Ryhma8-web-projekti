@@ -12,6 +12,8 @@ body{
     background-color: #e8e5dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/*Navigaation css*/
 nav {
     border-bottom: 1px solid #9b8372;
 }
@@ -30,6 +32,7 @@ nav {
     text-align: center;
 }
 
+/*Otsikon css*/
 h1 { 
     width: 80vw;
     margin: 1.5rem auto;
@@ -43,6 +46,7 @@ h1 {
     border-radius: 2px;
 }
 
+/*Otsikon alla olevan ohjeistuksen css*/
 p.ohjeet {
     font-size: 1.5em;
     margin-bottom: 0;
@@ -60,6 +64,7 @@ p.bold {
     background-color: rgb(230, 175, 74)
 }
 
+/*Pelin aloitusnappi*/
 div.aloitus {
     padding: 1em;
     margin-left: auto;
@@ -71,6 +76,8 @@ div.aloitus button {
     background-color: rgb(230, 175, 74);
     border-radius: 1em;
 }
+
+/*Pelin laatikon css*/
 div.laatikko {
     display: flex;
     align-items: center;
@@ -85,9 +92,10 @@ div.matematiikka {
     text-align: center;
     padding-top: 2%;
     display: none;
-    
+    border: solid rgb(201, 149, 53);
 }
 
+/*Pelin ruuan kuva*/
 div.kuvatahan {
     max-width: 50%;
     margin: auto;   
@@ -97,8 +105,10 @@ div.kuvatahan img {
     max-width: 100%;
     height: auto;    
     border-radius: 3%;
+    border: solid rgb(201, 149, 53);
 }
 
+/*Tietolaatikon css*/
 div.tunnista-maa {
     background-color:  rgb(230, 175, 74);
     max-width: 85%;
@@ -114,6 +124,7 @@ div.tunnista-maa form, div.muunnos form {
     margin-bottom: 1em;
 }
 
+/*Muunnostehtävän css*/
 div.muunnos {
     background-color:  rgb(230, 175, 74);
     max-width: 85%;
@@ -146,6 +157,7 @@ div.muunnos {
     margin-bottom: 2em;
 }
 
+/*Pelin päätöksen css*/
 #voititPelin button {
     padding: 3em;
     background-color: rgb(230, 175, 74);
@@ -159,7 +171,7 @@ p.lopputulos, p.ennatys {
     padding: 0.5em;
 
 }
-
+/*Pelin alapuolella oleva pistetaulukko, jossa on oikein ja vaarin merkkejä*/
 div.griddy {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -209,7 +221,6 @@ div.viisi {
 div.kuusi {
     background-color: white;
 }
-
 div.seitsaman {
     background-color: white;
 }
@@ -222,6 +233,8 @@ div.yhdeksan {
 div.kymmenen {
     background-color: white;
 }
+
+/*Sivun alareunassa oleva mittataulukko*/
 .muunnos-laatikko {
     background-color: rgb(255, 194, 82);
     display: flex;
@@ -235,10 +248,12 @@ div.kymmenen {
     margin-bottom: 3em;
     padding: 1em;
     border-radius: 10px;
-  }
-  .muunnos-laatikko div {
+    border: solid rgb(201, 149, 53);
+}
+.muunnos-laatikko div {
     background-color:  rgb(255, 194, 82);
-  }
+}
+
 footer {
     border-top: 1px solid #9b8372;
 }

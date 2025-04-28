@@ -127,7 +127,7 @@ function paivitaPeli() {
 alota.addEventListener("click", function (e){
     e.preventDefault();
     paivitaPeli()
-    alota.style.display = "none";
+    alota.style.display = "none"; //resettaa monet muuttujat, jotta peli rullaa hyvin uudestaan
     peli.style.display = "initial";
     oikeinvaarin.style.display = "grid";
     kuvaElementti.style.display = "initial";
@@ -160,10 +160,10 @@ aloitaAlusta.addEventListener("click", function (e){
 //Muunnosnapin funktio
 muunnosInput.addEventListener("click", function (e){
     e.preventDefault();
-    const vastaus = muunnosLomake.value.trim();
-    const oikeaVastaus = ruoat[nykyinenIndeksi].oikeaMuunnos;
+    const vastaus = muunnosLomake.value.trim(); //ottaa pelaajan antaman vastauksen
+    const oikeaVastaus = ruoat[nykyinenIndeksi].oikeaMuunnos; //katsoo minkä pitäisi olla oikea vastaus
     korjattuVastaus.style.visibility = "visible"; 
-    if(vastaus !== "" && oikeaVastaus.includes(vastaus)){ //tarkistaa oikean vastauksen
+    if(vastaus !== "" && oikeaVastaus.includes(vastaus)){ //tarkistaa oikean vastauksen ja muuttaa pistetauluun oikein tai väärin
         pisteet++;
         muunnosLomake.style.backgroundColor = "#bdffbf";
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "green";
@@ -175,15 +175,15 @@ muunnosInput.addEventListener("click", function (e){
         griddyLaatikot[nykyinenIndeksi].style.backgroundColor = "red";
         griddyLaatikot[nykyinenIndeksi].querySelector("img").setAttribute("src", "./img/vaarin.png");
         
-        if (oikeaVastaus[0].includes(",")){
+        if (oikeaVastaus[0].includes(",")){ //antaa oikean vastauksen, jos vastaus oli väärä
             korjattuVastaus.textContent = "Oikea vastaus oli: " + ruoat[nykyinenIndeksi].oikeaMuunnos[0]
         } else {
             korjattuVastaus.textContent = "Oikea vastaus oli: " + oikeaVastaus;
         }
     }
-    seuraavaKysymysNappi.disabled = false; 
+    seuraavaKysymysNappi.disabled = false; //Avaa napin seuraavaan kysymykseen
     seuraavaKysymysNappi.style.backgroundColor = "#cecece"; 
-    muunnosInput.disabled = true;
+    muunnosInput.disabled = true; //Estää vastaamasta useamman kerran samaan kysymykseen
     muunnosLomake.disabled = true;
 
 });
